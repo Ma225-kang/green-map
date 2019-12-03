@@ -1,5 +1,5 @@
 class Place < ApplicationRecord
-  belongs_to :user
+  belongs_to :mapmaster, class_name: "User"
   has_many :missions
 
   STATUS = %w[new on-going clean]

@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :places, foreign_key: :mapmaster_id
+  has_many :missions, foreign_key: :captaingreen_id
   validates :username, presence: true, uniqueness: true, allow_blank: false
   validates :email, presence: true, format: { with: /\A.*@.*\..{2,3}\z/ }
   validates :password, presence: true, format: { with: /\A(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}\z/ }

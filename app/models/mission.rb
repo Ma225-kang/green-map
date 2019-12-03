@@ -1,5 +1,5 @@
 class Mission < ApplicationRecord
-  belongs_to :user
+  belongs_to :captaingreen, class_name: "User"
   belongs_to :place
 
   TIME = %w[morning afternoon all-day]
