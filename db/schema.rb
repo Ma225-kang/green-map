@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_03_133759) do
+ActiveRecord::Schema.define(version: 2019_12_03_144727) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,12 +22,12 @@ ActiveRecord::Schema.define(version: 2019_12_03_133759) do
     t.integer "participation_level"
     t.string "status"
     t.string "equipment"
-    t.bigint "user_id"
     t.bigint "place_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "captaingreen_id"
+    t.index ["captaingreen_id"], name: "index_missions_on_captaingreen_id"
     t.index ["place_id"], name: "index_missions_on_place_id"
-    t.index ["user_id"], name: "index_missions_on_user_id"
   end
 
   create_table "places", force: :cascade do |t|
@@ -39,10 +39,10 @@ ActiveRecord::Schema.define(version: 2019_12_03_133759) do
     t.string "status"
     t.integer "volume"
     t.string "type_of_trash"
-    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_places_on_user_id"
+    t.bigint "mapmaster_id"
+    t.index ["mapmaster_id"], name: "index_places_on_mapmaster_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 2019_12_03_133759) do
     t.string "first_name"
     t.string "last_name"
     t.string "username"
+    t.string "address"
     t.float "latitude"
     t.float "longitude"
     t.string "level"
@@ -68,6 +69,6 @@ ActiveRecord::Schema.define(version: 2019_12_03_133759) do
   end
 
   add_foreign_key "missions", "places"
-  add_foreign_key "missions", "users"
-  add_foreign_key "places", "users"
+  add_foreign_key "missions", "users", column: "captaingreen_id"
+  add_foreign_key "places", "users", column: "mapmaster_id"
 end
