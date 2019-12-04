@@ -1,0 +1,36 @@
+
+<!-- put the search bar hereafter ! -->
+
+<!-- filters  -->
+<h3>location</h3>
+<h3>status</h3>
+<h3>volume</h3>
+
+<!-- cards -->
+<div class="card-index-place">
+  <div class="card-index-place-infos">
+    <% @places.each do |place| %>
+      <%= cl_image_tag place.display_photo, alt: "Photo of the site" %>
+      <div>
+        <p>places.adress</p>
+      </div>
+      <div>
+        <p>emoticon backpack</p>
+        <p>emoticon car</p>
+        <p>emoticon truck</p>
+        <!-- condition : the volume emoticon in green -->
+        <% if 1 <= place.volume && place.volume <= 3 %>
+          <p class="selectedgreen">emoticon sac à dos</p>
+        <% elsif place.volume == 4 %>
+          <p class="selectedgreen">emoticon car</p>
+        <% else %>
+          <p class="selectedgreen">emoticon truck</p>
+        <% end %>
+      </div>
+      <div>
+        <p>emoticon nombre de participants</p>
+        <%= place.captaingreen.count %>
+      </div>
+    <% end %>
+  </div>
+</div>
