@@ -7,8 +7,8 @@ class User < ApplicationRecord
   has_many :places, foreign_key: :mapmaster_id
   has_many :missions, foreign_key: :captaingreen_id
 
-  geocoded_by :address
-  after_validation :geocode, if: :will_save_change_to_address?
+  geocoded_by :full_address
+  after_validation :geocode, if: :full_address_changed?
 
   mount_uploader :avatar, AvatarUploader
 
@@ -21,4 +21,14 @@ class User < ApplicationRecord
   validates :zip_code, presence: true, format: { with: /\A([0-9]{5})|(2[AB]\d{3})\z/ }
   validates :country, presence: true
   validates :level, inclusion: { in: LEVELS }
+
+  private
+
+  def full_address
+    "#{zip_code} #{city}, #{country}"
+  end
+
+  def full_address_changed?
+    will_save_change_to_city? || will_save_change_to_zip_code? || will_save_change_to_country?
+  end
 end
