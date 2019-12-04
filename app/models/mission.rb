@@ -14,6 +14,5 @@ class Mission < ApplicationRecord
   validates :status, inclusion: { in: STATUS }
   validates :equipment, inclusion: { in: EQUIPMENT }
 
-
   mount_uploader :mapmaster_photo, PhotoUploader
 end
