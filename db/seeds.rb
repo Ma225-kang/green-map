@@ -321,7 +321,7 @@ fifth_mission = Mission.create!(
   mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place37.jpeg")),
   participation_level: 4,
   status: "planned",
-  equipment: "car",
+  equipment: "gloves",
 
 
 )
@@ -334,7 +334,7 @@ sixth_mission = Mission.create!(
   mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place38.jpeg")),
   participation_level: 5,
   status: "on-going",
-  equipment: "truck",
+  equipment: "rake",
 
 
 )
@@ -401,7 +401,7 @@ eleventh_mission = Mission.create!(
   mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place43.jpeg")),
   participation_level: 4,
   status: "on-going",
-  equipment: "car",
+  equipment: "bag",
 
 
 )
@@ -414,7 +414,7 @@ twelveth_mission = Mission.create!(
   mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place44.jpeg")),
   participation_level: 5,
   status: "completed",
-  equipment: "truck",
+  equipment: "wheelbarrow",
 
 
 )

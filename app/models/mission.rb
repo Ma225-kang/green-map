@@ -4,7 +4,7 @@ class Mission < ApplicationRecord
 
   TIME = %w[morning afternoon all-day]
   STATUS = %w[planned on-going cancelled completed]
-  EQUIPMENT = %w[gloves bag rake wheelbarrow car truck]
+  EQUIPMENT = %w[gloves bag rake wheelbarrow]
 
   validates :date, presence: true
   validates :time_slot, presence: true, inclusion: { in: TIME }

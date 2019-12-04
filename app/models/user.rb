@@ -15,9 +15,6 @@ class User < ApplicationRecord
   LEVELS = %w[rookie apprentice champion hero legend]
 
   validates :username, presence: true, uniqueness: true, allow_blank: false
-  # validates :email, presence: true, format: { with: /\A.*@.*\..{2,3}\z/ }
-  # validates :password, presence: true, format: { with: /\A(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}\z/ }
-
   validates :first_name, presence: true, allow_blank: false
   validates :last_name, presence: true, allow_blank: false
   validates :city, presence: true
