@@ -8,12 +8,22 @@ class PlacesController < ApplicationController
     @place = Place.find(params[:id])
   end
 
+  def new
+    @place = Place.new
+  end
+
   def create
+    @place = Place.new(params_places)
+    @place.status = "new"
+    @place.mapmaster = current_user
+    @place.save
+
+    redirect_to place_path(@place)
   end
 
 private
 
   def params_places
-    params_places = params.require(:place).permit(:address, :volume, :status,:mapmaster_photo)
+    params_places = params.require(:place).permit(:address, :volume, :mapmaster_photo)
   end
 end
