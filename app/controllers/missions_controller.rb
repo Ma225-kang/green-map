@@ -7,7 +7,7 @@ class MissionsController < ApplicationController
     @mission.captaingreen = current_user
 
     if @mission.save
-      redirect_to current_user_profile_path
+      redirect_to profile_path
     else
       render 'places/show'
     end
