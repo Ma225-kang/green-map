@@ -24,7 +24,7 @@ maylis = User.create!(
   first_name: "Maylis",
   last_name: "Castell",
   username: "Lyly",
-  address: "10 rue Voltaire",
+  # address: "10 rue Voltaire",
   level: "rookie",
   city: "Nantes",
   zip_code: "44000",
@@ -38,7 +38,7 @@ marie_noelle = User.create!(
   first_name: "Marie-Noëlle",
   last_name: "Fromage",
   username: "Mawie",
-  address: "41 boulevard de Verdun",
+  # address: "41 boulevard de Verdun",
   level: "apprentice",
   city: "Rennes",
   zip_code: "35000",
@@ -52,7 +52,7 @@ ophelie = User.create!(
   first_name: "Ophélie",
   last_name: "Cauchye",
   username: "Ophé",
-  address: "3 Rue du Président Édouard Herriot",
+  # address: "3 Rue du Président Édouard Herriot",
   level: "champion",
   city: "Lyon",
   zip_code: "69001",
@@ -66,7 +66,7 @@ cecile = User.create!(
   first_name: "Cécile",
   last_name: "Veneziani",
   username: "Cécé",
-  address: "7 place du Marché aux Fleurs",
+  # address: "7 place du Marché aux Fleurs",
   level: "hero",
   city: "Montpellier",
   zip_code: "34000",
@@ -81,7 +81,7 @@ nicolas = User.create!(
   first_name: "Nicolas",
   last_name: "Filzi",
   username: "Nico",
-  address: "20 rue Lacour",
+  # address: "20 rue Lacour",
   level: "legend",
   city: "Bordeaux",
   zip_code: "33000",
@@ -321,7 +321,7 @@ fifth_mission = Mission.create!(
   mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place37.jpeg")),
   participation_level: 4,
   status: "planned",
-  equipment: "car",
+  equipment: "gloves",
 
 
 )
@@ -334,7 +334,7 @@ sixth_mission = Mission.create!(
   mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place38.jpeg")),
   participation_level: 5,
   status: "on-going",
-  equipment: "truck",
+  equipment: "rake",
 
 
 )
@@ -401,7 +401,7 @@ eleventh_mission = Mission.create!(
   mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place43.jpeg")),
   participation_level: 4,
   status: "on-going",
-  equipment: "car",
+  equipment: "bag",
 
 
 )
@@ -414,7 +414,7 @@ twelveth_mission = Mission.create!(
   mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place44.jpeg")),
   participation_level: 5,
   status: "completed",
-  equipment: "truck",
+  equipment: "wheelbarrow",
 
 
 )
