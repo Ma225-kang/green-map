@@ -2,6 +2,12 @@ class Place < ApplicationRecord
   belongs_to :mapmaster, class_name: "User"
   has_many :missions
 
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
+
+  mount_uploader :display_photo, PhotoUploader
+  mount_uploader :mapmaster_photo, PhotoUploader
+
   STATUS = %w[new on-going clean]
   TRASHS = %w[plastic dangerous glass metal liquid organic electronic miscellaneous]
 
