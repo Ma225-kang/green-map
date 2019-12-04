@@ -12,12 +12,23 @@
 <!-- place trash types -->
 <%=  %>
 <!-- material suggestions -->
-<p>For this mission we suggest you bring</p>
+<p>For this mission we suggest you bring :</p>
+ <p>emoticon verts: gants, sac || emoticons condition : rateau, brouette</p>
+<% if @place.volume > 2 %>
+  <p> emoticon rateau en vert </p>
+<% elsif @place.volume >= 3%>
+  <p>emoticon brouette en vert </p>
+<% end %>
+
+<% end %>
 <!-- go on a mission button -->
-<%= f.submit 'GO ON THIS MISSION', class: "green-button" %>
+<%= link_to "GO ON THIS MISSION", current_user_profile, class: "green-button" %>
+<!-- pop up de demande sur la date -->
 
 <!-- safety tips -->
+<div class="safety">
 <p>Because we <i class="fas fa-heart"></i> and care about you, we would appreciate, you consider these safety recommendations ...Avoid contact with chimicals without gloves and be extra careful with sharp objects.</p>
+</div>
 
 
 

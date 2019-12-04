@@ -19,12 +19,13 @@
         <p>emoticon car</p>
         <p>emoticon truck</p>
         <!-- condition : the volume emoticon in green -->
-        <% if 1 =< place.volume < 3 %>
+        <% if 1 <= place.volume && place.volume <= 3 %>
           <p class="selectedgreen">emoticon sac à dos</p>
-        <% elsif %>
+        <% elsif place.volume == 4 %>
           <p class="selectedgreen">emoticon car</p>
         <% else %>
           <p class="selectedgreen">emoticon truck</p>
+        <% end %>
       </div>
       <div>
         <p>emoticon nombre de participants</p>

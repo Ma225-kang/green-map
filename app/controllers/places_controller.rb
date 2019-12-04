@@ -1,11 +1,11 @@
 class PlacesController < ApplicationController
-
+  skip_before_action :authenticate_user!, only: [:index, :show]
   def index
-    @places = Places.all
+    @places = Place.all
   end
 
   def show
-    @places = Places.find(params[:id])
+    @places = Place.find(params[:id])
   end
 
   def create
@@ -14,6 +14,6 @@ class PlacesController < ApplicationController
 private
 
   def params_places
-    #params_places = permit()
+    params_places = params.require(:place).permit(:address, :volume, :status,:mapmaster_photo)
   end
 end
