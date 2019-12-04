@@ -9,6 +9,7 @@ class Mission < ApplicationRecord
   validates :mapmaster_photo, presence: true
   validates :participation_level, inclusion: { in: 0..5 }, numericality: { only_integer: true }
   validates :status, inclusion: { in: %w(planned on-going cancelled completed) }
+  validates :participation_level, presence: true,
 
   mount_uploader :mapmaster_photo, PhotoUploader
 end
