@@ -10,8 +10,10 @@ class Mission < ApplicationRecord
   validates :time_slot, presence: true, inclusion: { in: TIME }
   validates :mapmaster_photo, presence: true
   validates :participation_level, inclusion: { in: 0..5 }, numericality: { only_integer: true }
+
   validates :status, inclusion: { in: STATUS }
   validates :equipment, inclusion: { in: EQUIPMENT }
+
 
   mount_uploader :mapmaster_photo, PhotoUploader
 end
