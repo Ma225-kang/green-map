@@ -15,9 +15,9 @@
         <p>places.adress</p>
       </div>
       <div>
-        <p>emoticon backpack</p>
-        <p>emoticon car</p>
-        <p>emoticon truck</p>
+        <%= image_tag "icons/backpack_icon.png" %>
+        <%= image_tag "icons/car_icon.png" %>
+        <%= image_tag "icons/truck_icon.png" %>
         <!-- condition : the volume emoticon in green -->
         <% if 1 <= place.volume && place.volume <= 3 %>
           <p class="selectedgreen">emoticon sac à dos</p>

@@ -1,10 +1,13 @@
 
 <!-- banner profile -->
   <!-- photo de profile -->
-  <%= cl_image_tag @user.avatar, alt: "#{@user}'s avatar" %>
+  <div class="banner">
+  <%= cl_image_tag @user.avatar, alt: "#{@user}'s avatar" , class:"avatar" %>
   <!-- badge de level -->
   <%= cl_image_tag @user.level %>
-
+  <img src="" alt="">
+  </div>
+  <div>
 <!-- mission-box -->
   <!-- count where user = captaingreen -->
   <%= @user.missions.count %>
@@ -12,12 +15,13 @@
   <%= @user.places.count %>
   <!-- count points  -->
   <p>! creer un compter de point !</p>
-
+  </div>
+</div>
 <!-- on going mission box -->
-    <% if @next_mission %>
-      <!-- img display -->
-      <%= cl_image_tag @next_mission.place.mapmaster_photo, alt: "#{@next_mission.place.address}" %>
-      <!-- section current mission info -->
+  <% if @next_mission %>
+    <!-- img display -->
+    <%= cl_image_tag @next_mission.place.mapmaster_photo, alt: "#{@next_mission.place.address}" %>
+    <!-- section current mission info -->
       <!-- mission name -->
       <%= @next_mission.place.address %>
       <!-- time_slot -->
@@ -25,25 +29,28 @@
       <!-- date -->
       <%= @next_mission.date %>
       <!-- button more info redirecting towards show of place -->
+      <%= link_to "more info", @next_mission_path, class:'btn btn-success' %>
       <!--link_to @next_mission.place_path -->
 
-      <!-- section action -->
-      <!-- button completed redirecting towards the end of mission -->
-      <%= link_to "complete", complete_mission_path(@next_mission), method: :patch %>
-      <!-- button cancel delete mission and delete user_id from the place db -->
-      <p><%= link_to "cancel", cancel_mission_path(@next_mission), method: :patch %></p>
-    <% end %>
-
-<!-- past missions data (scroll)-->
-  <!-- past mission card -->
-  <% @user.missions do |mission| %>
-    <% if @user.mission.status == "completed" %>
-      <div class="past_mission_card"></div>
-      <%= mission.date %>
-      <%= mission.time_slot %>
-      <%= mission.mapmaster_photo %>
-      <%= mission.status %>
-      <%= mission.place.volume %>
-      <%= mission.place.adress %>
-    <% end %>
+    <!-- section action -->
+    <!-- button completed redirecting towards the end of mission -->
+    <%= link_to "complete", complete_mission_path(@next_mission), method: :patch, class:'btn btn-success'%>
+    <!-- button cancel delete mission and delete user_id from the place db -->
+    <%= link_to "cancel", cancel_mission_path(@next_mission), method: :patch, class:'btn btn-warning'%>
   <% end %>
+  </div>
+<!-- past missions data (scroll)-->
+  </div>
+    <!-- past mission card -->
+    <% @user.missions do |mission| %>
+      <% if @user.mission.status == "completed" %>
+        <div class="past_mission_card"></div>
+        <%= mission.date %>
+        <%= mission.time_slot %>
+        <%= mission.mapmaster_photo %>
+        <%= mission.status %>
+        <%= mission.place.volume %>
+        <%= mission.place.adress %>
+      <% end %>
+    <% end %>
+  </div>

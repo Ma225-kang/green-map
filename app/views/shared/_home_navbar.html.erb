@@ -3,12 +3,12 @@
   <div class="home-buttons">
     <div class="nav-btn-wrapper">
       <%= image_tag "icons/alert_page_icon.png", class: 'background-icon left' %>
-      <p class="nav-btn orange-btn">ALERT</p>
+      <%= link_to "ALERT", new_place_path, class: "nav-btn orange-btn" %>
     </div>
 
     <div class="nav-btn-wrapper">
       <%= image_tag "icons/missions_icon.png", class: 'background-icon right' %>
-      <p class="nav-btn green-btn">COLLECT</p>
+      <%= link_to "COLLECT", places_path, class: "nav-btn green-btn" %>
     </div>
   </div>
 </div>
