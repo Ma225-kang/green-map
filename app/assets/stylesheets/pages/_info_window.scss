@@ -1,0 +1,20 @@
+.info-window-image {
+  width: 100px;
+  height: 70px;
+  background-size: cover;
+  background-position: center;
+  object-fit: cover;
+  padding-bottom: 5px;
+
+}
+
+.info-window h1 {
+  font-size: 20px;
+  text-decoration: none;
+  color: #5F5F5F;
+}
+.info-window {
+  display: grid;
+  grid-template-columns: 1fr;
+
+}
