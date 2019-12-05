@@ -9,11 +9,17 @@
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
-  <body>
+  <body class="app-wrapper">
     <%= render 'shared/flashes' %>
     <%= yield %>
+
+    <% should_display_home_navbar = params[:controller] == 'pages' && params[:action] == 'home' %>
+
+    <% unless should_display_home_navbar %>
+      <%= render 'shared/navbar' %>
+    <% end %>
+
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
-    <%= render 'shared/navbar' %>
   </body>
 </html>

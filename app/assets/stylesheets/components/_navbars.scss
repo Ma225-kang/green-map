@@ -1,26 +1,17 @@
 .navbar {
   display: flex;
   justify-content: space-around;
-  // display: grid;
-  // grid-template-columns: 1fr 1fr 1fr 1fr;
   width: 100vw;
+  height: 90px;
+}
+
+.bottom-navbar {
+  position: sticky;
+  bottom: 0;
 }
 
 .navbar-lewagon {
   background: white;
-  bottom: 0;
-  // padding-bottom: 0;
-  // display: flex;
-}
-
-.navbar-lewagon .navbar-collapse {
-}
-
-.navbar-brand {
-  width: 40px;
-  display: flex;
-  justify-content: space-around;
-
 }
 
 .navbar-lewagon .navbar-brand img {
@@ -31,9 +22,4 @@
 .home-buttons {
   text-align: center;
   padding: 15px;
-}
-
-.home-buttons h1 {
-  font-size: 15px;
-  letter-spacing: 5px;
 }
