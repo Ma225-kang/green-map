@@ -14,33 +14,36 @@
   <p>! creer un compter de point !</p>
 
 <!-- on going mission box -->
-  <!-- img display -->
-  <%= cl_image_tag @user.missions.last.place.display_photo, alt: "#{@user.missions.last.place.address}" %>
-  <!-- section current mission info -->
-    <!-- mission name -->
-    <%= @user.missions.last.place.address %>
-    <!-- time_slot -->
-    <%= @user.missions.last.time_slot %>
-    <!-- date -->
-    <%= @user.missions.last.date %>
-    <!-- button more info redirecting towards show of place -->
-    <!--link_to @user.missions.last.place_path -->
+    <% if @next_mission %>
+      <!-- img display -->
+      <%= cl_image_tag @next_mission.place.display_photo, alt: "#{@next_mission.place.address}" %>
+      <!-- section current mission info -->
+      <!-- mission name -->
+      <%= @next_mission.place.address %>
+      <!-- time_slot -->
+      <%= @next_mission.time_slot %>
+      <!-- date -->
+      <%= @next_mission.date %>
+      <!-- button more info redirecting towards show of place -->
+      <!--link_to @next_mission.place_path -->
 
-  <!-- section action -->
-    <% if @user.missions.last != nil && @user.missions.last.status == "on going" %>
+      <!-- section action -->
       <!-- button completed redirecting towards the end of mission -->
-      <%= link_to profile_path, complete_mission_path(@user.missions.last), method: :patch %>
+      <%= link_to "complete", complete_mission_path(@next_mission), method: :patch %>
       <!-- button cancel delete mission and delete user_id from the place db -->
-      <%= link to profile_path, cancel_mission_path(@user.missions.last), method: :patch %>
+      <p><%= link_to "cancel", cancel_mission_path(@next_mission), method: :patch %></p>
     <% end %>
 
 <!-- past missions data (scroll)-->
   <!-- past mission card -->
   <% @user.missions do |mission| %>
-    <%= mission.date %>
-    <%= mission.time_slot %>
-    <%= mission.diplay_photo %>
-    <%= mission.status %>
-    <%= mission.place.volume %>
-    <%= mission.place.adress %>
+    <% if @user.mission.status == "completed" %>
+      <div class="past_mission_card"></div>
+      <%= mission.date %>
+      <%= mission.time_slot %>
+      <%= mission.diplay_photo %>
+      <%= mission.status %>
+      <%= mission.place.volume %>
+      <%= mission.place.adress %>
+    <% end %>
   <% end %>
