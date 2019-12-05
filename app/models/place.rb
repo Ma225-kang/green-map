@@ -8,17 +8,22 @@ class Place < ApplicationRecord
   mount_uploader :mapmaster_photo, PhotoUploader
 
   STATUS = %w[new on-going clean]
-  TRASHS = %w[plastic dangerous glass metal liquid organic electronic miscellaneous]
-  VOLUMES = 1..5
-  CLEANUP_EQUIPMENT_NEEDED = %w[gloves bag rake wheelbarrow]
+  TRASHES = %w[plastic dangerous glass metal liquid organic electronic miscellaneous]
 
-  validates :trashes_on_site, presence: true, inclusion: { in: TRASHS }
+  CLEANUP_EQUIPMENT_NEEDED = %w[gloves bag rake wheelbarrow]
+  VOLUMES = 0..5
+
+  TRANSPORT = %w[backpack car truck]
+
+  validates :trashes_on_site, presence: true
   validates :volume, presence: true, inclusion: { in: VOLUMES }, numericality: { only_integer: true }
-  validates :status, presence: true, inclusion: { in: STATUS }
+  # validates :status, presence: true, inclusion: { in: STATUS }
+
+
+
 
   # def equipments
   #   equipments = []
-
 
   #   if trashes_on_site.include?('organic')
   #     equipments << 'bag'
