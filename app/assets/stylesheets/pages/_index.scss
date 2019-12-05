@@ -2,3 +2,9 @@
 @import "home";
 @import "new_place";
 @import "info_window";
+
+
+.app-wrapper {
+  position: relative;
+  // height: calc(var(--vh, 1vh) * 100);
+}

@@ -1,1 +1,77 @@
 // Specific CSS for your home-page
+
+.home-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+  height: calc(var(--vh, 1vh) * 100);
+}
+
+.home-navbar {
+  padding: 1em 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: $white;
+
+
+  h1 {
+    font-size: 1.3em;
+  }
+}
+
+.home-buttons {
+  display: flex;
+
+  .nav-btn-wrapper {
+    position: relative;
+
+    .background-icon {
+      position: absolute;
+      width: 40px;
+    }
+
+    .background-icon.left {
+      top: -30px;
+      left: -10px;
+    }
+
+    .background-icon.right {
+      bottom: -20px;
+      right: -10px;
+    }
+  }
+
+  .nav-btn {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-family: Montserrat, 'Open Sans', Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    height: 50px;
+    line-height: 20px;
+    margin: 2px 10px;
+    padding: 6px 24px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    width: 150px;
+  }
+
+  .orange-btn {
+    background-color: #fdd200;
+  }
+
+
+  .green-btn {
+    background-color: #4DD59A;
+  }
+}
+
