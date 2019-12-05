@@ -21,9 +21,9 @@ class PlacesController < ApplicationController
     redirect_to place_path(@place)
   end
 
-private
+  private
 
   def params_places
-    params_places = params.require(:place).permit(:address, :volume, :mapmaster_photo)
+    params.require(:place).permit(:address, :volume, :mapmaster_photo)
   end
 end
