@@ -1,5 +1,12 @@
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  // display: grid;
+  // grid-template-columns: 1fr 1fr 1fr 1fr;
+  width: 100vw;
+}
+
 .navbar-lewagon {
-  justify-content: space-between;
   background: white;
   bottom: 0;
   // padding-bottom: 0;
@@ -7,7 +14,13 @@
 }
 
 .navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+}
+
+.navbar-brand {
+  width: 40px;
+  display: flex;
+  justify-content: space-around;
+
 }
 
 .navbar-lewagon .navbar-brand img {
