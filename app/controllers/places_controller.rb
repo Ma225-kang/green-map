@@ -6,6 +6,7 @@ class PlacesController < ApplicationController
 
   def show
     @place = Place.find(params[:id])
+    @mission = Mission.new
   end
 
   def new
