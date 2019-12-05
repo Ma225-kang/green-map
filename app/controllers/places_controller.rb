@@ -6,6 +6,7 @@ class PlacesController < ApplicationController
 
   def show
     @place = Place.find(params[:id])
+    @mission = Mission.new
   end
 
   def new
@@ -24,6 +25,6 @@ class PlacesController < ApplicationController
 private
 
   def params_places
-    params_places = params.require(:place).permit(:address, :volume, :mapmaster_photo)
+    params.require(:place).permit(:address, :volume, :status, :mapmaster_photo)
   end
 end
