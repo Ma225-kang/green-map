@@ -1,3 +1,7 @@
+<div class="header">
+  <%= cl_image_tag("update_mission") %>
+</div>
+
 <%= simple_form_for @mission, url: complete_mission_path(@mission) do |f| %>
   <%= f.input :mapmaster_photo, input_html: { :style=> 'width: 180px' } %>
 
@@ -6,3 +10,4 @@
   <%= f.input :participation_proof, input_html: { :style=> 'width: 180px' } %>
   <%= f.submit value: "Submit", class: 'btn btn-primary' %>
 <% end %>
+
