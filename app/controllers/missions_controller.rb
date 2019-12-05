@@ -1,5 +1,4 @@
 class MissionsController < ApplicationController
-
   def create
     @mission = Mission.new(mission_params)
     @place = Place.find(params[:place_id])
@@ -18,5 +17,4 @@ class MissionsController < ApplicationController
   def mission_params
     params.require(:mission).permit(:date, :time_slot)
   end
-
 end
