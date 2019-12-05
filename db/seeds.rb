@@ -14,6 +14,7 @@ Mission.destroy_all
 Place.destroy_all
 User.destroy_all
 
+
 puts "Starting seeds..."
 
 puts "Creating users seeds ..."
@@ -93,166 +94,184 @@ puts "Done with users seeds !"
 
 puts "Creating places seeds ..."
 
+
+
 first_place = Place.create!(
   mapmaster: maylis,
-  type_of_trash: "plastic",
+  trashes_on_site: Place::TRASHES.sample(2),
   volume: 0,
-  status: "new",
+  status: Place::STATUS.sample,
+  # equipment: "wheelbarrow",
   address: "Le Hohneck, 68140 Stosswihr",
-  display_photo: File.open(Rails.root.join("db/fixtures/places/place1.jpeg")),
-  mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place2.jpeg"))
+  # display_photo: File.open(Rails.root.join("db/fixtures/places/place1.jpeg")),
+  mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place51.jpeg"))
 )
 
 second_place = Place.create!(
   mapmaster: marie_noelle,
-  type_of_trash: "dangerous",
+  trashes_on_site: Place::TRASHES.sample(3),
   volume: 1,
-  status: "on-going",
+  status: Place::STATUS.sample,
+  # equipment: "gloves",
   address: "39150 Grande Rivière",
-  display_photo: File.open(Rails.root.join("db/fixtures/places/place3.jpeg")),
-  mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place4.jpeg"))
+  # display_photo: File.open(Rails.root.join("db/fixtures/places/place3.jpeg")),
+  mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place52.jpeg"))
 )
 
 third_place = Place.create!(
   mapmaster: ophelie,
-  type_of_trash: "glass",
+  trashes_on_site: Place::TRASHES.sample(2),
   volume: 2,
-  status: "clean",
+  status: Place::STATUS.sample,
+  # equipment: "bag",
   address: "73630 Le Chatelard",
-  display_photo: File.open(Rails.root.join("db/fixtures/places/place5.jpeg")),
-  mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place6.jpeg"))
+  # display_photo: File.open(Rails.root.join("db/fixtures/places/place5.jpeg")),
+  mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place53.jpeg"))
 )
 
 fourth_place = Place.create!(
   mapmaster: cecile,
-  type_of_trash: "metal",
+  trashes_on_site: Place::TRASHES.sample(3),
   volume: 3,
-  status: "new",
+  status: Place::STATUS.sample,
+  # equipment: "rake",
   address: "26420 Saint-Julien-en-Vercors",
-  display_photo: File.open(Rails.root.join("db/fixtures/places/place7.jpeg")),
-  mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place8.jpeg"))
+  # display_photo: File.open(Rails.root.join("db/fixtures/places/place7.jpeg")),
+  mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place54.jpeg"))
 )
 
 fifth_place = Place.create!(
   mapmaster: nicolas,
-  type_of_trash: "liquid",
+  trashes_on_site: Place::TRASHES.sample(2),
   volume: 4,
-  status: "on-going",
+  status: Place::STATUS.sample,
+  # equipment: "wheelbarrow",
   address: "83630 Bauduen",
-  display_photo: File.open(Rails.root.join("db/fixtures/places/place9.jpeg")),
-  mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place10.jpeg"))
+  # display_photo: File.open(Rails.root.join("db/fixtures/places/place9.jpeg")),
+  mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place55.jpeg"))
 )
 
 sixth_place = Place.create!(
   mapmaster: maylis,
-  type_of_trash: "organic",
+  trashes_on_site: Place::TRASHES.sample(3),
   volume: 5,
-  status: "clean",
+  status: Place::STATUS.sample,
+  # equipment: "gloves",
   address: "84400 Vaucluse",
-  display_photo: File.open(Rails.root.join("db/fixtures/places/place11.jpeg")),
-  mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place12.jpeg"))
+  # display_photo: File.open(Rails.root.join("db/fixtures/places/place11.jpeg")),
+  mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place56.jpeg"))
 )
 
 seventh_place = Place.create!(
   mapmaster: marie_noelle,
-  type_of_trash: "electronic",
+  trashes_on_site: Place::TRASHES.sample(2),
   volume: 0,
-  status: "new",
+  status: Place::STATUS.sample,
+  # equipment: "bag",
   address: "48400 Barre-des-Cévennes",
-  display_photo: File.open(Rails.root.join("db/fixtures/places/place13.jpeg")),
-  mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place14.jpeg"))
+  # display_photo: File.open(Rails.root.join("db/fixtures/places/place13.jpeg")),
+  mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place57.jpeg"))
 )
 
 
 eighth_place = Place.create!(
   mapmaster: ophelie,
-  type_of_trash: "miscellaneous",
+  trashes_on_site: Place::TRASHES.sample(3),
   volume: 1,
-  status: "on-going",
+  status: Place::STATUS.sample,
+  # equipment: "rake",
   address: "15110 Saint-Urcize",
-  display_photo: File.open(Rails.root.join("db/fixtures/places/place15.jpeg")),
-  mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place16.jpeg"))
+  # display_photo: File.open(Rails.root.join("db/fixtures/places/place15.jpeg")),
+  mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place58.jpeg"))
 )
 
 nineth_place = Place.create!(
   mapmaster: cecile,
-  type_of_trash: "plastic",
+  trashes_on_site: Place::TRASHES.sample(2),
   volume: 2,
-  status: "clean",
+  status: Place::STATUS.sample,
+  # equipment: "wheelbarrow",
   address: "19170 Tarnac",
-  display_photo: File.open(Rails.root.join("db/fixtures/places/place17.jpeg")),
-  mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place18.jpeg"))
+  # display_photo: File.open(Rails.root.join("db/fixtures/places/place17.jpeg")),
+  mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place59.jpeg"))
 )
 
 tenth_place = Place.create!(
   mapmaster: nicolas,
-  type_of_trash: "dangerous",
+  trashes_on_site: Place::TRASHES.sample(3),
   volume: 3,
-  status: "new",
+  status: Place::STATUS.sample,
+  # equipment: "gloves",
   address: "87440 Marval",
-  display_photo: File.open(Rails.root.join("db/fixtures/places/place19.jpeg")),
-  mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place20.jpeg"))
+  # display_photo: File.open(Rails.root.join("db/fixtures/places/place19.jpeg")),
+  mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place60.jpeg"))
 )
 
 
 eleventh_place = Place.create!(
   mapmaster: maylis,
-  type_of_trash: "glass",
+  trashes_on_site: Place::TRASHES.sample(2),
   volume: 4,
-  status: "on-going",
+  status: Place::STATUS.sample,
+  # equipment: "bag",
   address: "05310 Freissinières",
-  display_photo: File.open(Rails.root.join("db/fixtures/places/place21.jpeg")),
-  mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place22.jpeg"))
+  # display_photo: File.open(Rails.root.join("db/fixtures/places/place21.jpeg")),
+  mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place61.jpeg"))
 )
 
 twelveth_place = Place.create!(
   mapmaster: marie_noelle,
-  type_of_trash: "metal",
+  trashes_on_site: Place::TRASHES.sample(3),
   volume: 5,
-  status: "clean",
+  status: Place::STATUS.sample,
+  # equipment: "rake",
   address: "05260 Champoléon",
-  display_photo: File.open(Rails.root.join("db/fixtures/places/place23.jpeg")),
-  mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place24.jpeg"))
+  # display_photo: File.open(Rails.root.join("db/fixtures/places/place23.jpeg")),
+  mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place62.jpeg"))
 )
 
 thirteenth_place = Place.create!(
   mapmaster: ophelie,
-  type_of_trash: "liquid",
+  trashes_on_site: Place::TRASHES.sample(2),
   volume: 0,
-  status: "new",
+  status: Place::STATUS.sample,
+  # equipment: "wheelbarrow",
   address: "38380 Saint-Pierre-de-Chartreuse",
-  display_photo: File.open(Rails.root.join("db/fixtures/places/place25.jpeg")),
-  mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place26.jpeg"))
+  # display_photo: File.open(Rails.root.join("db/fixtures/places/place25.jpeg")),
+  mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place63.jpeg"))
 )
 
 fourteenth_place = Place.create!(
   mapmaster: cecile,
-  type_of_trash: "organic",
+  trashes_on_site: Place::TRASHES.sample(3),
   volume: 1,
-  status: "on-going",
+  status: Place::STATUS.sample,
+  # equipment: "gloves",
   address: "09140 Seix",
-  display_photo: File.open(Rails.root.join("db/fixtures/places/place27.jpeg")),
-  mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place28.jpeg"))
+  # display_photo: File.open(Rails.root.join("db/fixtures/places/place27.jpeg")),
+  mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place64.jpeg"))
 )
 
 fifteenth_place = Place.create!(
   mapmaster: nicolas,
-  type_of_trash: "electronic",
+  trashes_on_site: Place::TRASHES.sample(2),
   volume: 2,
-  status: "clean",
+  status: Place::STATUS.sample,
+  # equipment: "bag",
   address: "65120 Luz-Saint-Sauveur",
-  display_photo: File.open(Rails.root.join("db/fixtures/places/place29.jpeg")),
-  mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place30.jpeg"))
+  # display_photo: File.open(Rails.root.join("db/fixtures/places/place29.jpeg")),
+  mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place65.jpeg"))
 )
 
 sixteenth_place = Place.create!(
   mapmaster: maylis,
-  type_of_trash: "miscellaneous",
+  trashes_on_site: Place::TRASHES.sample(3),
   volume: 3,
-  status: "new",
+  status: Place::STATUS.sample,
+  # equipment: "rake",
   address: "64440 Laruns",
-  display_photo: File.open(Rails.root.join("db/fixtures/places/place31.jpeg")),
-  mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place32.jpeg"))
+  # display_photo: File.open(Rails.root.join("db/fixtures/places/place31.jpeg")),
+  mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place66.jpeg"))
 )
 
 puts "Done with places seeds !"
@@ -268,7 +287,6 @@ first_mission = Mission.create!(
   mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place33.jpeg")),
   participation_level: 0,
   status: "planned",
-  equipment: "gloves",
 
 
 
@@ -282,7 +300,6 @@ second_mission = Mission.create!(
   mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place34.jpeg")),
   participation_level: 1,
   status: "on-going",
-  equipment: "bag",
 
 
 )
@@ -295,7 +312,6 @@ third_mission = Mission.create!(
   mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place35.jpeg")),
   participation_level: 2,
   status: "cancelled",
-  equipment: "rake",
 
 
 )
@@ -308,7 +324,6 @@ fourth_mission = Mission.create!(
   mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place36.jpeg")),
   participation_level: 3,
   status: "completed",
-  equipment: "wheelbarrow",
 
 
 )
@@ -321,7 +336,6 @@ fifth_mission = Mission.create!(
   mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place37.jpeg")),
   participation_level: 4,
   status: "planned",
-  equipment: "gloves",
 
 
 )
@@ -334,7 +348,6 @@ sixth_mission = Mission.create!(
   mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place38.jpeg")),
   participation_level: 5,
   status: "on-going",
-  equipment: "rake",
 
 
 )
@@ -347,7 +360,6 @@ seventh_mission = Mission.create!(
   mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place39.jpeg")),
   participation_level: 0,
   status: "cancelled",
-  equipment: "gloves",
 
 
 )
@@ -361,7 +373,6 @@ eighth_mission = Mission.create!(
   mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place40.jpeg")),
   participation_level: 1,
   status: "completed",
-  equipment: "bag",
 
 
 )
@@ -374,7 +385,6 @@ nineth_mission = Mission.create!(
   mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place41.jpeg")),
   participation_level: 2,
   status: "planned",
-  equipment: "rake",
 
 
 )
@@ -387,7 +397,6 @@ tenth_mission = Mission.create!(
   mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place42.jpeg")),
   participation_level: 3,
   status: "on-going",
-  equipment: "wheelbarrow",
 
 
 )
@@ -401,7 +410,6 @@ eleventh_mission = Mission.create!(
   mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place43.jpeg")),
   participation_level: 4,
   status: "on-going",
-  equipment: "bag",
 
 
 )
@@ -414,7 +422,6 @@ twelveth_mission = Mission.create!(
   mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place44.jpeg")),
   participation_level: 5,
   status: "completed",
-  equipment: "wheelbarrow",
 
 
 )

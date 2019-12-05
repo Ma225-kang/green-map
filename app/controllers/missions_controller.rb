@@ -1,5 +1,5 @@
 class MissionsController < ApplicationController
-  before_action :set_mission, only: [:review, :complete]
+  before_action :set_mission, only: [:review, :complete, :cancel]
 
   def create
     @mission = Mission.new(mission_params)
@@ -13,6 +13,10 @@ class MissionsController < ApplicationController
       render 'places/show'
     end
   end
+
+  def cancel
+    @mission.status = "cancelled"
+    @mission.save
 
   def review
   end
@@ -29,7 +33,7 @@ class MissionsController < ApplicationController
   end
 
   def mission_params
-    params.require(:mission).permit(:date, :time_slot)
+    params.require(:mission).permit(:date, :time_slot, :status)
   end
 
   def mission_update_params
