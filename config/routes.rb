@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resources :missions, only: [:create]
   end
 
-  resources :missions, only: [] do
+  resources :missions, only: [:edit, :update] do
     member do
       get 'review'
       patch 'complete'
