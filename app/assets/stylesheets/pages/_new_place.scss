@@ -1,0 +1,33 @@
+.global-create-place {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 100px;
+  background-color: #F1F1F1;
+  // height: 100vh;
+}
+
+.banner-create-place {
+  background-image: asset-url("banners/create_place_banner.jpg");
+  background-position: center;
+  background-size: cover;
+  width: 100vw;
+  height: 120px;
+  color: white;
+
+
+  h1 {
+    margin: 20px;
+    letter-spacing: 15px;
+    font-size: 20px;
+    font-weight: light;
+    text-align: center;
+  }
+}
+
+.create-place-content {
+  margin: 20px;
+}
+
+.description-create-place {
+
+}
