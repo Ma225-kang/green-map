@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_04_103126) do
+ActiveRecord::Schema.define(version: 2019_12_05_142932) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,7 +21,6 @@ ActiveRecord::Schema.define(version: 2019_12_04_103126) do
     t.string "mapmaster_photo"
     t.integer "participation_level"
     t.string "status"
-    t.string "equipment"
     t.bigint "place_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -39,10 +38,10 @@ ActiveRecord::Schema.define(version: 2019_12_04_103126) do
     t.float "longitude"
     t.string "status"
     t.integer "volume"
-    t.string "type_of_trash"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "mapmaster_id"
+    t.jsonb "trashes_on_site", default: []
     t.index ["mapmaster_id"], name: "index_places_on_mapmaster_id"
   end
 

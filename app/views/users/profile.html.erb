@@ -16,7 +16,7 @@
 <!-- on going mission box -->
     <% if @next_mission %>
       <!-- img display -->
-      <%= cl_image_tag @next_mission.place.display_photo, alt: "#{@next_mission.place.address}" %>
+      <%= cl_image_tag @next_mission.place.mapmaster_photo, alt: "#{@next_mission.place.address}" %>
       <!-- section current mission info -->
       <!-- mission name -->
       <%= @next_mission.place.address %>
@@ -41,7 +41,7 @@
       <div class="past_mission_card"></div>
       <%= mission.date %>
       <%= mission.time_slot %>
-      <%= mission.diplay_photo %>
+      <%= mission.mapmaster_photo %>
       <%= mission.status %>
       <%= mission.place.volume %>
       <%= mission.place.adress %>

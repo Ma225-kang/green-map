@@ -1,4 +1,6 @@
 class MissionsController < ApplicationController
+  before_action :set_mission, only: [:review, :complete, :cancel]
+
   def create
     @mission = Mission.new(mission_params)
     @place = Place.find(params[:place_id])
@@ -13,15 +15,28 @@ class MissionsController < ApplicationController
   end
 
   def cancel
-    @mission = Mission.find(params[:id])
     @mission.status = "cancelled"
     @mission.save
+
+  def review
+  end
+
+  def complete
+    @mission.update(mission_update_params)
     redirect_to profile_path
   end
 
   private
 
+  def set_mission
+    @mission = Mission.find(params[:id])
+  end
+
   def mission_params
     params.require(:mission).permit(:date, :time_slot, :status)
+  end
+
+  def mission_update_params
+    params.require(:mission).permit(:mapmaster_photo, :participation_level, :participation_proof)
   end
 end

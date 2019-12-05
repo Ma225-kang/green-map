@@ -1,0 +1,8 @@
+<%= simple_form_for @mission, url: complete_mission_path(@mission) do |f| %>
+  <%= f.input :mapmaster_photo, input_html: { :style=> 'width: 180px' } %>
+
+  <%= f.input :participation_level, collection: Place::VOLUMES, required: true, input_html: { :style=> 'width: 180px' } %>
+
+  <%= f.input :participation_proof, input_html: { :style=> 'width: 180px' } %>
+  <%= f.submit value: "Submit", class: 'btn btn-primary' %>
+<% end %>
