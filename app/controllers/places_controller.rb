@@ -23,6 +23,9 @@ class PlacesController < ApplicationController
     redirect_to place_path(@place)
   end
 
+  def geolocate_user
+  end
+
   private
 
   def params_places

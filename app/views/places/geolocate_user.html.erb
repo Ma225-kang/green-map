@@ -1,0 +1,27 @@
+<!-- BANNER -->
+<h1>POINT LOCATION</h1>
+
+<!-- CONSIGNES -->
+<div class="instructions">
+  <h3>where's that nasty garbage?</h3>
+    <div class="instructions_steps">
+      <div class="step1">
+        <%= image_tag "icons/step1gps_icon.svg" %>
+        <p>We need to know where you are to track garbage location</p>
+      </div>
+      <div class="step2">
+        <%= image_tag "icons/step2gps_icon.svg" %>
+        <p>Allow geolocalisation to advance to the next step</p>
+      </div>
+      <div class="step3">
+        <%= image_tag "icons/step3gps_icon.svg" %>
+        <p>Tap "I'm here!" on the <strong>map</strong> below</p>
+      </div>
+    </div>
+</div>
+
+<!-- MAP <-->
+<div>
+   <%= link_to "I'm here ", new_place_path, class: "btn btn-warning" %>
+</div>
+

@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   get "/profile", to: "users#profile", as: :profile
 
   resources :places, only: [:index, :show, :new, :create] do
+    collection do
+      get "geolocate_user"
+    end
     resources :missions, only: [:create]
   end
 
