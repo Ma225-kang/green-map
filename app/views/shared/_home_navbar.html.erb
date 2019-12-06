@@ -3,12 +3,12 @@
   <div class="home-buttons">
     <div class="nav-btn-wrapper">
       <%= image_tag "icons/alert_page_icon.png", class: 'background-icon left' %>
-      <%= link_to "ALERT", new_place_path, class: "nav-btn orange-btn" %>
+      <%= link_to "ALERT", geolocate_user_places_path, class: "nav-btn orange-btn" %>
     </div>
 
     <div class="nav-btn-wrapper">
       <%= image_tag "icons/missions_icon.png", class: 'background-icon right' %>
-      <%= link_to "COLLECT", geolocate_user_places_path, class: "nav-btn green-btn" %>
+      <%= link_to "COLLECT", places_path, class: "nav-btn green-btn" %>
     </div>
   </div>
 </div>

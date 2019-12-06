@@ -8,6 +8,10 @@ initMapbox();
 
 import { geolocateUser } from '../plugins/geolocate_user';
 
-geolocateUser();
 
+const button = document.querySelector('#geolocate_me');
 
+button.addEventListener('click', (event) => {
+  // Callback
+  geolocateUser();
+})
