@@ -18,8 +18,10 @@ class PlacesController < ApplicationController
 
   def create
     @place = Place.new(params_places)
+
     @place.status = "new"
     @place.mapmaster = current_user
+
     @place.save
 
     redirect_to place_path(@place)
@@ -31,6 +33,6 @@ class PlacesController < ApplicationController
   private
 
   def params_places
-    params.require(:place).permit(:address, :volume, :mapmaster_photo)
+    params.require(:place).permit(:volume, :mapmaster_photo, trashes_on_site: [])
   end
 end
