@@ -1,0 +1,58 @@
+.global-card-header-create {
+  width: 100vw;
+}
+
+.card-index-place {
+  background-color: white;
+}
+
+.card-index-place-infos {
+  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  img {
+  width: 130px;
+  height: 130px;
+  background-position: center;
+  background-size: cover;
+  border-radius: 5%;
+
+
+  }
+}
+
+
+.one-card-place-infos {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 5%;
+  height: 300px;
+
+}
+
+.icons-card {
+  width: 150px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  margin: 0;
+
+  img {
+    height: 28px;
+    width: 28px;
+    margin: 1px;
+  }
+}
+
+.address-info-card {
+  height: 100px;
+}
+
+.participants-number {
+
+}
