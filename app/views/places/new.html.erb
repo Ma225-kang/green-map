@@ -1,18 +1,37 @@
-<div class="global-create-place">
-  <div class="banner-create-place">
-  <!-- banner POINT LOCATION -->
-    <h1>POINT LOCATION</h1>
+  <!-- banner TELL US MORE -->
+<div class="header create-place">
+  <h1>TELL US MORE</h1>
+</div>
+
+  <!-- box instructions -->
+<div class="instructions">
+  <p>
+    Dear Mapmaster, your mission is almost complete!
+    Take a minute to fill the details.
+    It will help our Captain Green to prepare for their mission.
+  </p>
+</div>
+
+  <!-- box details -->
+<div class="form">
+  <p class="text-title-form">SHOW US WHAT YOU FOUND!</p>
+  <div class="picture-mapmaster">
+    <%= image_tag'icons/alert_page_icon.png', class: "camera" %>
+    <p class="text-picture-trashpoint">Add a picture of trashpoint</p>
+    <%= image_tag'icons/plus_icon.png', class: "plus" %>
   </div>
 
-  <div class="create-place-content">
-    <h2>Where's that nasty garbage ?</h2>
-    <div class="description-create-place">
-      <p>We need to know where you are to track garbage location</p>
-      <p>Allow geolocalisation to advance to the next step</p>
-      <p>Tap "I'm there !" on the map below</p>
+  <p class="text-title-form">HOW SERIOUS IS THE SITUATION?</p>
+  <p class="text-second-title-form">Let the next heroes know how they should prepare for this</p>
+  <div class="bar-volume d-flex inline">
+    <%= simple_form_for @place do |f| %>
+      <%= f.input :volume, collection: 1..5, as: :radio_buttons %>
+      <%= f.submit value: "Submit", class: 'btn btn-primary' %>
+    <% end %>
+    <div class="legends-volume">
+    <p>Quite a few plastic bags around here</p>
+    <p>We've a landfill situation here</p>
     </div>
-  <!-- map -->
-
   </div>
 </div>
 

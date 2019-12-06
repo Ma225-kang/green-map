@@ -11,4 +11,16 @@
   &.show-place {
     background-image: image-url('headers/show-place.jpg');
   }
+
+  &.create-place {
+    background-image: image-url('headers/create-place.jpg');
+  }
+
+  h1 {
+    font-size: 24px;
+    color: white;
+    text-align: center;
+    padding-top: 30px;
+    letter-spacing: 0.2em;
+  }
 }
