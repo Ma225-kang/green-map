@@ -28,6 +28,7 @@ class PlacesController < ApplicationController
   end
 
   def geolocate_user
+    @markers = [{lat: cookies[:latitude], lng: cookies[:longitude]}]
   end
 
   private

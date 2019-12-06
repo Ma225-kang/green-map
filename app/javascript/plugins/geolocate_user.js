@@ -1,7 +1,7 @@
 const geolocateUser = () => {
 
 
-  const button = document.querySelector('#geolocate_me');
+  const button = document.getElementById('geolocate_me');
 
   if (button) {
     button.addEventListener('click', (event) => {
@@ -27,9 +27,10 @@ const geolocateUser = () => {
     let lat = "latitude" + "=" + latitude + ";";
     document.cookie = lng;
     document.cookie = lat;
+    location = "/places/new";
+  }
 
-  //   if (lng == tr && lat == true ) {
-  //     location = "/places/new";
+  //   if (lng && lat) {
   //   } else {
   //     alert("We can't geolocate you, :(");
   //     location = "/home"
@@ -40,5 +41,5 @@ const geolocateUser = () => {
   }
 }
 
-export { geolocateUser };
+export { geolocateUser }
 
