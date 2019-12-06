@@ -15,16 +15,16 @@
         <p>places.adress</p>
       </div>
       <div>
-        <%= image_tag "icons/backpack_icon.png" %>
-        <%= image_tag "icons/car_icon.png" %>
-        <%= image_tag "icons/truck_icon.png" %>
+        <%= image_tag "icons/grey_backpack_icon.png" %>
+        <%= image_tag "icons/grey_car_icon.svg" %>
+        <%= image_tag "icons/grey_truck_icon.svg" %>
         <!-- condition : the volume emoticon in green -->
         <% if 1 <= place.volume && place.volume <= 3 %>
-          <p class="selectedgreen">emoticon sac à dos</p>
+          <%= image_tag "icons/green_bag.svg" %>
         <% elsif place.volume == 4 %>
-          <p class="selectedgreen">emoticon car</p>
+          <%= image_tag "icons/green_car_icon.svg" %>
         <% else %>
-          <p class="selectedgreen">emoticon truck</p>
+          <%= image_tag "icons/green_truck_icon.png" %>
         <% end %>
       </div>
       <div>
