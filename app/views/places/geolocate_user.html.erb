@@ -15,13 +15,15 @@
       </div>
       <div class="step3">
         <%= image_tag "icons/step3gps_icon.svg" %>
-        <p>Tap "I'm here!" on the <strong>map</strong> below</p>
+        <p>Tap "I'm here!" on the <strong>map</strong> below to geolocate the spot !</p>
       </div>
     </div>
 </div>
 
 <!-- MAP <-->
 <div>
-   <%= link_to "I'm here", "#", id:"geolocate_me" , class: "btn btn-warning" %>
+ <!--  <button  class="btn btn-warning">i'm here !</button> -->
+  <%= link_to `I'm here!`, new_place_path, class: "btn btn-warning", id: "geolocate_me"%>
+ <!--  <%= link_to 'Étape suivante', new_place_path, class: "btn btn-warning" %> -->
 </div>
 

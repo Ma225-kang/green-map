@@ -12,6 +12,8 @@ class PlacesController < ApplicationController
 
   def new
     @place = Place.new
+    @longitude = cookies[:longitude]
+    @latitude = cookies[:latitude]
   end
 
   def create
