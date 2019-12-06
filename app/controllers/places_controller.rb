@@ -12,6 +12,8 @@ class PlacesController < ApplicationController
 
   def new
     @place = Place.new
+    @longitude = cookies[:longitude]
+    @latitude = cookies[:latitude]
   end
 
   def create
@@ -21,6 +23,9 @@ class PlacesController < ApplicationController
     @place.save
 
     redirect_to place_path(@place)
+  end
+
+  def geolocate_user
   end
 
   private
