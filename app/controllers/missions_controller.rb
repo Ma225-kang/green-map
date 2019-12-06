@@ -17,6 +17,7 @@ class MissionsController < ApplicationController
   def cancel
     @mission.status = "cancelled"
     @mission.save
+  end
 
   def review
   end
