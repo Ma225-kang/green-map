@@ -1,43 +1,45 @@
-<<div class="header create global-card-header-create">FIND PLACES</div>
+<div class="header create create-place index-places global-card-header-create">
+  <h1>FIND PLACES</h1>
+</div>
 <!-- put the search bar here after ! -->
 
 <!-- filters  -->
-<h3 class="nav-btn orange-btn">location</h3>
-<h3 class="nav-btn orange-btn">status</h3>
-<h3 class="nav-btn orange-btn">volume</h3>
+<div class="nav-filters">
+  <%= link_to "Locations", new_place_path, class: "filters-btn orange-filters-btn" %>
+  <%= link_to "Status", new_place_path, class: "filters-btn orange-filters-btn" %>
+  <%= link_to "Volumes", new_place_path, class: "filters-btn orange-filters-btn" %>
+<!--  <h3 class="nav-btn orange-btn">location</h3>
+  <h3 class="nav-btn orange-btn">status</h3>
+  <h3 class="nav-btn orange-btn">volume</h3> -->
+</div>
+
 
 <!-- cards -->
-<div class="card-index-place">
-  <div class="card-index-place-infos">
-    <% @places.each do |place| %>
-      <div class="one-card-place-infos">
-        <%= cl_image_tag place.mapmaster_photo, alt: "Photo of the site", class: "img" %>
+<div class="card-index-place-infos">
+  <% @places.each do |place| %>
+    <div class="one-card-place-infos">
+      <%= cl_image_tag place.mapmaster_photo, alt: "Photo of the site", class: "img" %>
 
-        <div class="address-info-card">
-          <p><%= place.address %></p>
-        </div>
-
-        <div class="icons-card">
-          <%= image_tag "icons/grey_backpack_icon.png", class: "icon" %>
-          <%= image_tag "icons/grey_car_icon.svg", class: "icon"  %>
-          <%= image_tag "icons/grey_truck_icon.png", class: "icon"  %>
-          <!-- condition : the volume emoticon in green -->
-          <% if 1 <= place.volume && place.volume <= 3 %>
-            <%= image_tag "icons/green_bag.svg" %>
-          <% elsif place.volume == 4 %>
-            <%= image_tag "icons/green_car_icon.svg" %>
-          <% else %>
-            <%= image_tag "icons/green_truck_icon.png" %>
-          <% end %>
-        </div>
-
-
-        <div class="participants-number">
-          <p>emoticon nombre de participants</p>
-          <%= place.missions.count %>
-        </div>
-
+      <div class="address-info-card">
+        <p><%= place.address %></p>
       </div>
-    <% end %>
-  </div>
+
+      <div class="icons-card">
+        <%= image_tag "icons/grey_backpack_icon.png", class: "icon" %>
+        <%= image_tag "icons/grey_car_icon.svg", class: "icon"  %>
+        <%= image_tag "icons/grey_truck_icon.png", class: "icon"  %>
+        <!-- condition : the volume emoticon in green -->
+        <% if 1 <= place.volume && place.volume <= 3 %>
+          <%= image_tag "icons/green_bag.svg" %>
+        <% elsif place.volume == 4 %>
+          <%= image_tag "icons/green_car_icon.svg" %>
+        <% else %>
+          <%= image_tag "icons/green_truck_icon.png" %>
+        <% end %>
+
+        <%= place.missions.count %>
+        <%= image_tag "icons/team_icon.svg", class: "icon" %>
+      </div>
+    </div>
+  <% end %>
 </div>

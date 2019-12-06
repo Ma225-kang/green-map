@@ -21,8 +21,6 @@
     }
   }
 
-
-
   .nav-btn {
     position: relative;
 
@@ -54,3 +52,35 @@
     background-color: #4DD59A;
   }
 }
+
+.nav-filters {
+  display: flex;
+  justify-content: center;
+  margin: 8px;
+}
+
+  .filters-btn {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-family: Montserrat, 'Open Sans', Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    height: 30px;
+    line-height: 20px;
+    margin: 2px;
+    padding: 6px 24px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    width: 125px;
+  }
+
+  .orange-filters-btn {
+    background-color: #DBD976;
+  }
