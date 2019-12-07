@@ -84,3 +84,24 @@
   .orange-filters-btn {
     background-color: #DBD976;
   }
+
+.big-button {
+  width: 85vw;
+  opacity: 0.8;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-family: Montserrat, 'Open Sans', Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  height: 35px;
+  line-height: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 12px 0 20px 0;
+  padding: 5px 0;
+
+  &.alert-button {
+    background-color: #F2C938;
+  }
+}

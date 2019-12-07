@@ -6,30 +6,27 @@
   <!-- box instructions -->
 <div class="instructions">
   <p>
-    Dear Mapmaster, your mission is almost complete!
-    Take a minute to fill the details.
-    It will help our Captain Green to prepare for their mission.
+    Dear Mapmaster, your alert is almost complete!
+    Take a minute to fill in the details.
+    It will help our Captain Green prepare for their mission.
   </p>
 </div>
 
-<div><%= @longitude %></div>
   <!-- box details -->
 <div class="new-place-form">
   <%= simple_form_for @place do |f| %>
-    <p class="text-title-form">Show us what you found!</p>
+    <h2 class="text-title-form">Show us what you've found!</h2>
 
     <label for="place_mapmaster_photo" class="picture-mapmaster">
-      <!-- <div class="picture-mapmaster"> -->
         <%= image_tag'icons/alert_page_icon.png', class: "camera" %>
-        <p class="text-picture-trashpoint">Add a picture of trashpoint</p>
-        <%= image_tag'icons/plus_icon.png', class: "plus" %>
-      <!-- </div> -->
+        <p>Take a picture of trashpoint and upload it right here.</p>
     </label>
 
-    <%= f.input :mapmaster_photo, label: false, input_html: { class: 'hidden'} %>
-    <%= f.input :mapmaster_photo_cache, as: :hidden %>
 
-    <p class="text-title-form text-second-title-form">How bad is the crime scene?</p>
+      <%= f.input :mapmaster_photo, label: false, input_html: { class: 'hidden' } %>
+      <%= f.input :mapmaster_photo_cache, as: :hidden %>
+
+    <h2 class="text-title-form">How bad is the crime scene?</h2>
 
     <div class="volume-level-selection-wrapper">
       <label for="volume-level-1">1</label>
@@ -45,7 +42,13 @@
       <input type="radio" id="volume-level-5" value="5" name="place[volume]" class="hidden">
     </div>
 
-    <p class="text-title-form text-second-title-form">What kind of trash is there on site?</p>
+    <div class="legends-volume">
+      <p>Quite a few plastic bags around here</p>
+      <p>We've a landfill situation</p>
+    </div>
+
+
+    <h2 class="text-title-form text-second-title-form">What kind of trash is there?</h2>
 
     <div class="trash-type-selection-wrapper">
       <label for="trash-type-bottle">
@@ -73,9 +76,6 @@
         <%= image_tag'icons/trash-types/dangerous.png' %>
       </label>
 
-
-      <%# f.input :trashes_on_site, collection: Place::TRASHES, as: :check_boxes %>
-
       <input type="checkbox" id="trash-type-bottle"         value="bottle" name="place[trashes_on_site][]" class="hidden">
       <input type="checkbox" id="trash-type-can"            value="can" name="place[trashes_on_site][]" class="hidden">
       <input type="checkbox" id="trash-type-fish"           value="fish" name="place[trashes_on_site][]" class="hidden">
@@ -86,17 +86,8 @@
       <input type="checkbox" id="trash-type-dangerous"      value="dangerous" name="place[trashes_on_site][]" class="hidden">
     </div>
 
-
-    <%# f.input :volume, collection: 1..5, as: :radio_buttons, :style =>"display:inline", :default => true %>
-    <%= f.submit value: "Submit", class: 'btn btn-primary' %>
+    <%= f.submit 'Alert', class: "big-button alert-button" %>
   <% end %>
-    <!-- <div class="legends-volume">
-      <p>Quite a few plastic bags around here</p>
-      <p>We've a landfill situation here</p>
-    </div> -->
-<!--
-  <p class="text-title-form">WHAT DO WE HAVE TO FIGHT ON SITE?</p>
-  <p class="text-second-title-form">Tell your fellow heroes for the battles they should prepare for!</p> -->
 </div>
 
 <!-- navbar -->
