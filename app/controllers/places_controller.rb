@@ -12,20 +12,21 @@ class PlacesController < ApplicationController
 
   def new
     @place = Place.new
-
-    @longitude = cookies[:longitude]
-    @latitude = cookies[:latitude]
   end
 
   def create
     @place = Place.new(params_places)
+    @place.longitude = cookies[:longitude]
+    @place.latitude = cookies[:latitude]
 
     @place.status = "new"
     @place.mapmaster = current_user
 
-    @place.save
-
-    redirect_to place_path(@place)
+    if @place.save
+      redirect_to place_path(@place)
+    else
+      render :new
+    end
   end
 
   def geolocate_user
