@@ -1,64 +1,73 @@
-
-<!-- banner profile -->
-  <!-- photo de profile -->
+<div class="profile-page">
+  <!-- banner profile -->
+    <!-- photo de profile -->
   <div class="banner">
-  <%= cl_image_tag @user.avatar, alt: "#{@user}'s avatar" , class:"avatar" %>
-  <!-- badge de level -->
-  <% if @user.level == "legend" %>
-    <%= image_tag "icons/bin_profile_icon.svg"%>
-  <% elsif @user.level == "hero" %>
-    <%= image_tag "icons/bin_profile_icon.svg"%>
-  <% elsif @user.level == "champion" %>
-    <%= image_tag "icons/badge_icon.png"%>
-  <% elsif @user.level == "apprentice" %>
-    <%= image_tag "icons/bin_profile_icon.svg"%>
-  <% else @user.level == "rookie"%>
-  <%= image_tag "icons/bin_profile_icon.svg"%>
-  <% end %>
+    <%= cl_image_tag @user.avatar, alt: "#{@user}'s avatar" , class:"avatar" %>
+    <!-- badge de level -->
+    <% if @user.level == "legend" %>
+      <%= image_tag "icons/bin_profile_icon.svg"%>
+    <% elsif @user.level == "hero" %>
+      <%= image_tag "icons/bin_profile_icon.svg"%>
+    <% elsif @user.level == "champion" %>
+      <%= image_tag "icons/badge_icon.png"%>
+    <% elsif @user.level == "apprentice" %>
+      <%= image_tag "icons/bin_profile_icon.svg"%>
+    <% else @user.level == "rookie"%>
+      <%= image_tag "icons/bin_profile_icon.svg"%>
+    <% end %>
    </div>
-  <div>
-<!-- mission-box -->
-  <!-- count where user = captaingreen -->
-  <%= image_tag "icons/bin_profile_icon.svg"%>
-  <%= @user.missions.count %>
-  <!-- count where user = mapmaster -->
-  <%= image_tag "icons/marker_profile_icon.svg"%>
-  <%= @user.places.count %>
-  <%= image_tag "icons/points_profile_icon.svg"%>
-  <!-- count points  -->
-  <p>! creer un compter de point !</p>
-  </div>
-</div>
-<!-- on going mission box -->
-  <% if @next_mission %>
-    <!-- img display -->
-    <div class>
-    <%= cl_image_tag @next_mission.place.mapmaster_photo, alt: "#{@next_mission.place.address}" %>
-    </div>
-    <!-- section current mission info -->
-      <!-- mission name -->
-      <%= @next_mission.place.address %>
-      <!-- time_slot -->
-      <%= @next_mission.time_slot %>
-      <!-- date -->
-      <%= @next_mission.date %>
-      <!-- button more info redirecting towards show of place -->
-      <%= link_to "more info", @next_mission_path, class:'btn btn-success' %>
-      <!--link_to @next_mission.place_path -->
 
-    <!-- section action -->
-    <!-- button completed redirecting towards the end of mission -->
-    <%= link_to "complete", complete_mission_path(@next_mission), method: :patch, class:'btn btn-success'%>
-    <!-- button cancel delete mission and delete user_id from the place db -->
-    <%= link_to "cancel", cancel_mission_path(@next_mission), method: :patch, class:'btn btn-warning'%>
-  <% end %>
+
+  <div class="profile-icons-info">
+    <!-- mission-box -->
+    <!-- count where user = captaingreen -->
+    <%= @user.missions.count %>
+    <%= image_tag "icons/bin_profile_icon.svg"%>
+    <!-- count where user = mapmaster -->
+    <%= @user.places.count %>
+    <%= image_tag "icons/marker_profile_icon.svg"%>
+    <p>***</p>
+    <%= image_tag "icons/points_profile_icon.svg"%>
+    <!-- count points  -->
   </div>
+
+
+  <!-- on going mission box -->
+  <div class="next-mission-card">
+    <% if @next_mission %>
+      <!-- img display -->
+      <div class="image-address-time">
+        <%= cl_image_tag @next_mission.place.mapmaster_photo, alt: "#{@next_mission.place.address}", class:'next-mission-photo' %>
+      <!-- section current mission info -->
+        <div class="address-time">
+          <!-- mission name -->
+          <%= @next_mission.place.address %>
+          <!-- time_slot -->
+          <%= @next_mission.time_slot %>
+          <!-- date -->
+          <%= @next_mission.date %>
+        </div>
+      </div>
+      <div class="next-mission-buttons">
+        <!-- button more info redirecting towards show of place -->
+        <%= link_to "more info", @next_mission_path, class:'btn btn-success' %>
+        <!--link_to @next_mission.place_path -->
+
+      <!-- section action -->
+      <!-- button completed redirecting towards the end of mission -->
+      <%= link_to "complete", complete_mission_path(@next_mission), method: :patch, class:'btn btn-success'%>
+      <!-- button cancel delete mission and delete user_id from the place db -->
+      <%= link_to "cancel", cancel_mission_path(@next_mission), method: :patch, class:'btn btn-warning'%>
+      </div>
+    <% end %>
+  </div>
+
 <!-- past missions data (scroll)-->
-  </div>
+
     <!-- past mission card -->
+  <div class="past_mission_card">
     <% @user.missions do |mission| %>
       <% if @user.mission.status == "completed" %>
-        <div class="past_mission_card"></div>
         <%= mission.date %>
         <%= mission.time_slot %>
         <%= mission.mapmaster_photo %>
@@ -68,3 +77,5 @@
       <% end %>
     <% end %>
   </div>
+
+ </div>
