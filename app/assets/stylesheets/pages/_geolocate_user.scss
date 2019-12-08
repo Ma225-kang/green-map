@@ -14,7 +14,6 @@
   align-items: center;
   justify-content: space-around;
   background-color: red;
-
 }
 
 .step {
@@ -26,15 +25,40 @@
   background-color:red;
 }
 
-.map-geoloc {
-  display: flex;
-  align-items: center;
-  background-image: image-url('images/map_3.png');
-  height: 400 px;
+// .map-geoloc {
+//   display: flex;
+//   align-items: center;
+//   background-image: image-url('map_3.png');
+//   height: 400 px;
 
-  #geolocate_me {
+//   #geolocate_me {
+//     background-color: #fdd200;
+//     border-radius: 5px;
+//     padding: 3px;
+//   }
+
+//   img {
+//     height: 400px;
+//   }
+// }
+
+.map-geoloc {
+  position: absolute;
+  justify-content: center;
+
+  .map {
+    position: relative;
+    height: 200px;
+    width: 200px;
+    margin: 20px;
+  }
+
+  .geolocate_button {
+    position: relative;
     background-color: #fdd200;
     border-radius: 5px;
     padding: 3px;
+    top: -100px;
+    right: 100px;
   }
 }
