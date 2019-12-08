@@ -18,6 +18,9 @@ class PlacesController < ApplicationController
     @place = Place.new(params_places)
     @place.longitude = cookies[:longitude]
     @place.latitude = cookies[:latitude]
+    coordinates = JSON.parse(cookies[:lat_lon])
+    @longitude = coordinates[0]
+    @latitude = coordinates[1]
 
     @place.status = "new"
     @place.mapmaster = current_user
@@ -36,6 +39,6 @@ class PlacesController < ApplicationController
   private
 
   def params_places
-    params.require(:place).permit(:volume, :mapmaster_photo, trashes_on_site: [])
+    params.require(:place).permit(:volume, :mapmaster_photo, :latitude, :longitude, trashes_on_site: [])
   end
 end

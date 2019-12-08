@@ -21,12 +21,13 @@ const geolocateUser = () => {
       // <!-- CREATE COOKIE  -->
 
     var crd = pos.coords;
-    let longitude = crd.longitude;
-    let latitude = crd.latitude;
-    let lng = "longitude" + "=" + longitude + ";";
-    let lat = "latitude" + "=" + latitude + ";";
-    document.cookie = lng;
-    document.cookie = lat;
+    // let longitude = crd.longitude;
+    // let latitude = crd.latitude;
+    // let lng = {longitude: longitude}
+    // let lat = "latitude" + "=" + latitude + ";";
+    cookies[:lat_lon] = JSON.generate([crd.longitude, crd.latitude]);
+    // document.cookie = lng;
+    // document.cookie = lat;
     location = "/places/new";
   }
 
