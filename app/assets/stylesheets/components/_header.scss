@@ -20,6 +20,9 @@
     background-image: image-url('headers/index-places.jpg');
   }
 
+  &.locate-place{
+  background-image: url('headers/new_place.jpg')
+  }
 
   h1 {
     font-size: 24px;
@@ -29,8 +32,5 @@
     letter-spacing: 0.2em;
   }
 
-  &.locate-place{
-  background-image: url('headers/new_place.jpg')
-  }
 
 }
