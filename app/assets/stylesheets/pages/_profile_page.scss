@@ -3,26 +3,32 @@
   .banner {
     padding: 20px;
 
+
     .avatar {
       height: 60px;
       width: 60px;
+      position: relative;
+      right: 0px;
 
     }
 
     img {
       height: 30px;
       width: 30px;
+      position: relative;
+
 
     }
   }
 
   .profile-icons-info {
-    padding: 20px;
+    padding: 20px 20px 5px 20px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     border: 0.5px solid $gray;
     margin: 10px;
     background-color: white;
+    font-size: 35px;
   }
 
   .next-mission-card {
@@ -79,7 +85,10 @@
   }
 
   .past_mission_card {
-
+    padding: 20px;
+    border: 0.5px solid $gray;
+    margin: 10px;
+    background-color: white;
   }
 
 }

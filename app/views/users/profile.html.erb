@@ -68,14 +68,15 @@
   <div class="past_mission_card">
     <% @user.missions do |mission| %>
       <% if @user.mission.status == "completed" %>
-        <%= mission.date %>
-        <%= mission.time_slot %>
+        <h1>Mission <%= mission.date %>
+        <%= mission.time_slot %></h1>
         <%= mission.mapmaster_photo %>
         <%= mission.status %>
         <%= mission.place.volume %>
         <%= mission.place.adress %>
       <% end %>
     <% end %>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea beatae, nostrum sit aperiam vero magnam! Eos incidunt facilis ipsum voluptas, rem reiciendis eaque minus id autem! Maiores odit suscipit, tempora!</p>
   </div>
 
  </div>
