@@ -1,41 +1,46 @@
-.new-place-form {
+.new-form {
   margin: 0 auto;
   margin-top: 3px;
   margin-bottom: 5px;
-  width: 95vw;
+  width: 98vw;
   padding-left: 20px;
   padding-right: 20px;
   border: 1px solid $light-gray;
   background-color: #FFFFFF;
   border-radius: 5px;
+  box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.25);
 }
 
-.picture-mapmaster {
+.picture-mapmaster, .picture-participation-proof {
   display: flex;
   justify-content: center;
   align-items: center;
 
   margin: 0 auto;
-  padding: 0 10px 0 10px;
+  padding: 5px 10px 5px 10px;
   border: 1px solid $light-gray;
   border-radius: 10px;
 
   p {
     font-size: 12px;
-    padding: 15px 15px 0 15px;
+    padding: 15px 17px 0 17px;
     font-style: italic;
     text-align: center;
   }
 }
 
+.picture-mapmaster-active {
+  border: 2px solid $green;
+}
+
 .camera {
-  width: 70px;
-  height: 67px;
-  margin-left: 10px;
+  width: 55px;
+  height: 53px;
+  margin-left: 20px;
 }
 
 .text-title-form {
-  margin: 5px 0 15px 0;
+  margin: 8.5px 0 18px 0;
   padding-top: 15px;
   text-transform: uppercase;
   font-weight: 900;
@@ -56,11 +61,11 @@
   }
 }
 
-label.active {
+label.volume-active {
   background-color: $green;
 }
 
-.legends-volume {
+.legends-form {
   display: flex;
   justify-content: space-between;
 
@@ -77,13 +82,56 @@ label.active {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+
   label {
     color: white;
-    margin-right: 2px;
+    margin-right: 20px;
+    margin-bottom: 15px;
     flex-grow: 1;
     text-align: center;
   }
+
+  label:nth-child(4) {
+    margin-right: 0;
+  }
+
+  label:nth-child(8) {
+    margin-right: 0;
+  }
+
+  label img {
+    width: 60px;
+    height: 60px;
+    border: 1px solid $light-gray;
+    border-radius: 5px;
+    padding: 7px;
+  }
+
+  label:first-child img {
+    padding: 3px;
+  }
+
+  label:nth-child(3) img {
+    padding: 0;
+  }
+
+  label:nth-child(4) img {
+    padding: 0;
+  }
+
+  label:nth-child(6) img {
+    padding: 3px;
+  }
+
+  label:nth-child(7) img {
+    padding: 0;
+  }
+}
+
+label.trash-type-active img {
+  border: 2px solid $green;
+  border-radius: 5px;
 }
 
 // .plus {

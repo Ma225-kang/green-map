@@ -1,1 +1,65 @@
-<%= render 'form', mission: @mission %>
+  <!-- banner MISSION COMPLETE -->
+<div class="header update-mission">
+  <h1>MISSION COMPLETE</h1>
+</div>
+
+<!-- box instructions -->
+<div class="instructions">
+  <p>
+    Thank you so much for your contribution! <br>
+    Yet, all missions need a report! <br>
+    Fortunately it will take less than 1 minute.
+  </p>
+</div>
+
+<!-- form details -->
+<div class="new-form">
+
+  <%= simple_form_for @mission, url: complete_mission_path(@mission) do |f| %>
+    <h2 class="text-title-form">Show us your loot!</h2>
+
+    <label for="place_mapmaster_photo" class="picture-mapmaster">
+        <%= image_tag'icons/alert_page_icon.png', class: "camera" %>
+        <p>Take a picture of what you've fetched and upload it right here.</p>
+    </label>
+
+      <%= f.input :mapmaster_photo, label: false, input_html: { class: 'hidden' } %>
+      <%= f.input :mapmaster_photo_cache, as: :hidden %>
+
+    <h2 class="text-title-form">HOW MUCH DO YOU TAKE WITH YOU?</h2>
+
+    <div class="volume-level-selection-wrapper">
+      <label for="participation-level-1">1</label>
+      <label for="participation-level-2">2</label>
+      <label for="participation-level-3">3</label>
+      <label for="participation-level-4">4</label>
+      <label for="participation-level-5">5</label>
+
+      <input type="radio" id="participation-level-1" value="1" name="mission[participation_level]" class="hidden">
+      <input type="radio" id="participation-level-2" value="2" name="mission[participation_level]" class="hidden">
+      <input type="radio" id="participation-level-3" value="3" name="mission[participation_level]" class="hidden">
+      <input type="radio" id="participation-level-4" value="4" name="mission[participation_level]" class="hidden">
+      <input type="radio" id="participation-level-5" value="5" name="mission[participation_level]" class="hidden">
+    </div>
+
+    <div class="legends-form">
+      <p>I filled a few plastic bags</p>
+      <p>Everything's gone with me</p>
+    </div>
+
+
+    <h2 class="text-title-form text-second-title-form">Show us the result!</h2>
+
+      <label for="mission_participation_proof" class="picture-participation-proof">
+        <%= image_tag'icons/alert_page_icon.png', class: "camera" %>
+        <p>Take a picture of how clean it is now and upload it right here.</p>
+      </label>
+
+    <%= f.input :participation_proof, label: false, input_html: { class: 'hidden' } %>
+    <%= f.input :participation_proof_cache, as: :hidden %>
+
+    <%= f.submit 'Mission accomplished', class: "big-button complete-button" %>
+
+  <% end %>
+
+</div>

@@ -86,8 +86,7 @@
   }
 
 .big-button {
-  width: 85vw;
-  opacity: 0.8;
+  width: 86vw;
   border-radius: 5px;
   color: white;
   cursor: pointer;
@@ -98,10 +97,15 @@
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 1px;
-  margin: 12px 0 20px 0;
+  margin: 12px 0 25px 0;
   padding: 5px 0;
 
   &.alert-button {
     background-color: #F2C938;
+    opacity: 0.8;
+  }
+
+  &.complete-button {
+    background-color: $green;
   }
 }
