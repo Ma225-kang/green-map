@@ -1,0 +1,58 @@
+.typewriter {
+  margin-top: 15px;
+}
+
+.typewriter p {
+  color: $light-gray;
+  overflow: hidden;
+  border-right: .15em solid orange;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: .15em;
+  font-size: 12px;
+  animation:
+    typing 4.5s steps(30, end),
+    blink-caret .5s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange }
+}
+
+.points-collection {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 75vw;
+  margin: 0 auto;
+  margin-top: 10px;
+  border: 2px dotted #F2C938;
+  padding: 5px;
+  border-radius: 10px;
+
+  .trophy {
+    width: 30px;
+    height: 30px;
+    opacity: 0.6;
+  }
+
+  .message-points {
+    font-size: 14px;
+    margin-bottom: 0;
+    padding: 5px;
+    color: #F2C938;
+  }
+
+  .win-points {
+    font-weight: bold;
+    font-size: 16px;
+  }
+}

@@ -3,6 +3,7 @@ class PlacesController < ApplicationController
 
   def index
     @places = Place.all
+    @places = @places.order("updated_at DESC")
   end
 
   def show
