@@ -21,7 +21,14 @@
   }
 
   &.locate-place{
-  background-image: url('headers/new_place.jpg')
+    background-image: url('headers/new_place.jpg')
+
+
+
+  }
+  &.home{
+    background-image: url('headers/home.jpg')
+
   }
 
   h1 {

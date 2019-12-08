@@ -15,10 +15,21 @@ class PlacesController < ApplicationController
   end
 
   def create
-    @place = Place.new(params_places)
+    # COOKIE STUFF
+    # if cookie is a hash
     @place.longitude = cookies[:longitude]
     @place.latitude = cookies[:latitude]
+    # if cookie stored in JSON
+    coordinates = JSON.parse(cookies[:lat_lon])
+    # if cookies is a table
+    @longitude = coordinates[0]
+    @latitude = coordinates[1]
+    # delete cookie after usage
+    # document.cookie = "latitude=; longitude=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
 
+
+
+    @place = Place.new(params_places)
     @place.status = "new"
     @place.mapmaster = current_user
 
@@ -36,6 +47,6 @@ class PlacesController < ApplicationController
   private
 
   def params_places
-    params.require(:place).permit(:volume, :mapmaster_photo, trashes_on_site: [])
+    params.require(:place).permit(:volume, :mapmaster_photo, :latitude, :longitude, trashes_on_site: [])
   end
 end
