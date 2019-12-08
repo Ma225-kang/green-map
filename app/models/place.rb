@@ -8,8 +8,8 @@ class Place < ApplicationRecord
   mount_uploader :mapmaster_photo, PhotoUploader
 
   STATUS = %w[new on-going clean]
-  # TRASHES = %w[plastic dangerous glass metal liquid organic electronic miscellaneous]
-  TRASHES = %w[bottle can fish plastic-bottle trash fridge dangerous]
+  TRASHES = %w[plastic dangerous glass metal liquid organic electronic miscellaneous]
+  # TRASHES = %w[bottle can fish plastic-bottle trash fridge dangerous]
 
   CLEANUP_EQUIPMENT_NEEDED = %w[gloves bag rake wheelbarrow]
   VOLUMES = 0..5

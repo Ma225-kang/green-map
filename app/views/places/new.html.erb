@@ -12,8 +12,8 @@
   </p>
 </div>
 
-  <!-- box details -->
-<div class="new-place-form">
+  <!-- form details -->
+<div class="new-form">
   <%= simple_form_for @place do |f| %>
     <h2 class="text-title-form">Show us what you've found!</h2>
 
@@ -21,7 +21,6 @@
         <%= image_tag'icons/alert_page_icon.png', class: "camera" %>
         <p>Take a picture of trashpoint and upload it right here.</p>
     </label>
-
 
       <%= f.input :mapmaster_photo, label: false, input_html: { class: 'hidden' } %>
       <%= f.input :mapmaster_photo_cache, as: :hidden %>
@@ -42,7 +41,7 @@
       <input type="radio" id="volume-level-5" value="5" name="place[volume]" class="hidden">
     </div>
 
-    <div class="legends-volume">
+    <div class="legends-form">
       <p>Quite a few plastic bags around here</p>
       <p>We've a landfill situation</p>
     </div>
@@ -52,28 +51,28 @@
 
     <div class="trash-type-selection-wrapper">
       <label for="trash-type-bottle">
-        <%= image_tag'icons/trash-types/bottle.png' %>
+        <%= image_tag'icons/trash-types/glass.svg' %>
       </label>
       <label for="trash-type-can">
-        <%= image_tag'icons/trash-types/can.png' %>
+        <%= image_tag'icons/trash-types/metal.svg' %>
       </label>
       <label for="trash-type-fish">
-        <%= image_tag'icons/trash-types/fish.png' %>
+        <%= image_tag'icons/trash-types/organic.svg' %>
       </label>
       <label for="trash-type-plastic-bottle">
-        <%= image_tag'icons/trash-types/plastic-bottle.png' %>
+        <%= image_tag'icons/trash-types/plastic.svg' %>
       </label>
       <label for="trash-type-trash">
-        <%= image_tag'icons/trash-types/trash.png' %>
+        <%= image_tag'icons/trash-types/miscellaneous.svg' %>
       </label>
       <label for="trash-type-fridge">
-        <%= image_tag'icons/trash-types/fridge.png' %>
+        <%= image_tag'icons/trash-types/electronic.svg' %>
       </label>
       <label for="trash-type-gasoline">
-        <%= image_tag'icons/trash-types/gasoline.png' %>
+        <%= image_tag'icons/trash-types/liquid.svg' %>
       </label>
       <label for="trash-type-dangerous">
-        <%= image_tag'icons/trash-types/dangerous.png' %>
+        <%= image_tag'icons/trash-types/dangerous.svg' %>
       </label>
 
       <input type="checkbox" id="trash-type-bottle"         value="bottle" name="place[trashes_on_site][]" class="hidden">
@@ -86,8 +85,30 @@
       <input type="checkbox" id="trash-type-dangerous"      value="dangerous" name="place[trashes_on_site][]" class="hidden">
     </div>
 
-    <%= f.submit 'Alert', class: "big-button alert-button" %>
+    <%= f.submit 'Alert', class: "big-button alert-button", :onclick => "sweetAlert({
+      title: 'Thank you!',
+      text: 'Your contribution means the world to us. You get 50 reward points! Congratulations dear Mapmaster!',
+      icon: 'success',
+      timer: 15000,
+      });"
+    %>
+
   <% end %>
+
+  <script>
+    const picture = document.querySelector('.picture-mapmaster');
+    picture.addEventListener('click', event => {
+      picture.classList.toggle('picture-mapmaster-active');
+    });
+  </script>
+
+  <script>
+    document.querySelectorAll('.trash-type-selection-wrapper label').forEach(item => {
+      item.addEventListener('click', event => {
+        item.classList.toggle('trash-type-active');
+      });
+    });
+  </script>
 </div>
 
 <!-- navbar -->
