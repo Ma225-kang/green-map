@@ -1,8 +1,8 @@
 <div class="info-window">
   <%= cl_image_tag place.mapmaster_photo, alt: "Photo of the place", class: "info-window-image" %>
   <div class="info-window-infos">
-    <i class="fas fa-map-marker-alt"></i><h2><%= place.address %></h2>
-    <p><%= place.status %></p>
+    <i class="fas fa-map-marker-alt"></i><p><%= place.address %></p>
+    <p class="info-window-status"><%= place.status %></p>
   </div>
   <div class="plus-more-infos"></div>
     <%= link_to place_path(place) do %>
