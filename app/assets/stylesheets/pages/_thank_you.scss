@@ -36,9 +36,16 @@
   }
 
   a.big-button {
+    text-decoration: none;
     text-align: center;
-    width: 70vw;
+    width: 63vw;
     padding-top: 8px;
+  }
+
+  a.big-button:active {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
   }
 }
 
