@@ -1,12 +1,16 @@
 <div class="info-window">
-  <%= cl_image_tag place.mapmaster_photo, alt: "Photo of the place", class: "info-window-image" %>
-  <div class="info-window-infos">
-    <i class="fas fa-map-marker-alt"></i><p><%= place.address %></p>
-    <p class="info-window-status"><%= place.status %></p>
+  <div class="info-window-image">
+    <%= cl_image_tag place.mapmaster_photo, alt: "Photo of the place", class: "info-window-image-size" %>
   </div>
-  <div class="plus-more-infos"></div>
-    <%= link_to place_path(place) do %>
-      <i class="fas fa-plus"></i>
-    <% end %>
+  <div class="info-window-infos">
+    <p class="info-window-status"><%= place.status %></p>
+    <div class="info-window-infos-address">
+      <p><i class="fas fa-map-marker-alt"></i> <%= place.address %></p>
+    </div>
+    <div class="plus-more-infos">
+      <%= link_to place_path(place) do %>
+        <i class="fas fa-plus-circle"></i>
+      <% end %>
+    </div>
   </div>
 </div>
