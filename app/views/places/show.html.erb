@@ -20,61 +20,35 @@
     <div class="type-of-trashes">
       <p><em>Watch out !</em> The Mapmaster reported a real mess !</p>
       <!-- place trash types -->
-      <%= image_tag "icons/trash-types/png/bottle.png", class: "trashes-type-icon" %>
-      <%= image_tag "icons/trash-types/png/can.png", class: "trashes-type-icon" %>
-      <%= image_tag "icons/trash-types/png/dangerous.png", class: "trashes-type-icon" %>
-      <%= image_tag "icons/trash-types/png/fish.png", class: "trashes-type-icon" %>
-      <%= image_tag "icons/trash-types/png/fridge.png", class: "trashes-type-icon" %>
-      <%= image_tag "icons/trash-types/png/gasoline.png", class: "trashes-type-icon" %>
-      <%= image_tag "icons/trash-types/png/plastic-bottle.png", class: "trashes-type-icon" %>
-      <%= image_tag "icons/trash-types/png/trash.png", class: "trashes-type-icon" %>
+
+      <div class="icons-trash-type">
+        <% @place.trashes_on_site.each do |trash| %>
+          <%= image_tag "icons/trash-types/#{trash.parameterize(separator: '_')}.svg", class: "icon-trash" %>
+        <% end %>
+      </div>
+      <%# image_tag "icons/trash-types/png/bottle.png", class: "trashes-type-icon" %>
+      <%# image_tag "icons/trash-types/png/can.png", class: "trashes-type-icon" %>
+      <%# image_tag "icons/trash-types/png/dangerous.png", class: "trashes-type-icon" %>
+      <%# image_tag "icons/trash-types/png/fish.png", class: "trashes-type-icon" %>
+      <%# image_tag "icons/trash-types/png/fridge.png", class: "trashes-type-icon" %>
+      <%# image_tag "icons/trash-types/png/gasoline.png", class: "trashes-type-icon" %>
+      <%# image_tag "icons/trash-types/png/plastic-bottle.png", class: "trashes-type-icon" %>
+      <%# image_tag "icons/trash-types/png/trash.png", class: "trashes-type-icon" %>
     </div>
     <!-- material suggestions -->
     <div class="bring-bloc">
       <p>For this mission we suggest you bring</p>
-      <div class="icons-tools-to-bring">
 
-        <% case @place.volume %>
-          <% when 1 %>
-              <p><%= image_tag "icons/green_gloves_icon.png", class: "icons-tools" %>
-              <%= image_tag "icons/green_garbagebag_icon.png", class: "icons-tools" %>
-              <%= image_tag "icons/grey_rake_icon.png", class: "icons-tools" %>
-              <%= image_tag "icons/grey_wheelbarrow_icon.png", class: "icons-tools" %>
-              </p>
-          <% when 2 %>
-            <p><%= image_tag "icons/green_gloves_icon.png", class: "icons-tools" %>
-            <%= image_tag "icons/green_garbagebag_icon.png", class: "icons-tools" %>
-            <%= image_tag "icons/grey_rake_icon.png", class: "icons-tools" %>
-            <%= image_tag "icons/grey_wheelbarrow_icon.png", class: "icons-tools" %>
-            </p>
-          <% when 3 %>
-            <p><%= image_tag "icons/green_gloves_icon.png", class: "icons-tools" %>
-              <%= image_tag "icons/green_garbagebag_icon.png", class: "icons-tools" %>
-            <%= image_tag "icons/green_rake_icon.png", class: "icons-tools" %>
-            <%= image_tag "icons/grey_wheelbarrow_icon.png", class: "icons-tools" %>
-            </p>
-          <% when 4 %>
-            <p><%= image_tag "icons/green_gloves_icon.png", class: "icons-tools" %>
-              <%= image_tag "icons/green_garbagebag_icon.png", class: "icons-tools" %>
-            <%= image_tag "icons/green_rake_icon.png", class: "icons-tools" %>
-            <%= image_tag "icons/green_wheelbarrow_icon.svg", class: "icons-tools" %>
-            </p>
-          <% when 5 %>
-            <p><%= image_tag "icons/green_gloves_icon.png", class: "icons-tools" %>
-            <%= image_tag "icons/green_garbagebag_icon.png", class: "icons-tools" %>
-            <%= image_tag "icons/green_rake_icon.png", class: "icons-tools" %>
-            <%= image_tag "icons/green_wheelbarrow_icon.svg", class: "icons-tools" %>
-              </p>
-          <% else %>
-            <%= image_tag "icons/grey_gloves_icon.png", class: "icons-tools" %>
-            <%= image_tag "icons/grey_garbagebag_icon.svg", class: "icons-tools" %>
-            <%= image_tag "icons/grey_rake_icon.png", class: "icons-tools" %>
-            <%= image_tag "icons/grey_wheelbarrow_icon.png", class: "icons-tools" %>
+      <div class="icons-tools-to-bring">
+        <% @place.equipments.each do |equipment| %>
+          <%= image_tag "icons/equipment/#{equipment.parameterize(separator: '_')}_icon.png", class: "icon-equipment" %>
         <% end %>
       </div>
+
       <button type="button" class="nav-btn green-btn" id="go-on-mission-btn-show" data-toggle="modal" data-target="#exampleModalCenter">
         GO ON MISSION
       </button>
+
     </div>
 
     <!-- go on a mission button -->
