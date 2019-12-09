@@ -1,4 +1,7 @@
-<div class="header show-place align-show-place"><h1>MORE ABOUT <%= @place.address %>'s MISSION ?</h1></div>
+
+<div class="header show-place align-show-place"><h1 class="center-place-address"><%= @place.address.upcase %></h1></div>
+
+
 <div class="mission-show">
   <div class="mission-details">
     <!-- map -->
@@ -9,27 +12,67 @@
       </div>
       <div class="address-status">
         <!-- address -->
-        <%= @place.address %>
+        <i class="fas fa-map-marker-alt"></i> <%= @place.address %>
         <!-- place status -->
-        <%= @place.status %>
+        <em><%= @place.status %> </em>
       </div>
     </div>
     <div class="type-of-trashes">
+      <p><em>Watch out !</em> The Mapmaster reported a real mess !</p>
       <!-- place trash types -->
-      <%=  %>
+      <%= image_tag "icons/trash-types/png/bottle.png", class: "trashes-type-icon" %>
+      <%= image_tag "icons/trash-types/png/can.png", class: "trashes-type-icon" %>
+      <%= image_tag "icons/trash-types/png/dangerous.png", class: "trashes-type-icon" %>
+      <%= image_tag "icons/trash-types/png/fish.png", class: "trashes-type-icon" %>
+      <%= image_tag "icons/trash-types/png/fridge.png", class: "trashes-type-icon" %>
+      <%= image_tag "icons/trash-types/png/gasoline.png", class: "trashes-type-icon" %>
+      <%= image_tag "icons/trash-types/png/plastic-bottle.png", class: "trashes-type-icon" %>
+      <%= image_tag "icons/trash-types/png/trash.png", class: "trashes-type-icon" %>
     </div>
     <!-- material suggestions -->
     <div class="bring-bloc">
-      <p>For this mission we suggest you bring :</p>
+      <p>For this mission we suggest you bring</p>
       <div class="icons-tools-to-bring">
-        <p>emoticon verts: gants, sac || emoticons condition : rateau, brouette</p>
-        <% if @place.volume > 2 %>
-          <p> emoticon rateau en vert </p>
-        <% elsif @place.volume >= 3%>
-          <p>emoticon brouette en vert </p>
+
+        <% case @place.volume %>
+          <% when 1 %>
+              <p><%= image_tag "icons/green_gloves_icon.png", class: "icons-tools" %>
+              <%= image_tag "icons/green_garbagebag_icon.png", class: "icons-tools" %>
+              <%= image_tag "icons/grey_rake_icon.png", class: "icons-tools" %>
+              <%= image_tag "icons/grey_wheelbarrow_icon.png", class: "icons-tools" %>
+              </p>
+          <% when 2 %>
+            <p><%= image_tag "icons/green_gloves_icon.png", class: "icons-tools" %>
+            <%= image_tag "icons/green_garbagebag_icon.png", class: "icons-tools" %>
+            <%= image_tag "icons/grey_rake_icon.png", class: "icons-tools" %>
+            <%= image_tag "icons/grey_wheelbarrow_icon.png", class: "icons-tools" %>
+            </p>
+          <% when 3 %>
+            <p><%= image_tag "icons/green_gloves_icon.png", class: "icons-tools" %>
+              <%= image_tag "icons/green_garbagebag_icon.png", class: "icons-tools" %>
+            <%= image_tag "icons/green_rake_icon.png", class: "icons-tools" %>
+            <%= image_tag "icons/grey_wheelbarrow_icon.png", class: "icons-tools" %>
+            </p>
+          <% when 4 %>
+            <p><%= image_tag "icons/green_gloves_icon.png", class: "icons-tools" %>
+              <%= image_tag "icons/green_garbagebag_icon.png", class: "icons-tools" %>
+            <%= image_tag "icons/green_rake_icon.png", class: "icons-tools" %>
+            <%= image_tag "icons/green_wheelbarrow_icon.svg", class: "icons-tools" %>
+            </p>
+          <% when 5 %>
+            <p><%= image_tag "icons/green_gloves_icon.png", class: "icons-tools" %>
+            <%= image_tag "icons/green_garbagebag_icon.png", class: "icons-tools" %>
+            <%= image_tag "icons/green_rake_icon.png", class: "icons-tools" %>
+            <%= image_tag "icons/green_wheelbarrow_icon.svg", class: "icons-tools" %>
+              </p>
+          <% else %>
+            <%= image_tag "icons/grey_gloves_icon.png", class: "icons-tools" %>
+            <%= image_tag "icons/grey_garbagebag_icon.svg", class: "icons-tools" %>
+            <%= image_tag "icons/grey_rake_icon.png", class: "icons-tools" %>
+            <%= image_tag "icons/grey_wheelbarrow_icon.png", class: "icons-tools" %>
         <% end %>
       </div>
-      <button type="button" class="btn btn-success center-button" data-toggle="modal" data-target="#exampleModalCenter">
+      <button type="button" class="nav-btn green-btn" id="go-on-mission-btn-show" data-toggle="modal" data-target="#exampleModalCenter">
         GO ON MISSION
       </button>
     </div>
@@ -51,8 +94,8 @@
                   <%= f.input :time_slot, collection: Mission::TIME, input_html: { :style=> 'width: 180px' } %>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <%= f.submit value: "Submit", class: 'btn btn-primary' %>
+              <button type="button" class="nav-btn green-btn" data-dismiss="modal">Close</button>
+              <%= f.submit value: "Submit", class: 'nav-btn green-btn' %>
             </div>
           <% end %>
         </div>
