@@ -1,10 +1,13 @@
 
-<div class="header show-place align-show-place"><h1 class="center-place-address"><%= @place.address.upcase %></h1></div>
+<div class="header show-place align-show-place">
+  <h1 class="center-place-address">
+    <%= @place.address.upcase %>
+  </h1>
+</div>
 
 
 <div class="mission-show">
   <div class="mission-details">
-
 
     <!-- map -->
     <div
@@ -40,14 +43,7 @@
           <%= image_tag "icons/trash-types/#{trash.parameterize(separator: '_')}.svg", class: "icon-trash" %>
         <% end %>
       </div>
-      <%# image_tag "icons/trash-types/png/bottle.png", class: "trashes-type-icon" %>
-      <%# image_tag "icons/trash-types/png/can.png", class: "trashes-type-icon" %>
-      <%# image_tag "icons/trash-types/png/dangerous.png", class: "trashes-type-icon" %>
-      <%# image_tag "icons/trash-types/png/fish.png", class: "trashes-type-icon" %>
-      <%# image_tag "icons/trash-types/png/fridge.png", class: "trashes-type-icon" %>
-      <%# image_tag "icons/trash-types/png/gasoline.png", class: "trashes-type-icon" %>
-      <%# image_tag "icons/trash-types/png/plastic-bottle.png", class: "trashes-type-icon" %>
-      <%# image_tag "icons/trash-types/png/trash.png", class: "trashes-type-icon" %>
+
     </div>
     <!-- material suggestions -->
     <div class="bring-bloc">

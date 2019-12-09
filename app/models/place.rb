@@ -17,7 +17,7 @@ class Place < ApplicationRecord
 
   TRANSPORT = %w[backpack car truck]
 
-  validates :trashes_on_site, presence: true, inclusion: { in: TRASHES }
+  validates :trashes_on_site, presence: true
   validates :volume, presence: true, inclusion: { in: VOLUMES }, numericality: { only_integer: true }
 
   # validates :status, presence: true, inclusion: { in: STATUS }
@@ -26,7 +26,7 @@ class Place < ApplicationRecord
     equipments = []
 
     if trashes_on_site.include?('plastic')
-      equipments = ['trash bag', 'litter picker']
+      equipments = ['trash bag', 'picker']
     elsif trashes_on_site.include?('dangerous')
       equipments = ['trash bag', 'gloves', 'face mask']
     elsif trashes_on_site.include?('glass')
@@ -36,11 +36,11 @@ class Place < ApplicationRecord
     elsif trashes_on_site.include?('liquid')
       equipments = ['trash bag', 'gloves']
     elsif trashes_on_site.include?('organic')
-      equipments = ['trash bag', 'litter picker']
+      equipments = ['trash bag', 'picker']
     elsif trashes_on_site.include?('electronic')
       equipments = ['wheelbarrow']
     elsif trashes_on_site.include?('miscellaneous')
-      equipments = ['trash bag', 'gloves', 'litter picker']
+      equipments = ['trash bag', 'gloves', 'picker']
     end
 
     return equipments
