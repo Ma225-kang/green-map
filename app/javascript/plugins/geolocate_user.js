@@ -23,10 +23,13 @@ const geolocateUser = () => {
     var crd = pos.coords;
     let longitude = crd.longitude;
     let latitude = crd.latitude;
-    let lng = "longitude" + "=" + longitude + ";";
+    let lng = {longitude: longitude}
     let lat = "latitude" + "=" + latitude + ";";
-    document.cookie = lng;
-    document.cookie = lat;
+    // document.cookie = lng;
+    // document.cookie = lat;
+    // console.log(pos.coords)
+    // document.cookie = JSON.generate([crd.longitude, crd.latitude]);
+    // cookies[:lat_lon] = JSON.generate([crd.longitude, crd.latitude]);
     location = "/places/new";
   }
 

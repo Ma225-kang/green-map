@@ -19,9 +19,19 @@
   &.index-places {
     background-image: image-url('headers/index-places.jpg');
 
-    h1 {
+   h1 {
       padding-top: 12px;
     }
+
+  &.locate-place{
+    background-image: url('headers/new_place.jpg')
+
+
+
+  }
+  &.home{
+    background-image: url('headers/home.jpg')
+
   }
 
   h1 {
@@ -32,7 +42,3 @@
     letter-spacing: 0.2em;
   }
 
-  &.locate-place{
-  background-image: url('headers/new_place.jpg')
-  }
-}
