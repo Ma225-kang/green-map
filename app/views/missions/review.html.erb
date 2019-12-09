@@ -24,13 +24,15 @@
 
     <label for="mission_mapmaster_photo" class="picture-mapmaster">
         <%= image_tag'icons/alert_page_icon.png', class: "camera" %>
-        <p>Take a picture of what you've fetched and upload it right here.</p>
+        <%= image_tag'icons/green_success_icon.png', class: "green-success hidden" %>
+        <p class="take-picture-message">Take a picture of trashpoint and upload it right here.</p>
+        <p class="well-done hidden">Great! You're now two steps away from completing your mission!</p>
     </label>
 
       <%= f.input :mapmaster_photo, label: false, input_html: { class: 'hidden' } %>
       <%= f.input :mapmaster_photo_cache, as: :hidden %>
 
-    <h2 class="text-title-form">HOW MUCH DO YOU TAKE WITH YOU?</h2>
+    <h2 class="text-title-form quantity">HOW MUCH DO YOU TAKE WITH YOU?</h2>
 
     <div class="volume-level-selection-wrapper">
       <label for="participation-level-1">1</label>
@@ -59,8 +61,10 @@
     <h2 class="text-title-form text-second-title-form">Show us the result!</h2>
 
       <label for="mission_participation_proof" class="picture-participation-proof">
-        <%= image_tag'icons/alert_page_icon.png', class: "camera" %>
-        <p>Take a picture of how clean it is now and upload it right here.</p>
+        <%= image_tag'icons/alert_page_icon.png', class: "camera participation" %>
+        <%= image_tag'icons/green_success_icon.png', class: "green-success participation hidden" %>
+        <p class="take-picture-message-participation">Take a picture of how clean it is now and upload it right here.</p>
+        <p class="well-done-participation hidden">Dear Captain Green, your mission is set to be a great success! <i class="fas fa-thumbs-up"></i> </p>
       </label>
 
     <%= f.input :participation_proof, label: false, input_html: { class: 'hidden' } %>
