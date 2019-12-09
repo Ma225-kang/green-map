@@ -1,0 +1,68 @@
+.thank-you-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 50px;
+  height: 90vh;
+  width: 98vw;
+  background-color: #FFFFFF;
+
+  h1 {
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  h2 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  .congratulations-message {
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  img {
+    width: 70px;
+    height: 70px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  a.big-button {
+    text-align: center;
+    width: 70vw;
+    padding-top: 8px;
+  }
+}
+
+.thank-you-message {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 30vw;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  border: 2px dotted #F2C938;
+  padding: 5px;
+  border-radius: 10px;
+
+  .message-points {
+    font-size: 16px;
+    margin-bottom: 0;
+    padding: 5px;
+    color: #F2C938;
+  }
+
+  .win-points {
+    font-weight: bold;
+    font-size: 20px;
+  }
+}

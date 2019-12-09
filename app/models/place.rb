@@ -1,6 +1,7 @@
 class Place < ApplicationRecord
   belongs_to :mapmaster, class_name: "User"
   has_many :missions
+  has_many :congratulations
 
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
