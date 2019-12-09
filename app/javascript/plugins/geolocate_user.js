@@ -18,13 +18,11 @@ const geolocateUser = () => {
 
   function success(pos) {
 
-      // <!-- CREATE COOKIE  -->
+    // <!-- CREATE COOKIE  -->
 
     var crd = pos.coords;
-
     let longitude = crd.longitude;
     let latitude  = crd.latitude;
-
     document.cookie = `latitude=${latitude}`
     document.cookie = `longitude=${longitude}`
 

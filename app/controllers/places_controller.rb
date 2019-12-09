@@ -17,22 +17,16 @@ class PlacesController < ApplicationController
 
   def create
 
-    binding.pry
+    @place = Place.new(params_places)
+    @place.status = "new"
+    @place.mapmaster = current_user
+
     # COOKIE STUFF
     # if cookie is a hash
     @place.longitude = cookies[:longitude]
     @place.latitude = cookies[:latitude]
-    # if cookie stored in JSON
-    coordinates = JSON.parse(cookies[:lat_lon])
-    # if cookies is a table
-    @longitude = coordinates[0]
-    @latitude = coordinates[1]
-    # delete cookie after usage
-    # document.cookie = "latitude=; longitude=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
 
-    @place = Place.new(params_places)
-    @place.status = "new"
-    @place.mapmaster = current_user
+    puts "#{@place.longitude} #{@place.latitude}"
 
     if @place.save
       redirect_to place_congratulations_path(@place)
