@@ -4,61 +4,68 @@
 //   align-items: center;
 // }
 
-.position-geoloc {
+.instructions-geoloc {
+  width: 100%;
+  height: 65px;
+  background: #FFFFFF;
+  box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.25);
 
+  p {
+    text-align: center;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 10px;
+    letter-spacing: 0.1em;
+    padding-top: 10px;
  }
+}
 
 
 .instructions_steps {
   display: flex;
   align-items: center;
   justify-content: space-around;
-
+  flex-direction: column;
+  margin: 10px;
 }
 
 .step {
   display: flex;
-  flex-direction: row;
   text-align: center;
   justify-content: space-around;
-  margin: 20px;
-  background-color:red;
+  margin: 5px;
 }
 
-// .map-geoloc {
-//   display: flex;
-//   align-items: center;
-//   background-image: image-url('map_3.png');
-//   height: 400 px;
-
-//   #geolocate_me {
-//     background-color: #fdd200;
-//     border-radius: 5px;
-//     padding: 3px;
-//   }
-
-//   img {
-//     height: 400px;
-//   }
-// }
-
 .map-geoloc {
-  position: absolute;
-  justify-content: center;
-
-  .map {
-    position: relative !important;
-    height: 200px;
-    width: 200px;
-    margin: 20px;
+    background-image: image-url('pages_images/map_3.png');
+    // background-image: image-url('headers/index-places.jpg')
+    background-size: cover;
+    height: 300px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    border-radius: 5px;
   }
 
-  .geolocate_button {
-    position: relative;
+  .geolocate-button {
     background-color: #fdd200;
-    border-radius: 5px;
+    color: white;
+    width: 100px;
     padding: 3px;
     top: -100px;
     right: 100px;
-  }
+    cursor: pointer;
+    font-family: Montserrat, 'Open Sans', Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    height: 40px;
+    line-height: 20px;
+    margin: 2px 10px;
+    padding: 6px 10px;
+    text-decoration: none;
+    letter-spacing: 1px;
+    width: 150px;
+    border-radius: 5px;
+
 }
