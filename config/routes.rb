@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get "/profile", to: "users#profile", as: :profile
 
   resources :places, only: [:index, :show, :new, :create] do
+    resource :congratulations, only: [:show]
+
     collection do
       get "geolocate_user"
     end
@@ -18,4 +20,6 @@ Rails.application.routes.draw do
       patch 'cancel'
     end
   end
+
+
 end

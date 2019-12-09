@@ -22,7 +22,7 @@
   <%= simple_form_for @mission, url: complete_mission_path(@mission) do |f| %>
     <h2 class="text-title-form">Show us your loot!</h2>
 
-    <label for="place_mapmaster_photo" class="picture-mapmaster">
+    <label for="mission_mapmaster_photo" class="picture-mapmaster">
         <%= image_tag'icons/alert_page_icon.png', class: "camera" %>
         <p>Take a picture of what you've fetched and upload it right here.</p>
     </label>
@@ -69,12 +69,5 @@
     <%= f.submit 'Mission accomplished', class: "big-button complete-button" %>
 
   <% end %>
-
-    <script>
-    const participationProof = document.querySelector('.picture-participation-proof');
-    participationProof.addEventListener('click', event => {
-      participationProof.classList.toggle('picture-mapmaster-active');
-    });
-  </script>
 
 </div>
