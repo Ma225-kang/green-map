@@ -440,6 +440,7 @@ eleventh_mission = Mission.create!(
   mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place43.jpeg")),
   participation_level: 2,
   status: "completed",
+)
 
 puts "Done with missions seeds !"
 
