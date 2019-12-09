@@ -16,16 +16,15 @@ class PlacesController < ApplicationController
   end
 
   def create
-
     @place = Place.new(params_places)
     @place.status = "new"
     @place.mapmaster = current_user
 
     # COOKIE STUFF
-    # if cookie is a hash
     @place.longitude = cookies[:longitude]
     @place.latitude = cookies[:latitude]
 
+    #testing
     puts "#{@place.longitude} #{@place.latitude}"
 
     if @place.save
