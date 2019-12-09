@@ -1,14 +1,20 @@
+
+
 .align-show-place {
   padding: 0;
   display: flex;
   flex-direction: column;
   text-align: center;
   align-items: center;
+
+  &.center-place-address {
+
+  }
 }
 
 .mission-show {
   // border: 0.5px solid $light-gray;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.10);
   margin: 10px;
   background-color: white;
 }
@@ -34,24 +40,54 @@
 .place-photo {
   width: 300px;
   border-radius: 5px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, .10);
+
 }
 
 .address-status {
   padding: 0px 20px;
 
+  em {
+    background-color: $light-gray;
+    padding: 3px;
+    border-radius: 2px;
+    font-weight: normal;
+  }
 }
 
 .type-of-trashes {
+  padding-top: 5px;
+  text-align: center;
+  p {
+    font-size: 15px;
+    color: $gray;
+    em {
+      color: red;
+    }
+  }
+}
 
+.trashes-type-icon {
+  height: 30px;
+  width: 30px;
 }
 
 .bring-bloc {
   padding: 20px;
-
+  p {
+    text-align:center;
+    font-size: 15px;
+    color: $gray;
+  }
 }
 
 .icons-tools-to-bring {
+  text-align: center;
 
+  .icons-tools {
+    height: 30px;
+    width: 30px;
+  }
 }
 
 .center-button {
@@ -94,24 +130,18 @@
 
 }
 
-.btn btn-secondary {
 
-}
-
-.btn btn-primary {
-
-}
 
 .safety {
   // border: 0.5px solid $light-gray;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.10);
   margin: 10px;
   background-color: white;
   padding: 20px;
 
 }
 
-.fas {
+.fa-heart {
   color: red;
 }
 
