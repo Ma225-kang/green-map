@@ -27,6 +27,8 @@ class MissionsController < ApplicationController
 
     current_user.points += @mission.place.volume * @mission.participation_level
     current_user.save
+    @mission.place.volume -= @mission.participation_level
+    @mission.place.save
 
     redirect_to profile_path
   end

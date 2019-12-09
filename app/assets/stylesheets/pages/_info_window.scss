@@ -1,3 +1,9 @@
+.info-window {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
 .info-window-image {
   width: 100px;
   height: 70px;
@@ -8,13 +14,17 @@
 
 }
 
-.info-window h1 {
-  font-size: 20px;
+.info-window p {
+  font-size: 10px;
   text-decoration: none;
   color: #5F5F5F;
 }
-.info-window {
-  display: grid;
-  grid-template-columns: 1fr;
 
+.info-window-status {
+
+}
+
+.fa-plus {
+  text-size: 15px;
+  color: $green;
 }

@@ -1,20 +1,30 @@
+
+
 .align-show-place {
   padding: 0;
   display: flex;
   flex-direction: column;
   text-align: center;
   align-items: center;
+
+  &.center-place-address {
+
+  }
 }
 
 .mission-show {
   // border: 0.5px solid $light-gray;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.10);
   margin: 10px;
   background-color: white;
 }
 
 .mission-details {
+  padding: 5px;
+}
 
+#map {
+  height: 50px;
 }
 
 
@@ -27,31 +37,81 @@
   justify-content: center;
   align-items: center;
   padding: 20px;
-
+  position: absolute;
+  z-index: 1000;
+  top: 30px;
 
 }
 
 .place-photo {
-  width: 300px;
+  position: absolute;
+  z-index: 1000;
+  bottom: -125px;
+  left: 5px;
+  width: 100px;
   border-radius: 5px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, .10);
+
 }
 
-.address-status {
+.address-place {
   padding: 0px 20px;
+  background-color: rgba(255, 255, 255, .10);
+  position: absolute;
+  z-index: 1000;
+  top: 10px;
+  right: -10px;
+}
+.status-place {
+  position: absolute;
+  z-index:1000;
+  top:30px;
+  right: 10px;
+  background-color: $light-gray;
+  padding: 3px;
+  border-radius: 5px;
+  font-weight: normal;
 
+  p {
+    margin-bottom: 0;
+  }
 }
 
 .type-of-trashes {
+  padding-top: 5px;
+  text-align: center;
+  p {
+    font-size: 15px;
+    color: $gray;
+    em {
+      color: red;
+    }
+  }
+}
 
+.trashes-type-icon {
+  height: 30px;
+  width: 30px;
 }
 
 .bring-bloc {
   padding: 20px;
 
+  p {
+    text-align:center;
+    font-size: 15px;
+    color: $gray;
+  }
 }
 
 .icons-tools-to-bring {
+  text-align: center;
+  margin-bottom: 20px;
 
+  .icons-tools {
+    height: 30px;
+    width: 30px;
+  }
 }
 
 .center-button {
@@ -94,24 +154,18 @@
 
 }
 
-.btn btn-secondary {
 
-}
-
-.btn btn-primary {
-
-}
 
 .safety {
   // border: 0.5px solid $light-gray;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.10);
   margin: 10px;
   background-color: white;
   padding: 20px;
 
 }
 
-.fas {
+.fa-heart {
   color: red;
 }
 

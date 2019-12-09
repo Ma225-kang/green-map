@@ -22,4 +22,8 @@ import '../components/select_trash';
 
 import '../components/participation_proof';
 
-import '../components/preview_picture';
+import '../components/preview_picture_place';
+
+import '../components/preview_picture_mission';
+
+import '../components/preview_picture_participation';

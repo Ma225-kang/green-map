@@ -4,11 +4,25 @@ class PlacesController < ApplicationController
   def index
     @places = Place.all
     @places = @places.order("updated_at DESC")
+
+    if params[:query].present?
+      @places = Place.search_name_and_description(params[:query]).geocoded
+    else
+      @places = Place.geocoded
+    end
   end
 
   def show
     @place = Place.find(params[:id])
     @mission = Mission.new
+
+    @markers = [
+      {
+        lat: @place.latitude,
+        lng: @place.longitude,
+        # infoWindow: render_to_string(partial: "info_window", locals: { place: @place })
+        image_url: helpers.asset_url('icons/red_mapmarker_icon.png')
+      }]
   end
 
   def new
