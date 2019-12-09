@@ -4,16 +4,17 @@
   <div class="banner">
     <%= cl_image_tag @user.avatar, alt: "#{@user}'s avatar" , class:"avatar" %>
     <!-- badge de level -->
+    <%= @user.points %>
     <% if @user.level == "legend" %>
-      <%= image_tag "icons/bin_profile_icon.svg"%>
+      <%= image_tag "icons/legend_icon.png"%>
     <% elsif @user.level == "hero" %>
-      <%= image_tag "icons/bin_profile_icon.svg"%>
+      <%= image_tag "icons/hero_icon.png"%>
     <% elsif @user.level == "champion" %>
       <%= image_tag "icons/badge_icon.png"%>
     <% elsif @user.level == "apprentice" %>
-      <%= image_tag "icons/bin_profile_icon.svg"%>
+      <%= image_tag "icons/apprentice_icon.png"%>
     <% else @user.level == "rookie"%>
-      <%= image_tag "icons/bin_profile_icon.svg"%>
+      <%= image_tag "icons/rookie_icon.png"%>
     <% end %>
    </div>
 
@@ -50,15 +51,13 @@
       </div>
       <div class="next-mission-buttons">
         <!-- button more info redirecting towards show of place -->
-        <%= link_to "more info", @next_mission_path, class:'btn btn-success' %>
-        <!--link_to @next_mission.place_path -->
+        <%= link_to "more info", place_path(@next_mission.place), class:'btn btn-success' %>
 
-      <!-- section action -->
-      <!-- button completed redirecting towards the end of mission -->
-
-      <%= link_to "complete", review_mission_path(@next_mission), class:'btn btn-success'%>
-      <!-- button cancel delete mission and delete user_id from the place db -->
-      <%= link_to "cancel", cancel_mission_path(@next_mission), method: :patch, class:'btn btn-warning'%>
+        <!-- section action -->
+        <!-- button completed redirecting towards the end of mission -->
+        <%= link_to "complete", review_mission_path(@next_mission), class:'btn btn-success'%>
+        <!-- button cancel delete mission and delete user_id from the place db -->
+        <%= link_to "cancel", cancel_mission_path(@next_mission), method: :patch, class:'btn btn-warning'%>
       </div>
     <% end %>
   </div>
@@ -71,23 +70,28 @@
       <p>You don't have a mission history yet.</p>
       <p>Go on a mission or locate a point to see something here </p>
     <% else %>
+    <div class="past-cards">
       <% @user.missions do |mission| %>
         <% if @user.mission.status == "completed" %>
-          <h1>Mission <%= mission.date %>
-          <%= mission.time_slot %></h1>
+        <div class="mission_done">
+          <h3>Mission <%= mission.date %>
+          <%= mission.time_slot %></h3>
            <%= cl_image_tag mission.mapmaster_photo, class: 'memorypic'%>
-          <%= mission.status %>
-          <%= mission.place.volume %>
+           <%= mission.place.volume %>
           <%= mission.place.adress %>
+        </div>
         <% end %>
       <% end %>
       <% @user.places.each do |place| %>
-        <h1>Location<%= place.created_at %></h1>
-        <%= cl_image_tag place.mapmaster_photo, class: 'memorypic' %>
-        <%= place.status %>
-        <%= place.volume %>
-        <%= place.address%>
+        <div class="mission_done">
+          <h3>Location<%= place.created_at %></h3>
+          <%= cl_image_tag place.mapmaster_photo, class: 'memorypic' %>
+          <%= place.status %>
+          <%= place.volume %>
+          <%= place.address%>
+        </div>
       <% end %>
+    </div>
     <% end %>
   </div>
 

@@ -24,6 +24,10 @@ class MissionsController < ApplicationController
 
   def complete
     @mission.update(mission_update_params)
+
+    current_user.points += @mission.place.volume * @mission.participation_level
+    current_user.save
+
     redirect_to profile_path
   end
 

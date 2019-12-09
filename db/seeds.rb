@@ -26,6 +26,7 @@ maylis = User.create!(
   last_name: "Castell",
   username: "Lyly",
   # address: "10 rue Voltaire",
+  points: 10,
   level: "rookie",
   city: "Nantes",
   zip_code: "44000",
@@ -40,6 +41,7 @@ marie_noelle = User.create!(
   last_name: "Fromage",
   username: "Mawie",
   # address: "41 boulevard de Verdun",
+  points: 40,
   level: "apprentice",
   city: "Rennes",
   zip_code: "35000",
@@ -54,6 +56,7 @@ ophelie = User.create!(
   last_name: "Cauchye",
   username: "Ophé",
   # address: "3 Rue du Président Édouard Herriot",
+  points: 81,
   level: "champion",
   city: "Lyon",
   zip_code: "69001",
@@ -68,7 +71,8 @@ cecile = User.create!(
   last_name: "Veneziani",
   username: "Cécé",
   # address: "7 place du Marché aux Fleurs",
-  level: "hero",
+  points: 31,
+  level: "apprentice",
   city: "Montpellier",
   zip_code: "34000",
   country: "France",
@@ -83,7 +87,8 @@ nicolas = User.create!(
   last_name: "Filzi",
   username: "Nico",
   # address: "20 rue Lacour",
-  level: "legend",
+  points: 39,
+  level: "apprentice",
   city: "Bordeaux",
   zip_code: "33000",
   country: "France",
@@ -97,7 +102,7 @@ puts "Creating places seeds ..."
 
 
 first_place = Place.create!(
-  mapmaster: maylis,
+  mapmaster: marie_noelle,
   trashes_on_site: Place::TRASHES.sample(2),
   volume: 0,
   status: Place::STATUS.sample,
@@ -152,7 +157,7 @@ fifth_place = Place.create!(
 )
 
 sixth_place = Place.create!(
-  mapmaster: maylis,
+  mapmaster: ophelie,
   trashes_on_site: Place::TRASHES.sample(3),
   volume: 5,
   status: Place::STATUS.sample,
@@ -209,7 +214,7 @@ tenth_place = Place.create!(
 
 
 eleventh_place = Place.create!(
-  mapmaster: maylis,
+  mapmaster: ophelie,
   trashes_on_site: Place::TRASHES.sample(2),
   volume: 4,
   status: Place::STATUS.sample,
@@ -425,6 +430,16 @@ twelveth_mission = Mission.create!(
 
 
 )
+
+
+eleventh_mission = Mission.create!(
+  place: fourth_place,
+  date: '2020-02-02',
+  captaingreen: ophelie,
+  time_slot: "afternoon",
+  mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place43.jpeg")),
+  participation_level: 2,
+  status: "completed",
 
 puts "Done with missions seeds !"
 
