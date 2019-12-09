@@ -4,21 +4,35 @@
 
 <div class="mission-show">
   <div class="mission-details">
+
+
     <!-- map -->
-    <div class="photo-basic-infos">
+    <div
+    id="map"
+    style="width: 100%;
+    height: 200px;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+    >
+
+      <div class="status-place">
+        <p><%= @place.status %></p>
+      </div>
       <div class="mission-photo">
       <!-- photo du site -->
         <%= cl_image_tag @place.mapmaster_photo, alt: "Photo of the place", class:'place-photo' %>
       </div>
-      <div class="address-status">
+      <div class="address-place">
         <!-- address -->
-        <i class="fas fa-map-marker-alt"></i> <%= @place.address %>
+        <i class="fas fa-map-marker-alt"></i><%= @place.address %>
         <!-- place status -->
-        <em><%= @place.status %> </em>
       </div>
     </div>
+
+
+
     <div class="type-of-trashes">
-      <p><em>Watch out !</em> The Mapmaster reported a real mess !</p>
+      <p><em>Watch out !</em><br>The Mapmaster reported a real mess !</p>
       <!-- place trash types -->
       <%= image_tag "icons/trash-types/png/bottle.png", class: "trashes-type-icon" %>
       <%= image_tag "icons/trash-types/png/can.png", class: "trashes-type-icon" %>
