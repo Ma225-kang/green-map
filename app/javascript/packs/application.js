@@ -12,6 +12,12 @@ import { geolocateUser } from '../plugins/geolocate_user';
 
 geolocateUser();
 
-import { selectVolume } from './components/form_volume';
+import { selectVolume } from '../components/form_volume';
 
 selectVolume();
+
+import '../components/select_picture';
+
+import '../components/select_trash';
+
+import '../components/participation_proof';
