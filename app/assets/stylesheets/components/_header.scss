@@ -22,16 +22,14 @@
    h1 {
       padding-top: 12px;
     }
+  }
 
   &.locate-place{
-    background-image: url('headers/new_place.jpg')
-
-
-
+    background-image: url('headers/new_place.jpg');
   }
-  &.home{
-    background-image: url('headers/home.jpg')
 
+  &.home{
+    background-image: url('headers/home.jpg');
   }
 
   h1 {
@@ -42,3 +40,4 @@
     letter-spacing: 0.2em;
   }
 
+}
