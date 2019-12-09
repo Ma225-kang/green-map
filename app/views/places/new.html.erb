@@ -19,7 +19,9 @@
 
     <label for="place_mapmaster_photo" class="picture-mapmaster">
         <%= image_tag'icons/alert_page_icon.png', class: "camera" %>
-        <p>Take a picture of trashpoint and upload it right here.</p>
+        <%= image_tag'icons/green_success_icon.png', class: "green-success hidden" %>
+        <p class="take-picture-message">Take a picture of trashpoint and upload it right here.</p>
+        <p class="well-done hidden">Well done! We promise we'll fight that garbage until the very end <i class="fas fa-dragon"></i> </p>
     </label>
 
       <%= f.input :mapmaster_photo, label: false, input_html: { class: 'hidden' } %>
@@ -85,30 +87,10 @@
       <input type="checkbox" id="trash-type-dangerous"      value="dangerous" name="place[trashes_on_site][]" class="hidden">
     </div>
 
-    <%= f.submit 'Alert', class: "big-button alert-button", :onclick => "sweetAlert({
-      title: 'Thank you!',
-      text: 'Your contribution means the world to us. You get 50 reward points! Congratulations dear Mapmaster!',
-      icon: 'success',
-      timer: 15000,
-      });"
-    %>
+    <%= f.submit 'Alert', class: "big-button alert-button" %>
 
   <% end %>
 
-  <script>
-    const picture = document.querySelector('.picture-mapmaster');
-    picture.addEventListener('click', event => {
-      picture.classList.toggle('picture-mapmaster-active');
-    });
-  </script>
-
-  <script>
-    document.querySelectorAll('.trash-type-selection-wrapper label').forEach(item => {
-      item.addEventListener('click', event => {
-        item.classList.toggle('trash-type-active');
-      });
-    });
-  </script>
 </div>
 
 <!-- navbar -->
