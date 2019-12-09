@@ -21,3 +21,5 @@ import '../components/select_picture';
 import '../components/select_trash';
 
 import '../components/participation_proof';
+
+import '../components/preview_picture';

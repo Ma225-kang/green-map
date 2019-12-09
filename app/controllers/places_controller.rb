@@ -16,8 +16,10 @@ class PlacesController < ApplicationController
   end
 
   def create
+    @place = Place.new(params_places)
+    @place.status = "new"
+    @place.mapmaster = current_user
 
-    binding.pry
     # COOKIE STUFF
     # if cookie is a hash
     @place.longitude = cookies[:longitude]
@@ -29,10 +31,6 @@ class PlacesController < ApplicationController
     @latitude = coordinates[1]
     # delete cookie after usage
     # document.cookie = "latitude=; longitude=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-
-    @place = Place.new(params_places)
-    @place.status = "new"
-    @place.mapmaster = current_user
 
     if @place.save
       redirect_to place_congratulations_path(@place)

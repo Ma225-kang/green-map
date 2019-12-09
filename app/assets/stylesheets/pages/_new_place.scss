@@ -33,10 +33,26 @@
   border: 2px solid $green;
 }
 
-.camera {
+.camera, {
   width: 55px;
   height: 53px;
   margin-left: 20px;
+}
+
+.green-success {
+  opacity: 0.7;
+  width: 45px;
+  height: 45px;
+  margin-left: 15px;
+}
+
+i {
+  font-size: 13px;
+  padding-left: 3px;
+}
+
+.hidden {
+  display: none;
 }
 
 .text-title-form {
@@ -133,8 +149,3 @@ label.trash-type-active img {
   border: 2px solid $green;
   border-radius: 5px;
 }
-
-// .plus {
-//   width: 26.61px;
-//   height: 25px;
-// }
