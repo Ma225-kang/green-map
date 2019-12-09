@@ -2,7 +2,7 @@
   <!-- banner profile -->
     <!-- photo de profile -->
   <div class="banner">
-<<<<<<< HEAD
+
     <%= cl_image_tag @user.avatar, alt: "#{@user}'s avatar" , class:"avatar" %>
     <!-- badge de level -->
     <%= @user.points %>
@@ -17,26 +17,6 @@
     <% else @user.level == "rookie"%>
       <%= image_tag "icons/rookie_icon.png"%>
     <% end %>
-=======
-    <%= image_tag "icons/Logo.png", alt: "logo" , class:"logo"  %>
-    <div class="avatar-profile-medal">
-      <%= cl_image_tag @user.avatar, alt: "#{@user}'s avatar" , class:"avatar" %>
-      <!-- badge de level -->
-      <div class="profile-medal">
-         <% if @user.level == "legend" %>
-        <%= image_tag "icons/bin_profile_icon.svg"%>
-      <% elsif @user.level == "hero" %>
-        <%= image_tag "icons/bin_profile_icon.svg"%>
-      <% elsif @user.level == "champion" %>
-        <%= image_tag "icons/badge_icon.png"%>
-      <% elsif @user.level == "apprentice" %>
-        <%= image_tag "icons/bin_profile_icon.svg"%>
-      <% else @user.level == "rookie"%>
-        <%= image_tag "icons/bin_profile_icon.svg"%>
-      <% end %>
-      </div>
-    </div>
->>>>>>> 699d249c2fcffb02039cad6bcc00d60826ca4000
    </div>
 
 
@@ -72,27 +52,14 @@
       </div>
       <div class="next-mission-buttons">
         <!-- button more info redirecting towards show of place -->
-<<<<<<< HEAD
-        <%= link_to "more info", place_path(@next_mission.place), class:'btn btn-success' %>
 
-        <!-- section action -->
-        <!-- button completed redirecting towards the end of mission -->
-        <%= link_to "complete", review_mission_path(@next_mission), class:'btn btn-success'%>
-        <!-- button cancel delete mission and delete user_id from the place db -->
-        <%= link_to "cancel", cancel_mission_path(@next_mission), method: :patch, class:'btn btn-warning'%>
-=======
         <%= link_to "more info", @next_mission_path, class:'nav-btn green-btn' %>
         <!--link_to @next_mission.place_path -->
-
       <!-- section action -->
       <!-- button completed redirecting towards the end of mission -->
-
-
       <%= link_to "complete", review_mission_path(@next_mission), class:'nav-btn green-btn'%>
-
       <!-- button cancel delete mission and delete user_id from the place db -->
       <%= link_to "cancel", cancel_mission_path(@next_mission), method: :patch, class:'nav-btn orange-btn'%>
->>>>>>> 699d249c2fcffb02039cad6bcc00d60826ca4000
       </div>
     <% end %>
   </div>

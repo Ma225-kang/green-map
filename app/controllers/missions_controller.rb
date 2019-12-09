@@ -27,7 +27,8 @@ class MissionsController < ApplicationController
 
     current_user.points += @mission.place.volume * @mission.participation_level
     current_user.save
-    @mission.place.volume -= @mission.participation_level
+    # attention updated directly from the completion form
+    # @mission.place.volume = updated
     @mission.place.save
 
     redirect_to profile_path
