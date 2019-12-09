@@ -1,0 +1,94 @@
+.global-places-cards {
+  width: 98vw;
+  margin: 0 auto;
+  margin-top: 3px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  background-color: #FFFFFF;
+}
+
+.card-place-infos {
+  width: 45%;
+  margin: 0 auto;
+  margin-top: 15px;
+
+  img {
+    width: 162px;
+    height: 162px;
+    border-radius: 5%;
+    object-fit: cover;
+  }
+
+  p {
+    height: 30px;
+    font-size: 14px;
+    margin-top: 5px;
+    padding: 1px 0 2px 2px;
+  }
+
+  .icon {
+    width: 50px;
+    height: 50px;
+    margin-top: 5px;
+  }
+
+  .icon:first-child, .icon:nth-child(2) {
+    margin-right: 2px;
+  }
+
+  .link-to-place {
+    text-decoration: none;
+    color: black;
+  }
+
+  i {
+    color: $light-gray;
+  }
+
+  .group {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin-top: 7px;
+  }
+
+  .participants {
+    display: flex;
+  }
+
+  .number-of-participants {
+    margin-bottom: 0;
+    padding-left: 8px;
+    padding-top: 5px;
+  }
+}
+
+.input-group {
+  padding-top: 35px;
+  width: 80vw;
+  margin: 0 auto;
+
+  ::placeholder {
+    color: black;
+    font-weight: light;
+  }
+
+  input:focus::-webkit-input-placeholder {
+    color: transparent;
+  }
+
+  input:focus:-moz-placeholder {
+    color: transparent;
+  }
+}
+
+.form-control, .input-group-append {
+  height: 3.5vh;
+  opacity: 0.75;
+}
+
+.input-group-append {
+  border-left: 1.5px solid white;
+}
+

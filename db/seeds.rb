@@ -104,7 +104,7 @@ first_place = Place.create!(
   # equipment: "wheelbarrow",
   address: "Le Hohneck, 68140 Stosswihr",
   # display_photo: File.open(Rails.root.join("db/fixtures/places/place1.jpeg")),
-  mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place51.jpeg"))
+  mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place55.jpeg"))
 )
 
 second_place = Place.create!(
@@ -148,7 +148,7 @@ fifth_place = Place.create!(
   # equipment: "wheelbarrow",
   address: "83630 Bauduen",
   # display_photo: File.open(Rails.root.join("db/fixtures/places/place9.jpeg")),
-  mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place55.jpeg"))
+  mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place51.jpeg"))
 )
 
 sixth_place = Place.create!(
