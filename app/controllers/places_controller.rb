@@ -16,6 +16,8 @@ class PlacesController < ApplicationController
   end
 
   def create
+
+    binding.pry
     # COOKIE STUFF
     # if cookie is a hash
     @place.longitude = cookies[:longitude]
@@ -40,6 +42,8 @@ class PlacesController < ApplicationController
   end
 
   def geolocate_user
+    p cookies[:latitude]
+    p cookies[:longitude]
     @markers = [{lat: cookies[:latitude], lng: cookies[:longitude]}]
   end
 

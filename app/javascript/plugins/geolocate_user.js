@@ -21,23 +21,15 @@ const geolocateUser = () => {
       // <!-- CREATE COOKIE  -->
 
     var crd = pos.coords;
-    let longitude = crd.longitude;
-    let latitude = crd.latitude;
-    let lng = {longitude: longitude}
-    let lat = "latitude" + "=" + latitude + ";";
-    // document.cookie = lng;
-    // document.cookie = lat;
-    // console.log(pos.coords)
-    // document.cookie = JSON.generate([crd.longitude, crd.latitude]);
-    // cookies[:lat_lon] = JSON.generate([crd.longitude, crd.latitude]);
-    location = "/places/new";
-  }
 
-  //   if (lng && lat) {
-  //   } else {
-  //     alert("We can't geolocate you, :(");
-  //     location = "/home"
-  // }
+    let longitude = crd.longitude;
+    let latitude  = crd.latitude;
+
+    document.cookie = `latitude=${latitude}`
+    document.cookie = `longitude=${longitude}`
+
+    window.location = button.dataset.nextPageUrl
+  }
 
   function error(err) {
     console.warn(`ERREUR (${err.code}): ${err.message}`);

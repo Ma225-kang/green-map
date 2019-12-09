@@ -3,7 +3,8 @@
   <h1>POINT LOCATION</h1>
 </div>
 
-<div class="instructions">
+<div class="instructions-geoloc">
+  <p>So tell us...</p>
   <p>where's that nasty garbage?</p>
 </div>
 
@@ -18,14 +19,13 @@
         <p><%= image_tag "icons/step2gps_icon.svg" %>Allow geolocalisation to advance to the next step</p>
       </div>
       <div class="step">
-        <p><%= image_tag "icons/step3gps_icon.svg" %>Tap "I'm here!" on the <strong>map</strong> below to geolocate the spot !</p>
+        <p><%= image_tag "icons/step3gps_icon.svg" %>Tap <strong>"Geolocate me!"</strong> on the map below to geolocate the spot !</p>
       </div>
     </div>
   </div>
 
   <!-- MAP <-->
   <div class="map-geoloc">
-     <button  id="geolocate_me" class="geolocate-button" >i'm here !</button>
-     <%= image_tag "pages_images/map_3.png", class: "map" %>
+     <button  id="geolocate_me" class="geolocate-button" data-next-page-url="<%= new_place_path %>" >Geolocate me!</button>
   </div>
 </div>
