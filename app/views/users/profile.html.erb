@@ -55,7 +55,7 @@
 
       <!-- section action -->
       <!-- button completed redirecting towards the end of mission -->
-      <%= link_to "complete", complete_mission_path(@next_mission), method: :patch, class:'btn btn-success'%>
+      <%= link_to "complete", review_mission_path(@next_mission[:id]), method: :patch, class:'btn btn-success'%>
       <!-- button cancel delete mission and delete user_id from the place db -->
       <%= link_to "cancel", cancel_mission_path(@next_mission), method: :patch, class:'btn btn-warning'%>
       </div>
