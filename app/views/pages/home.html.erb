@@ -1,53 +1,52 @@
 <div class="global-home-page home-wrapper">
-  <div class="container">
-    <div class="banner-home-page">
-      <div class="banner-home-page-logo">
-        <%= image_tag "icons/Logo.png", alt: "logo" , class:"logo-home" %>
-      </div>
-      <div class="banner-home-page-title">
-        <h1>Green Map</h1>
-      </div>
+
+  <div class="banner-home-page">
+    <div class="banner-home-page-logo">
+      <%= image_tag "icons/logo_without_name.png", alt: "logo" , class:"logo-home" %>
     </div>
 
-    <div class="welcome-message">
-        <h2 class="slogan-app">Help us fight against trash in nature !</h2>
-        <p>CHOOSE YOUR MISSION</p>
-    </div>
-
-    <div class="map-home">
-      <div
-      id="map"
-      style="width: 90%;
-      height: 180px;"
-      data-markers="<%= @markers.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-      >
-      </div>
+    <div class="banner-home-page-title">
+      <h1>Green Map</h1>
+      <%= link_to new_user_session_path, class: "profile_icon_home" do %>
+        <%= image_tag "icons/profile_icon.png" %>
+      <% end %>
     </div>
   </div>
-</div>
 
-    <div class="manual-cards">
-      <div class="two-cards-manual" id="first-card-manual">
-        <h3>Want to alert ?</h3>
-          <%= image_tag "icons/alert_page_icon.png", class: 'background-icon' %>
-          <h4>Be a MapMaster !</h4>
-            <p>See something wrong ? warn the  CaptainsGreen to fly to the rescue</p>
-            <%#= link_to "ALERT", geolocate_user_places_path, class: "nav-btn orange-btn" %>
-            <%= link_to "ALERT", geolocate_user_places_path, class: "nav-btn orange-btn" %>
-      </div>
-      <div class="two-cards-manual">
-        <h3>Want to collect?</h3>
-          <%= image_tag "icons/missions_icon.png", class: 'background-icon' %>
-          <h4>Be a CaptainGreen !</h4>
-            <p class="description-app">Choose a spot on the map, meet nature with a secret ingredient : be a part of it !</p>
-            <%#= link_to "COLLECT", places_path, class: "nav-btn green-btn" %>
-            <%= link_to "COLLECT", places_path, class: "nav-btn green-btn" %>
-      </div>
+  <div class="welcome-message">
+    <h2 class="slogan-app">Help us fight against trash in nature !</h2>
+    <p>CHOOSE YOUR MISSION</p>
+  </div>
+
+  <div
+  id="map"
+  style="width: 100%;
+  height: 180px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+  >
+  </div>
+
+  <div class="manual-cards">
+    <div class="two-cards-manual">
+      <h3>Want to alert ?</h3>
+        <%= image_tag "icons/alert_page_icon.png", class: 'background-icon' %>
+        <h4>Be a MapMaster !</h4>
+          <p>See something wrong ? warn the  CaptainsGreen to fly to the rescue !</p>
+          <%#= link_to "ALERT", geolocate_user_places_path, class: "nav-btn orange-btn" %>
+          <%= link_to "ALERT", geolocate_user_places_path, class: "nav-btn orange-btn buttons-home" %>
     </div>
+    <div class="two-cards-manual" id="first-card-manual">
+      <h3>Want to collect?</h3>
+        <%= image_tag "icons/missions_icon.png", class: 'background-icon' %>
+        <h4>Be a CaptainGreen !</h4>
+          <p class="description-app">Choose a spot on the map, meet nature with a secret ingredient : be a part of it !</p>
+          <%#= link_to "COLLECT", places_path, class: "nav-btn green-btn" %>
+          <%= link_to "COLLECT", places_path, class: "nav-btn green-btn buttons-home" %>
+    </div>
+  </div>
 
-
-
+</div>
 
   <%#= render 'shared/home_navbar' %>
 
