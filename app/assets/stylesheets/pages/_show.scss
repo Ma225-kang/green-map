@@ -1,22 +1,50 @@
-
-
-.align-show-place {
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  align-items: center;
-
-  &.center-place-address {
-
-  }
-}
-
 .mission-show {
   // border: 0.5px solid $light-gray;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.10);
-  margin: 10px;
+  border: 1px solid $light-gray;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  width: 97vw;
+  margin: 0 auto;
   background-color: white;
+}
+
+.show-place-details {
+  width: 86vw;
+  margin: 10px auto;
+
+  .fa-fire {
+    font-size: 16px;
+    margin-left: 2px;
+    padding-right: 4px;
+  }
+
+  .fa-rocket {
+    padding-right: 4px;
+    margin-left: 1px;
+  }
+
+  p {
+    margin-bottom: 0;
+    border-radius: 5px;
+    opacity: 0.6;
+    color: black;
+  }
+
+  .show-place-address {
+    margin-left: 3px;
+    margin-bottom: 5px;
+    text-transform: capitalize;
+  }
+
+  .fa-map-marker-alt {
+    margin-right: 4px;
+  }
+
+  .new-status, .on-going-status {
+    background-color: $light-gray;
+    padding: 3px 10px 3px 0;
+    opacity: 0.5;
+  }
+
 }
 
 .mission-details {
@@ -27,9 +55,7 @@
   height: 50px;
 }
 
-
 .photo-basic-infos {
-
 }
 
 .mission-photo {
@@ -40,7 +66,6 @@
   position: absolute;
   z-index: 1000;
   top: 30px;
-
 }
 
 .place-photo {
@@ -51,66 +76,56 @@
   width: 100px;
   border-radius: 5px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, .10);
-
-}
-
-.address-place {
-  padding: 0px 20px;
-  background-color: rgba(255, 255, 255, .10);
-  position: absolute;
-  z-index: 1000;
-  top: 10px;
-  right: -10px;
-}
-.status-place {
-  position: absolute;
-  z-index:1000;
-  top:30px;
-  right: 10px;
-  background-color: $light-gray;
-  padding: 3px;
-  border-radius: 5px;
-  font-weight: normal;
-
-  p {
-    margin-bottom: 0;
-  }
 }
 
 .type-of-trashes {
-  padding-top: 5px;
   text-align: center;
+  margin-top: 4px;
+
   p {
     font-size: 15px;
     color: $gray;
-    em {
-      color: red;
-    }
+    margin-bottom: 10px;
+  }
+
+  .watch-out-message {
+    color: red;
+    font-style: italic;
+    margin: 4px 0;
   }
 }
 
-.trashes-type-icon {
-  height: 30px;
-  width: 30px;
+.show-icon-trash {
+  width: 53px;
+  height: 53px;
+  padding: 6px;
+  border: 1px solid $green;
+  border-radius: 50%;
+  margin: 5px 7px;
 }
 
 .bring-bloc {
-  padding: 20px;
+  padding: 15px;
+  text-align: center;
 
   p {
     text-align:center;
     font-size: 15px;
     color: $gray;
+    padding-top: 15px;
   }
-}
 
-.icons-tools-to-bring {
-  text-align: center;
-  margin-bottom: 20px;
+  .equipment-suggestions {
+    border-top: 1px solid $light-gray;
+    margin-bottom: 10px;
+  }
 
-  .icons-tools {
-    height: 30px;
-    width: 30px;
+  .icon-equipment {
+    width: 53px;
+    height: 53px;
+    padding: 8px;
+    margin-right: 5px;
+    opacity: 0.8;
   }
 }
 
@@ -154,20 +169,64 @@
 
 }
 
-
-
 .safety {
   // border: 0.5px solid $light-gray;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.10);
-  margin: 10px;
+  width: 97vw;
   background-color: white;
-  padding: 20px;
+  border: 1px solid $light-gray;
+  text-align: justify;
+  padding: 5px 23px;
+  margin-top: 6px;
 
-}
+  p {
+    font-size: 10px;
+    margin-bottom: 0;
+  }
 
-.fa-heart {
+  .fa-heart {
   color: red;
+  }
 }
+
+
+// .align-show-place {
+//   padding: 0;
+//   display: flex;
+//   flex-direction: column;
+//   text-align: center;
+//   align-items: center;
+
+//   h1 {
+//     text-transform: uppercase;
+//     margin-bottom: -10px;
+//   }
+// }
+
+
+// .address-place {
+//   padding: 0px 20px;
+//   background-color: rgba(255, 255, 255, .10);
+//   position: absolute;
+//   z-index: 1000;
+//   top: 10px;
+//   right: -10px;
+// }
+
+// .status-place {
+//   // position: absolute;
+//   // z-index: 1000;
+//   // top: 10  px;
+//   // left: 10px;
+//   // background-color: $light-gray;
+//   padding: 3px;
+//   // border-radius: 5px;
+//   font-weight: normal;
+
+//   // p {
+//   //   margin-bottom: 0;
+//   // }
+// }
 
 
 

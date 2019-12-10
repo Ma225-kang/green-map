@@ -1,10 +1,6 @@
-
-<div class="header show-place align-show-place">
-  <h1 class="center-place-address">
-    <%= @place.address.upcase %>
-  </h1>
+<div class="header show-place">
+  <h1>GET MORE DETAILS</h1>
 </div>
-
 
 <div class="mission-show">
   <div class="mission-details">
@@ -18,50 +14,48 @@
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
     >
 
-      <div class="status-place">
-        <p><%= @place.status %></p>
-      </div>
-      <div class="mission-photo">
-      <!-- photo du site -->
-        <%= cl_image_tag @place.mapmaster_photo, alt: "Photo of the place", class:'place-photo' %>
-      </div>
-      <div class="address-place">
-        <!-- address -->
-        <i class="fas fa-map-marker-alt"></i><%= @place.address %>
-        <!-- place status -->
-      </div>
+    <!-- photo du site -->
+    <div class="mission-photo">
+      <%= cl_image_tag @place.mapmaster_photo, alt: "Photo of the place", class:'place-photo' %>
     </div>
 
+  </div>
 
+    <div class="show-place-details">
+      <p class="show-place-address"><i class="fas fa-map-marker-alt"></i> <%= @place.address %></p>
+      <% if @place.status == 'new' %>
+        <p class="new-status"> <i class="fas fa-rocket"></i> New mission waiting for you! </p>
+      <% else %>
+         <p class="on-going-status"> <i class="fas fa-fire"></i> On-going mission, don't miss out! </p>
+      <% end %>
+      <!-- <p class="status-place"><i class="fas fa-battery-three-quarters"></i> <%= @place.status %> mission</p> -->
+    </div>
 
     <div class="type-of-trashes">
-      <p><em>Watch out !</em><br>The Mapmaster reported a real mess !</p>
+      <p class="watch-out-message">Watch out!</p>
+      <p>The Mapmaster reported a real mess!</p>
+
       <!-- place trash types -->
-
-      <div class="icons-trash-type">
-        <% @place.trashes_on_site.each do |trash| %>
-          <%= image_tag "icons/trash-types/#{trash.parameterize(separator: '_')}.svg", class: "icon-trash" %>
-        <% end %>
-      </div>
-
+      <% @place.trashes_on_site.each do |trash| %>
+        <%= image_tag "icons/trash-types/#{trash.parameterize(separator: '_')}.svg", class: "show-icon-trash" %>
+      <% end %>
     </div>
+
     <!-- material suggestions -->
     <div class="bring-bloc">
-      <p>For this mission we suggest you bring</p>
+      <p class="equipment-suggestions">You might need a bit of equipment:</p>
 
-      <div class="icons-tools-to-bring">
-        <% @place.equipments.each do |equipment| %>
+      <% @place.equipments.each do |equipment| %>
           <%= image_tag "icons/equipment/#{equipment.parameterize(separator: '_')}_icon.png", class: "icon-equipment" %>
-        <% end %>
-      </div>
-
-      <button type="button" class="nav-btn green-btn" id="go-on-mission-btn-show" data-toggle="modal" data-target="#exampleModalCenter">
-        GO ON MISSION
-      </button>
-
+      <% end %>
     </div>
 
-    <!-- go on a mission button -->
+    <div class="go-on-mission-button">
+      <button type="button" class="big-button complete-button" data-toggle="modal" data-target="#exampleModalCenter">
+        GO ON MISSION
+      </button>
+    </div>
+
     <!-- pop up de demande sur la date -->
     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
@@ -85,10 +79,9 @@
         </div>
       </div>
     </div>
+</div>
 
     <!-- safety tips -->
-  </div>
-</div>
 <div class="safety">
-  <p>Because we <i class="fas fa-heart"></i> and care about you, we would appreciate, you consider these safety recommendations ...Avoid contact with chimicals without gloves and be extra careful with sharp objects.</p>
+  <p>Because we<i class="fas fa-heart"></i> and care about you, please consider the following safety recommendations. Avoid contact with chemicals without gloves and be careful with sharp objects.</p>
 </div>
