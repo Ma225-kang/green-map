@@ -36,6 +36,8 @@ import '../components/preview_picture_mission';
 
 import '../components/preview_picture_participation';
 
-import { selectVol2 } from '../components/form_place_after';
+import { listenForVolumeLeftSelection } from '../components/form_place_after';
 
-selectVol2();
+import { initAutocomplete } from '../plugins/init_autocomplete';
+
+initAutocomplete();

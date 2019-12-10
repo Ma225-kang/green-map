@@ -1,15 +1,22 @@
-const labels = document.querySelectorAll('.place_after-level-selection-wrapper label');
+const listenForMissionSelection = (e) => {
+  const labels = document.querySelectorAll('.place_after-level-selection-wrapper label');
 
-const selectVol2 = (e) => {
   labels.forEach((label) => {
     label.classList.remove('vol2-active');
   });
   e.currentTarget.classList.add('vol2-active');
 };
 
-labels.forEach((label) => {
-  label.addEventListener('click', selectVol2)
-});
+const listenForVolumeLeftSelection = () => {
+  const labels = document.querySelectorAll('.place_after-level-selection-wrapper label');
 
-export { selectVol2 };
+  if (labels.length != 0) {
+    labels.forEach((label) => {
+      label.addEventListener('click', listenForMissionSelection)
+    });
+  }
+}
 
+
+
+export { listenForVolumeLeftSelection };

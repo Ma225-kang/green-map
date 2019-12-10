@@ -2,10 +2,8 @@ class PlacesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @places = Place.all
-
-    if params[:query].present?
-      @places = Place.search_name_and_description(params[:query]).geocoded.order("created_at DESC")
+    if params[:search].present?
+      @places = Place.near(params[:search]).geocoded.order("created_at DESC")
     else
       @places = Place.geocoded.order("created_at DESC")
     end
