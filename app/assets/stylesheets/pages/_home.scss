@@ -1,23 +1,165 @@
 // Specific CSS for your home-page
 
-.home-wrapper {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  height: calc(var(--vh, 1vh) * 100);
+// .home-wrapper {
+//   display: flex;
+//   flex-direction: column;
+//   height: 100vh;
+//   height: calc(var(--vh, 1vh) * 100);
+// }
+
+.global-home-page {
 }
 
-.home-navbar {
-  padding: 1em 0;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  background-color: $white;
+.banner-home-page {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  height: 80px;
+  padding: 10px 20px;
 
+  .banner-home-page-logo {
+
+  }
+
+  .banner-home-page-title {
+    padding-top: 30px;
+    text-align: center;
+  }
+
+  .logo-home {
+    height: 80px;
+    width: 100px;
+  }
 
   h1 {
-    font-size: 1.3em;
+    text-align: center;
+    font-size: 24px;
+    letter-spacing: 7px;
+    color: #808080;
+    font-weight: lighter;
   }
 }
 
+.welcome-message {
+  text-align: center;
+  height: 130px;
+  width: 95%;
+  padding: 10px 15px 5px 15px;
+  margin-top: 5px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, .10);
+  background-color: white;
+  margin: 0 auto;
+  margin-top: 30px;
+
+  .slogan-app {
+    width: 300px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    line-height: 25px;
+    height: 60px;
+  }
+
+  h2 {
+    color: #4DD599;
+    font-size: 18px;
+    letter-spacing: 4px;
+    font-weight: light;
+
+
+  }
+
+
+  p {
+    color: #808080;
+    font-size: 15px;
+    letter-spacing: 3px;
+    font-weight: semi-bold;
+
+
+  }
+}
+
+.map-home {
+  display: grid;
+  grid-template-columns: 1fr;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, .10);
+  justify-content: center;
+  width: 95%;
+  height: 210px;
+  background-color: white;
+  margin: 10px auto;
+}
+
+
+#map {
+  margin: auto;
+
+}
+
+.manual-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  // box-shadow: 0px 4px 6px rgba(0, 0, 0, .10);
+  // width: 100%;
+  margin: 0 auto;
+
+}
+
+.two-cards-manual {
+
+  text-align: center;
+  background-color: white;
+  padding: 20px 10px;
+  display: grid;
+  grid-gap: 3px;
+  grid-template-columns: 1fr;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, .10);
+  width: 95%;
+
+  h3 {
+    color: #808080;
+    font-size: 16px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    padding: 10px 0px;
+
+  }
+
+  h4 {
+    letter-spacing: 2px;
+    font-weight: semi-bold;
+    font-size: 15px;
+  }
+
+  .description-app {
+    font-weight: light;
+    font-size: 13px;
+  }
+
+  .background-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 20px;
+  }
+
+  p {
+    text-align: center;
+
+  }
+
+  h4 {
+    color: #808080;
+    font-size: 13px;
+    letter-spacing: 2px;
+    font-weight: semi-bold;
+    margin-bottom: 20px;
+
+  }
+
+  p {
+    color: #808080;
+    font-size: 13px;
+    letter-spacing: 2px;
+    font-weight:regular;
+  }
+}
 
