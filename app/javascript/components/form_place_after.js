@@ -1,6 +1,6 @@
 const labels = document.querySelectorAll('.place_after-level-selection-wrapper label');
 
-const selectVolume = (e) => {
+const selectVol2 = (e) => {
   labels.forEach((label) => {
     label.classList.remove('vol2-active');
   });
@@ -8,8 +8,8 @@ const selectVolume = (e) => {
 };
 
 labels.forEach((label) => {
-  label.addEventListener('click', selectVolume)
+  label.addEventListener('click', selectVol2)
 });
 
-export { selectVolume };
+export { selectVol2 };
 
