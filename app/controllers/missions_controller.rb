@@ -10,6 +10,15 @@ class MissionsController < ApplicationController
     if @mission.save
       redirect_to profile_path
     else
+      @markers = [
+        {
+          lat: @place.latitude,
+          lng: @place.longitude,
+          # infoWindow: render_to_string(partial: "info_window", locals: { place: @place })
+          image_url: helpers.asset_url('icons/red_mapmarker_icon.png')
+        }
+      ]
+
       render 'places/show'
     end
   end

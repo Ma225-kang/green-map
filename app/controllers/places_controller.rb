@@ -3,12 +3,11 @@ class PlacesController < ApplicationController
 
   def index
     @places = Place.all
-    @places = @places.order("created_at DESC")
 
     if params[:query].present?
-      @places = Place.search_name_and_description(params[:query]).geocoded
+      @places = Place.search_name_and_description(params[:query]).geocoded.order("created_at DESC")
     else
-      @places = Place.geocoded
+      @places = Place.geocoded.order("created_at DESC")
     end
   end
 
@@ -22,7 +21,8 @@ class PlacesController < ApplicationController
         lng: @place.longitude,
         # infoWindow: render_to_string(partial: "info_window", locals: { place: @place })
         image_url: helpers.asset_url('icons/red_mapmarker_icon.png')
-      }]
+      }
+    ]
   end
 
   def new

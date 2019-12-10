@@ -3,8 +3,15 @@ class Place < ApplicationRecord
   has_many :missions
   has_many :congratulations
 
-  geocoded_by :address
-  after_validation :geocode, if: :will_save_change_to_address?
+  reverse_geocoded_by :latitude, :longitude do |place, results|
+    geo = results.first
+    place.address = "#{geo.city}, #{geo.postal_code}" if geo
+  end
+  after_validation :reverse_geocode
+  # if: :should_geocode_by_address?
+
+  # geocoded_by :address
+  # after_validation :geocode, if: :will_save_change_to_address?
 
   mount_uploader :mapmaster_photo, PhotoUploader
 

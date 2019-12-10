@@ -52,32 +52,58 @@
     </div>
 
     <div class="go-on-mission-button">
-      <button type="button" class="big-button complete-button" data-toggle="modal" data-target="#exampleModalCenter">
+      <button type="button" class="big-button complete-button" data-toggle="modal" data-target="#goOnMissionModal">
         GO ON MISSION
       </button>
     </div>
 
     <!-- pop up de demande sur la date -->
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <% mission_has_errors = !@mission.errors.empty? %>
+    <div class="modal fade" id="goOnMissionModal" data-has-errors="<%= mission_has_errors %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Ready to go? <br> Select a (greenie) date <i class="fas fa-leaf"></i></h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
+
+            <div class="modal-header-title"></div>
+              <h1 class="modal-title" id="exampleModalLongTitle">Ready to go?</h1>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+
+            <%= simple_form_for [@place, @mission] do |f| %>
+
+              <div class="modal-body">
+                <%= f.input :date, as: :string, required: true, label: "Select date", input_html: { id: "datepicker" } %>
+
+                <%= f.label :time_slot, required: true, label: "Select time slot" %>
+                <% if @mission.errors['time_slot'].present? %>
+                  <div class="form-group string required mission_date form-group-invalid">
+                    <div class="invalid-feedback" style="display: block">Time slot <%= @mission.errors['time_slot'].first %></div>
+                  </div>
+                <% end %>
+
+                <div class="time-slot-selection-wrapper">
+                  <%= f.collection_radio_buttons :time_slot, Mission::TIME, :to_s, :capitalize %>
+                  <!-- <label for="time-slot-morning">Morning</label>
+                  <label for="time-slot-afternoon">Afternoon</label>
+                  <label for="time-slot-all-day">All day</label>
+
+                  <input type="radio" id="time-slot-morning" value="Morning" name="mission[time_slot]" class="hidden" required="true">
+                  <input type="radio" id="time-slot-afternoon" value="Afternoon" name="mission[time_slot]" class="hidden" required="true">
+                  <input type="radio" id="time-slot-all-day" value="All day" name="mission[time_slot]" class="hidden" required="true"> -->
+                </div>
+
+              </div>
+
+              <div class="modal-footer">
+                <!-- <button type="button" class="nav-btn green-btn" data-dismiss="modal">Close</button> -->
+                <%= f.submit value: "Submit", class: 'big-button complete-button', data: { disable_with: 'Submit' } %>
+              </div>
+
+            <% end %>
+
           </div>
-          <%= simple_form_for [@place, @mission] do |f| %>
-            <div class="modal-body">
-                  <%= f.input :date, as: :date, html5: true, input_html: { :style=> 'width: 180px', value: Date.today } %>
-                  <%= f.input :time_slot, collection: Mission::TIME, input_html: { :style=> 'width: 180px' } %>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="nav-btn green-btn" data-dismiss="modal">Close</button>
-              <%= f.submit value: "Submit", class: 'nav-btn green-btn' %>
-            </div>
-          <% end %>
-        </div>
       </div>
     </div>
 </div>
@@ -86,3 +112,5 @@
 <div class="safety">
   <p>Because we<i class="fas fa-heart"></i> and care about you, please consider the following safety recommendations. Avoid contact with chemicals without gloves and be careful with sharp objects.</p>
 </div>
+
+
