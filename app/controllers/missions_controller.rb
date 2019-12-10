@@ -49,7 +49,7 @@ class MissionsController < ApplicationController
   end
 
   def congrats_on_completion
-    @mission = Mission.find(params[:mission_id])
+    @mission = Mission.find(params[:id])
   end
 
   private
