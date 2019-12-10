@@ -18,6 +18,7 @@ Rails.application.routes.draw do
       get 'review'
       patch 'complete'
       patch 'cancel'
+      get 'congrats_on_completion'
     end
   end
 

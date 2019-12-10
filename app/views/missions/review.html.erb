@@ -32,7 +32,7 @@
       <%= f.input :mapmaster_photo, label: false, input_html: { class: 'hidden' } %>
       <%= f.input :mapmaster_photo_cache, as: :hidden %>
 
-    <h2 class="text-title-form quantity">HOW MUCH DO YOU TAKE WITH YOU?</h2>
+    <h2 class="text-title-form quantity">HOW WAS THE BATTLE?</h2>
 
     <div class="volume-level-selection-wrapper">
       <label for="participation-level-1">1</label>
@@ -41,21 +41,37 @@
       <label for="participation-level-4">4</label>
       <label for="participation-level-5">5</label>
 
-      <input type="radio" id="participation-level-1" value="1" name="mission[participation_level]" class="hidden">
-      <input type="radio" id="participation-level-2" value="2" name="mission[participation_level]" class="hidden">
-      <input type="radio" id="participation-level-3" value="3" name="mission[participation_level]" class="hidden">
-      <input type="radio" id="participation-level-4" value="4" name="mission[participation_level]" class="hidden">
-      <input type="radio" id="participation-level-5" value="5" name="mission[participation_level]" class="hidden">
+      <input type="radio" id="participation-level-1" value="1" name="mission[perceived_effort]" class="hidden">
+      <input type="radio" id="participation-level-2" value="2" name="mission[perceived_effort]" class="hidden">
+      <input type="radio" id="participation-level-3" value="3" name="mission[perceived_effort]" class="hidden">
+      <input type="radio" id="participation-level-4" value="4" name="mission[perceived_effort]" class="hidden">
+      <input type="radio" id="participation-level-5" value="5" name="mission[perceived_effort]" class="hidden">
     </div>
 
     <div class="legends-form">
-      <p>I filled a few plastic bags</p>
-      <p>Everything's gone with me</p>
+      <p>I was barely exercising!</p>
+      <p>I gave it my all!</p>
     </div>
 
-    <div class="points-collection">
-      <%= image_tag "icons/yellow_trophy_icon.png", class: "trophy" %>
-      <p class="message-points">Wow! You've earned <span class="win-points">55</span> points!</p>
+    <h2 class="text-title-form quantity">HOW DOES THE PLACE LOOK LIKE NOW?</h2>
+
+    <div class="place_after-level-selection-wrapper">
+      <label for="volume_left-level-1">1</label>
+      <label for="volume_left-level-2">2</label>
+      <label for="volume_left-level-3">3</label>
+      <label for="volume_left-level-4">4</label>
+      <label for="volume_left-level-5">5</label>
+
+      <input type="radio" id="volume_left-level-1" value="1" name="mission[volume_left]" class="hidden">
+      <input type="radio" id="volume_left-level-2" value="2" name="mission[volume_left]" class="hidden">
+      <input type="radio" id="volume_left-level-3" value="3" name="mission[volume_left]" class="hidden">
+      <input type="radio" id="volume_left-level-4" value="4" name="mission[volume_left]" class="hidden">
+      <input type="radio" id="volume_left-level-5" value="5" name="mission[volume_left]" class="hidden">
+    </div>
+
+    <div class="legends-form">
+      <p>it is all clean!</p>
+      <p>Is is a real mess!</p>
     </div>
 
     <h2 class="text-title-form text-second-title-form">Show us the result!</h2>
