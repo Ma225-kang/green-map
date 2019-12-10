@@ -27,3 +27,7 @@ import '../components/preview_picture_place';
 import '../components/preview_picture_mission';
 
 import '../components/preview_picture_participation';
+
+import { selectVol2 } from '../components/form_place_after';
+
+selectVol2();
