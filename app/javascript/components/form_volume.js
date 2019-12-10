@@ -1,15 +1,21 @@
-const labels = document.querySelectorAll('.volume-level-selection-wrapper label');
-
 const selectVolume = (e) => {
+  const labels = document.querySelectorAll('.volume-level-selection-wrapper label');
+
   labels.forEach((label) => {
     label.classList.remove('volume-active');
   });
   e.currentTarget.classList.add('volume-active');
 };
 
-labels.forEach((label) => {
-  label.addEventListener('click', selectVolume)
-});
+const listenForVolumeSelection = () => {
+  const labels = document.querySelectorAll('.volume-level-selection-wrapper label');
 
-export { selectVolume };
+  if (labels.length != 0) {
+    labels.forEach((label) => {
+      label.addEventListener('click', selectVolume)
+    });
+  }
+}
+
+export { listenForVolumeSelection };
 

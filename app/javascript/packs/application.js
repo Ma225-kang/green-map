@@ -1,8 +1,8 @@
-import swal from 'sweetalert';
-
 import "bootstrap";
 
 import 'mapbox-gl/dist/mapbox-gl.css'; // <-- you need to uncomment the stylesheet_pack_tag in the layout!
+
+import "../plugins/flatpickr"
 
 import { initMapbox } from '../plugins/init_mapbox';
 
@@ -12,9 +12,17 @@ import { geolocateUser } from '../plugins/geolocate_user';
 
 geolocateUser();
 
-import { selectVolume } from '../components/form_volume';
+import { listenForVolumeSelection } from '../components/form_volume';
 
-selectVolume();
+listenForVolumeSelection();
+
+import { listenForTimeSlotSelection } from '../components/time_slot_mission';
+
+listenForTimeSlotSelection();
+
+import { displayModalIfErrors } from '../components/mission_modal_form';
+
+displayModalIfErrors();
 
 import '../components/select_picture';
 
