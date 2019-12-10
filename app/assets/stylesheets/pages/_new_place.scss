@@ -157,3 +157,20 @@ label.trash-type-active img {
   border: 2px solid $green;
   border-radius: 5px;
 }
+
+
+.place_after-level-selection-wrapper{
+  display: flex;
+  label {
+    background-color: $light-gray;
+    color: white;
+    margin-right: 2px;
+    padding-top: 2px;
+    flex-grow: 1;
+    text-align: center;
+  }
+}
+
+label.vol2-active {
+  background-color: $green;
+}

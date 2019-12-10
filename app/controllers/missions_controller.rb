@@ -24,7 +24,35 @@ class MissionsController < ApplicationController
 
   def complete
     @mission.update(mission_update_params)
-    redirect_to profile_path
+
+    #update status mission
+    @mission.status = "completed"
+
+    # calculates the points for new mission
+
+    progress = (@mission.place.volume - @mission.volume_left)
+    if progress < 0
+      @mission.mission_points = (@mission.perceived_effort - progress) * 10
+    else
+      @mission.mission_points = (@mission.perceived_effort + progress) * 10
+    end
+
+    @mission.save!
+
+    # update total user points after mission
+    current_user.points += @mission.mission_points
+    current_user.save
+
+    # update place volume with new volume left on site estimated by volonteer
+    @mission.place.volume = @mission.volume_left
+    @mission.place.save
+
+
+    redirect_to congrats_on_completion_mission_path
+  end
+
+  def congrats_on_completion
+    @mission = Mission.find(params[:id])
   end
 
   private
@@ -38,6 +66,6 @@ class MissionsController < ApplicationController
   end
 
   def mission_update_params
-    params.require(:mission).permit(:mapmaster_photo, :participation_level, :participation_proof)
+    params.require(:mission).permit(:mapmaster_photo, :perceived_effort, :participation_proof, :volume_left)
   end
 end
