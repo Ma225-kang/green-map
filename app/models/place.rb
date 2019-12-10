@@ -10,7 +10,6 @@ class Place < ApplicationRecord
 
   STATUS = %w[new on-going clean]
   TRASHES = %w[plastic dangerous glass metal liquid organic electronic miscellaneous]
-  # TRASHES = %w[bottle can fish plastic-bottle trash fridge dangerous]
 
   CLEANUP_EQUIPMENT_NEEDED = ['gloves', 'trash bag', 'rake', 'wheelbarrow', 'litter picker', 'face mask']
   VOLUMES = 0..5
@@ -25,24 +24,35 @@ class Place < ApplicationRecord
   def equipments
     equipments = []
 
-    if trashes_on_site.include?('plastic')
-      equipments = ['trash bag', 'picker']
-    elsif trashes_on_site.include?('dangerous')
-      equipments = ['trash bag', 'gloves', 'face mask']
-    elsif trashes_on_site.include?('glass')
-      equipments = ['trash bag', 'gloves']
-    elsif trashes_on_site.include?('metal')
-      equipments = ['trash bag', 'gloves']
-    elsif trashes_on_site.include?('liquid')
-      equipments = ['trash bag', 'gloves']
-    elsif trashes_on_site.include?('organic')
-      equipments = ['trash bag', 'picker']
-    elsif trashes_on_site.include?('electronic')
-      equipments = ['wheelbarrow']
-    elsif trashes_on_site.include?('miscellaneous')
-      equipments = ['trash bag', 'gloves', 'picker']
+    trashes_on_site.each do |trash|
+      if trash.include?('plastic')
+        equipments << 'trash bag'
+        equipments << 'picker'
+      elsif trash.include?('dangerous')
+        equipments << 'trash bag'
+        equipments << 'gloves'
+        equipments << 'face mask'
+      elsif trash.include?('glass')
+        equipments << 'trash bag'
+        equipments << 'gloves'
+      elsif trash.include?('metal')
+        equipments << 'trash bag'
+        equipments << 'gloves'
+      elsif trash.include?('liquid')
+        equipments << 'trash bag'
+        equipments << 'gloves'
+      elsif trash.include?('organic')
+        equipments << 'trash bag'
+        equipments << 'picker'
+      elsif trash.include?('electronic')
+        equipments << 'wheelbarrow'
+      elsif trash.include?('miscellaneous')
+        equipments << 'trash bag'
+        equipments << 'gloves'
+        equipments << 'picker'
+      end
     end
 
-    return equipments
+    return equipments.uniq
   end
 end

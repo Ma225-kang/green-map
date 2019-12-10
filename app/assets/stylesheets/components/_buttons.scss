@@ -97,16 +97,22 @@
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 1px;
-  margin: 12px 0 20px 0;
+  margin: 0 auto;
   padding: 5px 0;
 
   &.alert-button {
+    margin: 12px 0 20px 0;
     background-color: #F2C938;
     opacity: 0.8;
   }
 
   &.complete-button {
     background-color: $green;
+    text-decoration: none;
+  }
+
+  &.mission {
+    margin: 12px 0 20px 0;
   }
 }
 
@@ -143,8 +149,7 @@
     background-color: #4DD59A;
   }
 
-  #go-on-mission-btn-show {
-    width: 200px;
-    margin-left: auto;
-    margin-right: auto;
-  }
+.go-on-mission-button {
+  text-align: center;
+  margin-bottom: 5px;
+}

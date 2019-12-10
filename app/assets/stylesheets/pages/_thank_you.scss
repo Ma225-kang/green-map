@@ -21,18 +21,20 @@
     font-size: 16px;
     margin-bottom: 15px;
     text-align: center;
+    line-height: 25px;
   }
 
   .congratulations-message {
     font-size: 18px;
     font-weight: bold;
+    line-height: 30px;
   }
 
   img {
     width: 70px;
     height: 70px;
     margin-top: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
   }
 
   a.big-button {
@@ -53,18 +55,22 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  width: 30vw;
   margin: 0 auto;
   margin-top: 20px;
   margin-bottom: 40px;
-  border: 2px dotted #F2C938;
-  padding: 5px;
-  border-radius: 10px;
+  text-align: center;
+
+  i {
+    color: #F2C938;
+  }
 
   .message-points {
-    font-size: 16px;
-    margin-bottom: 0;
+    width: 30vw;
+    border: 2px dotted #F2C938;
     padding: 5px;
+    border-radius: 10px;
+    font-size: 16px;
+    margin: 0 20px;
     color: #F2C938;
   }
 
