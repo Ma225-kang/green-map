@@ -38,38 +38,43 @@
 
 
   <!-- on going mission box -->
-  <div class="next-mission-card">
-    <% if @next_mission %>
-      <!-- img display -->
-      <div class="image-address-time">
-        <%= cl_image_tag @next_mission.place.mapmaster_photo, alt: "#{@next_mission.place.address}", class:'next-mission-photo' %>
-      <!-- section current mission info -->
-        <div class="address-time">
-          <!-- mission name -->
-          <!-- date -->
-          <h3><%= @next_mission.date %></h3>
-          <!-- time_slot -->
-          <p>- <%= @next_mission.time_slot %> -</p>
-          <h4><i class="fas fa-map-marker-alt"></i><%= @next_mission.place.address %></h4>
+  <div class="global-next-mission-card">
+    <div class="next-mission-card-first">
+      <% if @next_mission %>
+        <!-- img display -->
+        <div class="image-address-time">
+          <%= cl_image_tag @next_mission.place.mapmaster_photo, alt: "#{@next_mission.place.address}", class:'next-mission-photo' %>
+        <!-- section current mission info -->
+          <div class="address-time">
+            <!-- mission name -->
+            <!-- date -->
+            <h3><%= @next_mission.date %></h3>
+            <!-- time_slot -->
+            <p>- <%= @next_mission.time_slot %> -</p>
+          </div>
+        </div>
+        <div class="next-mission-buttons">
+          <!-- button more info redirecting towards show of place -->
+          <%= link_to "more info", @next_mission_path, class:'nav-btn green-btn' %>
+          <!--link_to @next_mission.place_path -->
+
+        <!-- section action -->
+        <!-- button completed redirecting towards the end of mission -->
+
+
+        <%= link_to "complete", review_mission_path(@next_mission), class:'nav-btn green-btn'%>
+
+        <!-- button cancel delete mission and delete user_id from the place db -->
+        <%= link_to "cancel", cancel_mission_path(@next_mission), method: :patch, class:'nav-btn orange-btn'%>
+        </div>
+      <% end %>
+      <div class="next-mission-card-second">
+        <div class="next-mission-place-address">
+          <i class="fas fa-map-marker-alt"></i> <%= @next_mission.place.address %></h4>
         </div>
       </div>
-      <div class="next-mission-buttons">
-        <!-- button more info redirecting towards show of place -->
-        <%= link_to "more info", @next_mission_path, class:'nav-btn green-btn' %>
-        <!--link_to @next_mission.place_path -->
-
-      <!-- section action -->
-      <!-- button completed redirecting towards the end of mission -->
-
-
-      <%= link_to "complete", review_mission_path(@next_mission), class:'nav-btn green-btn'%>
-
-      <!-- button cancel delete mission and delete user_id from the place db -->
-      <%= link_to "cancel", cancel_mission_path(@next_mission), method: :patch, class:'nav-btn orange-btn'%>
-      </div>
-    <% end %>
+    </div>
   </div>
-
 <!-- past missions data (scroll)-->
 
     <!-- past mission card -->
@@ -78,23 +83,44 @@
       <p>You don't have a mission history yet.</p>
       <p>Go on a mission or locate a point to see something here </p>
     <% else %>
+
+
+
+    <div class="mission-completed-cards">
       <% @user.missions do |mission| %>
+      <div class="one-place-profile-card">
         <% if @user.mission.status == "completed" %>
           <h1>Mission <%= mission.date %>
           <%= mission.time_slot %></h1>
-           <%= cl_image_tag mission.mapmaster_photo, class: 'memorypic'%>
+          <div class="memorypic-container">
+            <%= cl_image_tag mission.mapmaster_photo, class: 'memorypic'%>
+          </div>
           <%= mission.status %>
           <%= mission.place.volume %>
           <%= mission.place.adress %>
         <% end %>
+      </div>
       <% end %>
+    </div>
+
+
+
+    <div class="place-profile-cards">
       <% @user.places.each do |place| %>
-        <h1>Location<%= place.created_at %></h1>
-        <%= cl_image_tag place.mapmaster_photo, class: 'memorypic' %>
+      <div class="one-place-profile-card">
+        <h1><em>Location</em> <%= place.created_at %></h1>
+        <div class="memorypic-container">
+          <%= cl_image_tag place.mapmaster_photo, class: 'memorypic' %>
+        </div>
         <%= place.status %>
         <%= place.volume %>
         <%= place.address%>
+      </div>
       <% end %>
+    </div>
+
+
+
     <% end %>
   </div>
 
