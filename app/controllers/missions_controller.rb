@@ -45,11 +45,11 @@ class MissionsController < ApplicationController
     @mission.place.save
 
 
-    redirect_to profile_path
+    redirect_to congrats_on_completion_mission_path
   end
 
   def congrats_on_completion
-
+    @mission = Mission.find(params[:mission_id])
   end
 
   private
