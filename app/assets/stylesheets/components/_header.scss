@@ -3,6 +3,7 @@
   height: 92px;
   background-size: cover;
   background-position: center;
+  opacity: 0.7;
 
   &.update-mission {
     background-image: image-url('headers/update-mission.jpg');
@@ -41,7 +42,7 @@
     font-size: 24px;
     color: white;
     text-align: center;
-    padding-top: 40px;
+    padding-top: 33px;
     letter-spacing: 0.2em;
   }
 }

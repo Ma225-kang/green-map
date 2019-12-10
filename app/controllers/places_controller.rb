@@ -1,9 +1,9 @@
 class PlacesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show, :new]
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     @places = Place.all
-    @places = @places.order("updated_at DESC")
+    @places = @places.order("created_at DESC")
 
     if params[:query].present?
       @places = Place.search_name_and_description(params[:query]).geocoded
