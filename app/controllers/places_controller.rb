@@ -34,6 +34,7 @@ class PlacesController < ApplicationController
     @place.status = "new"
     @place.mapmaster = current_user
     @place.mapmaster.points += 10
+    @place.mapmaster.save
 
     # COOKIE STUFF
     @place.longitude = cookies[:longitude]

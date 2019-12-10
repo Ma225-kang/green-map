@@ -290,7 +290,7 @@ first_mission = Mission.create!(
   captaingreen: marie_noelle,
   time_slot: "morning",
   mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place33.jpeg")),
-  participation_level: 0,
+  perceived_effort: 0,
   status: "planned",
 
 
@@ -303,7 +303,7 @@ second_mission = Mission.create!(
   captaingreen: ophelie,
   time_slot: "afternoon",
   mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place34.jpeg")),
-  participation_level: 1,
+  perceived_effort: 1,
   status: "on-going",
 
 
@@ -315,7 +315,7 @@ third_mission = Mission.create!(
   captaingreen: cecile,
   time_slot: "all-day",
   mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place35.jpeg")),
-  participation_level: 2,
+  perceived_effort: 2,
   status: "cancelled",
 
 
@@ -327,7 +327,7 @@ fourth_mission = Mission.create!(
   captaingreen: nicolas,
   time_slot: "morning",
   mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place36.jpeg")),
-  participation_level: 3,
+  perceived_effort: 3,
   status: "completed",
 
 
@@ -339,7 +339,7 @@ fifth_mission = Mission.create!(
   captaingreen: maylis,
   time_slot: "afternoon",
   mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place37.jpeg")),
-  participation_level: 4,
+  perceived_effort: 4,
   status: "planned",
 
 
@@ -351,7 +351,7 @@ sixth_mission = Mission.create!(
   captaingreen: marie_noelle,
   time_slot: "all-day",
   mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place38.jpeg")),
-  participation_level: 5,
+  perceived_effort: 5,
   status: "on-going",
 
 
@@ -363,7 +363,7 @@ seventh_mission = Mission.create!(
   captaingreen: ophelie,
   time_slot: "morning",
   mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place39.jpeg")),
-  participation_level: 0,
+  perceived_effort: 0,
   status: "cancelled",
 
 
@@ -376,7 +376,7 @@ eighth_mission = Mission.create!(
   captaingreen: cecile,
   time_slot: "afternoon",
   mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place40.jpeg")),
-  participation_level: 1,
+  perceived_effort: 1,
   status: "completed",
 
 
@@ -388,7 +388,7 @@ nineth_mission = Mission.create!(
   captaingreen: nicolas,
   time_slot: "all-day",
   mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place41.jpeg")),
-  participation_level: 2,
+  perceived_effort: 2,
   status: "planned",
 
 
@@ -400,7 +400,7 @@ tenth_mission = Mission.create!(
   captaingreen: maylis,
   time_slot: "morning",
   mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place42.jpeg")),
-  participation_level: 3,
+  perceived_effort: 3,
   status: "on-going",
 
 
@@ -413,7 +413,7 @@ eleventh_mission = Mission.create!(
   captaingreen: marie_noelle,
   time_slot: "afternoon",
   mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place43.jpeg")),
-  participation_level: 4,
+  perceived_effort: 4,
   status: "on-going",
 
 
@@ -425,7 +425,7 @@ twelveth_mission = Mission.create!(
   captaingreen: ophelie,
   time_slot: "all-day",
   mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place44.jpeg")),
-  participation_level: 5,
+  perceived_effort: 5,
   status: "completed",
 
 
@@ -438,7 +438,7 @@ eleventh_mission = Mission.create!(
   captaingreen: ophelie,
   time_slot: "afternoon",
   mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place43.jpeg")),
-  participation_level: 2,
+  perceived_effort: 2,
   status: "completed",
 )
 
