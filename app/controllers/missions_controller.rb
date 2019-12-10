@@ -25,11 +25,17 @@ class MissionsController < ApplicationController
   def complete
     @mission.update(mission_update_params)
 
-    current_user.points += @mission.place.volume * @mission.participation_level
+    # calculates the points for new mission
+    @mission.new_points = (perceived_effort + (@mission.place.volume * @mission.volume_left))* 10
+
+    # update total user points after mission
+    current_user.points += current_user.mission.mission_points
     current_user.save
-    # attention updated directly from the completion form
-    # @mission.place.volume = updated
-    @mission.place.save
+
+    # update place volume with new volume left on site estimated by volonteer
+    @mission.place.volume = 0
+    @mission.place.volume = mission.volume_left
+    @mission.save
 
     redirect_to profile_path
   end
