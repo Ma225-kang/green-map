@@ -25,6 +25,9 @@ class MissionsController < ApplicationController
   def complete
     @mission.update(mission_update_params)
 
+    #update status mission
+    @mission.status = "completed"
+
     # calculates the points for new mission
 
     progress = (@mission.place.volume - @mission.volume_left)
@@ -63,6 +66,6 @@ class MissionsController < ApplicationController
   end
 
   def mission_update_params
-    params.require(:mission).permit(:mapmaster_photo, :perceived_effort, :participation_proof, :volume_)
+    params.require(:mission).permit(:mapmaster_photo, :perceived_effort, :participation_proof, :volume_left)
   end
 end
