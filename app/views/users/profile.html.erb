@@ -36,31 +36,34 @@
 
   <!-- on going mission box -->
   <div class="next-mission-card">
-    <% if @next_mission %>
-      <!-- img display -->
-      <div class="image-address-time">
-        <%= cl_image_tag @next_mission.place.mapmaster_photo, alt: "#{@next_mission.place.address}", class:'next-mission-photo' %>
-      <!-- section current mission info -->
-        <div class="address-time">
-          <!-- mission name -->
-          <!-- date -->
-          <h3><%= @next_mission.date %></h3>
-          <!-- time_slot -->
-          <p>- <%= @next_mission.time_slot %> -</p>
-          <h4><i class="fas fa-map-marker-alt"></i><%= @next_mission.place.address %></h4>
+    <% if @next_missions %>
+        <h3>Your next missions </h3>
+      <% @next_missions.each do |next_mission| %>
+        <!-- img display -->
+        <div class="image-address-time">
+          <%= cl_image_tag next_mission.place.mapmaster_photo, alt: "#{next_mission.place.address}", class:'next-mission-photo' %>
+        <!-- section current mission info -->
+          <div class="address-time">
+            <!-- mission name -->
+            <!-- date -->
+            <h3><%= next_mission.date %></h3>
+            <!-- time_slot -->
+            <p>- <%= next_mission.time_slot %> -</p>
+            <h4><i class="fas fa-map-marker-alt"></i><%= next_mission.place.address %></h4>
+          </div>
         </div>
-      </div>
-      <div class="next-mission-buttons">
-        <!-- button more info redirecting towards show of place -->
+        <div class="next-mission-buttons">
+          <!-- button more info redirecting towards show of place -->
 
-        <%= link_to "more info", @next_mission_path, class:'nav-btn green-btn' %>
-        <!--link_to @next_mission.place_path -->
-      <!-- section action -->
-      <!-- button completed redirecting towards the end of mission -->
-      <%= link_to "complete", review_mission_path(@next_mission), class:'nav-btn green-btn'%>
-      <!-- button cancel delete mission and delete user_id from the place db -->
-      <%= link_to "cancel", cancel_mission_path(@next_mission), method: :patch, class:'nav-btn orange-btn'%>
-      </div>
+          <%= link_to "more info", mission_path(next_mission), class:'nav-btn green-btn' %>
+          <!--link_to @next_mission.place_path -->
+        <!-- section action -->
+        <!-- button completed redirecting towards the end of mission -->
+        <%= link_to "complete", review_mission_path(next_mission), class:'nav-btn green-btn'%>
+        <!-- button cancel delete mission and delete user_id from the place db -->
+        <%= link_to "cancel", cancel_mission_path(next_mission), method: :patch, class:'nav-btn orange-btn'%>
+        </div>
+      <% end %>
     <% end %>
   </div>
 

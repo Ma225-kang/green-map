@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def profile
     @user = current_user
-    @next_mission = current_user.missions.where("date >= ? AND status IN (?)", Date.today, ['on-going', 'planned']).order(:date).first
+    @next_missions = current_user.missions.where("date >= ? AND status NOT IN (?) OR status = ?", Date.today, ['completed', 'cancelled'], nil).order(:date)
     if @user.points <= 0 && @user.points <= 10
       @user.level = "rookie"
     elsif @user.points > 10 && @user.points <= 50
