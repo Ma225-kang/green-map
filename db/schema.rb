@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_10_092517) do
+ActiveRecord::Schema.define(version: 2019_12_10_133910) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,7 +26,6 @@ ActiveRecord::Schema.define(version: 2019_12_10_092517) do
     t.date "date"
     t.string "time_slot"
     t.string "mapmaster_photo"
-    t.string "status"
     t.bigint "place_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -35,6 +34,7 @@ ActiveRecord::Schema.define(version: 2019_12_10_092517) do
     t.integer "volume_left"
     t.integer "mission_points"
     t.integer "perceived_effort"
+    t.string "status", default: "planned"
     t.index ["captaingreen_id"], name: "index_missions_on_captaingreen_id"
     t.index ["place_id"], name: "index_missions_on_place_id"
   end

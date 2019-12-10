@@ -3,7 +3,7 @@ class Mission < ApplicationRecord
   belongs_to :place
 
   TIME = %w[morning afternoon all-day]
-  STATUS = %w[planned on-going cancelled completed]
+  STATUS = %w[planned cancelled completed]
 
   validates :date, presence: true, on: :create
   validates :time_slot, presence: true, inclusion: { in: TIME }, on: :create
