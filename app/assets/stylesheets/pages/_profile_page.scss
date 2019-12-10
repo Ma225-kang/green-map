@@ -1,10 +1,12 @@
 .profile-page {
 
   .banner {
+
     padding: 20px;
     display: flex;
     justify-content: space-between;
-    background-image: asset-url("images/headers/profile.png");
+    background-image: image-url('headers/profile.png');
+    background-size: cover;
 
     .logo {
       height: 80px;
@@ -23,7 +25,7 @@
     .avatar {
       height: 60px;
       width: 60px;
-      right: 0px;
+      right: 20px;
     }
 
     .profile-medal {
@@ -35,25 +37,64 @@
       width: 30px;
       position: relative;
       top: 15px;
-      right: 15px;
+      right: 40px;
 
     }
   }
 
-  .global-next-mission-card {
-
-  }
 
   .profile-icons-info {
-    padding: 20px 20px 5px 20px;
+    padding: 10px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, .10);
     margin: 10px;
     background-color: white;
     font-size: 35px;
     font-weight: 600;
 
+  }
+  .profile-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+
+    img {
+      margin: 10px;
+    }
+  }
+
+  .right-part-next-mission {
+
+  }
+
+  .global-next-mission-card {
+    text-align: center;
+    background-color: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, .10);
+    padding: 10px;
+    margin: 10px;
+
+    h3 {
+      font-size: 20px;
+      letter-spacing: 2px;
+      font-weight: bold;
+      margin-bottom: 0;
+
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .day-time-slot {
+    margin-top: 10px;
+    text-align: justify;
+    p {
+      margin: 0;
+    }
   }
 
   .next-mission-card-first {
@@ -67,11 +108,17 @@
     background-color: white;
   }
 
-  .image-address-time {
-    padding: 15px 0px 0px 10px;
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    height: 190px;
+  .next-mission-photo-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+
+  }
+
+  .next-mission-image {
+    // padding: 15px 0px 0px 10px;
+    // display: grid;
+    // grid-template-rows: 1fr 1fr;
     width: 150px;
 
     .address-time {
@@ -109,7 +156,7 @@
   .next-mission-buttons {
     display: flex;
     flex-direction: column;
-    padding: 25px 3px;
+    // padding: 25px 3px;
     text-align: center;
     align-items: center;
 
@@ -129,6 +176,10 @@
 
   }
 
+  .next-mission-options {
+     padding: 0;
+     margin: 0 10px 15px 10px;
+  }
 
   .next-mission-card-second {
     padding: 10px 0px 10px 10px;
@@ -143,6 +194,12 @@
 
   .next-mission-place-address {
     width: 100%;
+    border-bottom: 1px solid #C4C4C4;
+    padding: 10px 0;
+
+    p {
+      margin-bottom: 0;
+    }
   }
 
   .past_mission_card {
