@@ -3,12 +3,22 @@
   margin: 0 auto;
   margin-top: 3px;
   background: linear-gradient(180deg, #FFFFFF 0%, #D3D3D3, #F1F1F1);
+
+  .link-to-place {
+    text-decoration: none;
+    color: black;
+  }
+
+  :active {
+    text-decoration: none;
+    color: black;
+  }
+
+  :hover {
+    text-decoration: none;
+  }
 }
 
-.link-to-place {
-  text-decoration: none;
-  color: black;
-}
 
 .card-place-infos {
   display: flex;

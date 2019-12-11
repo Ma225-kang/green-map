@@ -2,26 +2,29 @@
   <!-- banner profile -->
     <!-- photo de profile -->
   <div class="banner">
+    <%= link_to root_path do %>
+      <%= image_tag "icons/Logo.png", class:"logo" %>
+    <% end %>
 
-    <%= image_tag "icons/Logo.png", alt: "logo" , class:"logo"  %>
-      <div class="avatar-profile-medal">
-        <%= cl_image_tag @user.avatar, alt: "#{@user}'s avatar" , class:"avatar" %>
-        <!-- badge de level -->
-        <div class="profile-medal">
-          <% if @user.level == "legend" %>
-            <%= image_tag "icons/legend_icon.png"%>
-          <% elsif @user.level == "hero" %>
-            <%= image_tag "icons/hero_icon.png"%>
-          <% elsif @user.level == "champion" %>
-            <%= image_tag "icons/badge_icon.png"%>
-          <% elsif @user.level == "apprentice" %>
-            <%= image_tag "icons/apprentice_icon.png"%>
-          <% else @user.level == "rookie"%>
-            <%= image_tag "icons/rookie_icon.png"%>
-          <% end %>
-        </div>
+
+    <div class="avatar-profile-medal">
+      <%= cl_image_tag @user.avatar, alt: "#{@user}'s avatar" , class:"avatar" %>
+      <!-- badge de level -->
+      <div class="profile-medal">
+        <% if @user.level == "legend" %>
+          <%= image_tag "icons/legend_icon.png"%>
+        <% elsif @user.level == "hero" %>
+          <%= image_tag "icons/hero_icon.png"%>
+        <% elsif @user.level == "champion" %>
+          <%= image_tag "icons/badge_icon.png"%>
+        <% elsif @user.level == "apprentice" %>
+          <%= image_tag "icons/apprentice_icon.png"%>
+        <% else @user.level == "rookie"%>
+          <%= image_tag "icons/rookie_icon.png"%>
+        <% end %>
       </div>
-   </div>
+    </div>
+  </div>
 
 
   <div class="profile-icons-info">
@@ -46,12 +49,12 @@
 
   <div class="global-next-mission-card">
     <% if @next_missions %>
-      <h3>Your next mission</h3>
+      <h3>Your next missions</h3>
       <!-- <p class="text-center">at</p> -->
-        <% @next_missions.each do |next_mission| %>
-          <div class="next-mission-place-address">
-            <p><i class="fas fa-map-marker-alt"></i> <%= next_mission.place.address %></p>
-          </div>
+      <% @next_missions.each do |next_mission| %>
+        <div class="next-mission-place-address">
+          <p><i class="fas fa-map-marker-alt"></i> <%= next_mission.place.address %></p>
+        </div>
 
         <div class="next-mission-photo-buttons">
           <!-- img display -->
@@ -80,11 +83,9 @@
         </div>
       <% end %>
     <% end %>
-
   </div>
 
-
-<!-- past missions data (scroll)-->
+  <!-- past missions data (scroll)-->
 
     <!-- past mission card -->
   <div class="past_mission_card">
@@ -93,41 +94,41 @@
       <p>Go on a mission or locate a point to see something here </p>
     <% else %>
 
-    <div class="mission-completed-cards">
-
-      <% @user.missions.each do |mission| %>
-      <div class="one-place-profile-card">
-        <% if mission.status == "completed" %>
-        <div class="mission_done">
-          <h3>Mission <%= mission.date %>
-          <%= mission.time_slot %></h3>
-           <div class="memorypic-container">
-           <%= cl_image_tag mission.mapmaster_photo, class: 'memorypic'%>
-           <%= mission.place.volume %>
-          <%= mission.place.address %>
-        </div>
+      <div class="mission-completed-cards">
+        <h3>Your past missions</h3>
+        <% @user.missions.each do |mission| %>
+          <div class="one-place-profile-card">
+            <% if mission.status == "completed" %>
+              <div class="mission_done">
+                <h3><i class="far fa-calendar-alt"></i> <%= mission.date.strftime("%d %m %Y") %>
+                <%= mission.time_slot %></h3>
+                <div class="memorypic-container">
+                  <%= cl_image_tag mission.mapmaster_photo, class: 'memorypic'%>
+                </div>
+                 <%#= mission.place.volume %>
+                <p><i class="fas fa-map-marker-alt"></i> <%= mission.place.address %></p>
+              </div>
+            <% end %>
+          </div>
         <% end %>
       </div>
-      <% end %>
-    </div>
 
 
 
-    <div class="place-profile-cards">
-      <% @user.places.each do |place| %>
-      <div class="one-place-profile-card">
-        <h1><em>Location</em> <%= place.created_at %></h1>
-        <div class="memorypic-container">
-          <%= cl_image_tag place.mapmaster_photo, class: 'memorypic' %>
-        </div>
-        <%= place.status %>
-        <%= place.volume %>
-        <%= place.address%>
+      <div class="place-profile-cards">
+        <% @user.places.each do |place| %>
+          <div class="one-place-profile-card">
+            <h1><i class="far fa-calendar-alt"></i> <%= place.created_at.strftime("%d %m %Y") %></h1>
+            <div class="memorypic-container">
+              <%= cl_image_tag place.mapmaster_photo, class: 'memorypic' %>
+            </div>
+            <div class="volume-address">
+            <%#= place.volume %>
+            <p><i class="fas fa-map-marker-alt"></i> <%= place.address %></p>
+            </div>
+          </div>
+        <% end %>
       </div>
-      <% end %>
-    </div>
-
     <% end %>
   </div>
-
- </div>
+</div>
