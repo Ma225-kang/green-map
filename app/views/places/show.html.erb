@@ -24,13 +24,36 @@
 
     <div class="show-place-details">
       <p class="show-place-address"><i class="fas fa-map-marker-alt"></i> <%= @place.address %></p>
-      <% if @place.status == 'new' %>
-        <p class="new-status"> <i class="fas fa-rocket"></i> New mission waiting for you! </p>
-      <% else %>
-         <p class="on-going-status"> <i class="fas fa-fire"></i> On-going mission, don't miss out! </p>
+
+      <% if @place.volume == 1 %>
+        <div class="trash-level-message-box">
+          <%= image_tag "icons/level/level_one_trash.png", class: "icon-level-of-trash" %>
+        </div>
+
+      <% elsif @place.volume == 2 %>
+        <div class="trash-level-message-box">
+          <%= image_tag "icons/level/level_two_trash.png", class: "icon-level-of-trash" %>
+        </div>
+
+      <% elsif @place.volume == 3 %>
+        <div class="trash-level-message-box">
+          <%= image_tag "icons/level/level_three_trash.png", class: "icon-level-of-trash" %>
+        </div>
+
+      <% elsif @place.volume == 4 %>
+        <div class="trash-level-message-box">
+          <%= image_tag "icons/level/level_four_trash.png", class: "icon-level-of-trash" %>
+        </div>
+
+      <% elsif @place.volume == 5 %>
+        <div class="trash-level-message-box">
+          <%= image_tag "icons/level/level_five_trash.png", class: "icon-level-of-trash" %>
+        </div>
+
       <% end %>
-      <!-- <p class="status-place"><i class="fas fa-battery-three-quarters"></i> <%= @place.status %> mission</p> -->
+
     </div>
+    <hr>
 
     <div class="type-of-trashes">
       <p class="watch-out-message">Watch out!</p>
@@ -41,6 +64,8 @@
         <%= image_tag "icons/trash-types/#{trash.parameterize(separator: '_')}.svg", class: "show-icon-trash" %>
       <% end %>
     </div>
+
+    <hr>
 
     <!-- material suggestions -->
     <div class="bring-bloc">
@@ -104,13 +129,12 @@
             <% end %>
 
           </div>
+        </div>
       </div>
-    </div>
+  </div>
 </div>
 
     <!-- safety tips -->
 <div class="safety">
   <p>Because we<i class="fas fa-heart"></i> and care about you, please consider the following safety recommendations. Avoid contact with chemicals without gloves and be careful with sharp objects.</p>
 </div>
-
-

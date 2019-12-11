@@ -25,35 +25,40 @@
   <!-- <div class="card-index-place-infos"> -->
     <% @places.each do |place| %>
 
-      <div class="card-place-infos">
         <%= link_to place_path(place[:id]), class: "link-to-place" do %>
+          <div class="card-place-infos">
+            <div>
+              <%= cl_image_tag place.mapmaster_photo, alt: "Photo of the site", class: "image-index" %>
+            </div>
 
-        <%= cl_image_tag place.mapmaster_photo, alt: "Photo of the site", class: "img" %>
-        <div class="participants">
-          <%= image_tag "icons/team_icon.svg", class: "group" %>
-          <p class="number-of-participants"><strong><%= place.missions.count %></strong> Captain Green</p>
-        </div>
-        <p><i class="fas fa-map-marker-alt"></i> <%= place.address %></p>
+            <div class="card-place-details">
+              <p class="address-place"><i class="fas fa-map-marker-alt"></i> <%= place.address %></p>
 
+              <div class="participants">
+                <%= image_tag "icons/team_icon.svg", class: "group" %>
+                <p class="number-of-participants"><strong><%= place.missions.count %></strong> Captain Green</p>
+              </div>
 
-        <div class="icons-card">
-          <!-- condition : the volume emoticon in green -->
-          <% if 1 <= place.volume && place.volume <= 2 %>
-            <%= image_tag "icons/green_bag.png", class: "icon" %>
-            <%= image_tag "icons/grey_car_icon.svg", class: "icon"  %>
-            <%= image_tag "icons/grey_truck_icon.png", class: "icon"  %>
+              <div class="icons-volume-place">
+                <!-- condition : the volume emoticon in green -->
+                <% if place.volume == 1  %>
+                  <%= image_tag "icons/level/level_one_trash.png", class: "icon-level-of-trash" %>
 
-          <% elsif 3 <= place.volume && place.volume <= 4 %>
-            <%= image_tag "icons/grey_backpack_icon.png", class: "icon" %>
-            <%= image_tag "icons/green_car_icon.png", class: "icon" %>
-            <%= image_tag "icons/grey_truck_icon.png", class: "icon"  %>
-          <% else %>
-            <%= image_tag "icons/grey_backpack_icon.png", class: "icon" %>
-            <%= image_tag "icons/grey_car_icon.svg", class: "icon"  %>
-            <%= image_tag "icons/green_truck_icon.png", class: "icon" %>
-          <% end %>
-        </div>
+                <% elsif place.volume == 2  %>
+                  <%= image_tag "icons/level/level_two_trash.png", class: "icon-level-of-trash" %>
+
+                <% elsif place.volume == 3  %>
+                  <%= image_tag "icons/level/level_three_trash.png", class: "icon-level-of-trash" %>
+
+                <% elsif place.volume == 4  %>
+                  <%= image_tag "icons/level/level_four_trash.png", class: "icon-level-of-trash" %>
+
+                <% elsif place.volume == 5  %>
+                  <%= image_tag "icons/level/level_five_trash.png", class: "icon-level-of-trash" %>
+                <% end %>
+              </div>
+            </div>
+          </div>
         <% end %>
-      </div>
     <% end %>
 </div>

@@ -1,0 +1,112 @@
+.form-sign-up {
+  margin: 0 auto;
+  background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+  height: 77vh;
+  display: flex;
+  align-items: center;
+
+  h2 {
+  font-size: 24px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: bold;
+  }
+}
+
+.sign-up-user {
+  width: 95vw;
+  height: 72vh;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+
+  .details-user {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #user_first_name, #user_last_name, #user_city, #user_zip_code, #user_email, #user_password, #user_password_confirmation {
+    margin-bottom: 10px;
+    padding-right: 5px;
+    border: none;
+    border-bottom: 1px solid gray;
+    padding-left: 0;
+  }
+
+  #user_first_name, #user_last_name, #user_city, #user_zip_code {
+    width: 145px;
+    height: 30px;
+  }
+
+  #user_email, #user_password, #user_password_confirmation {
+    width: 190px;
+    height: 30px;
+    margin-left: 64px;
+  }
+
+  #user_email {
+    margin-top: 25px;
+    margin-bottom: 20px;
+  }
+
+  .text-muted {
+    margin-left: 64px;
+    margin-bottom: 20px;
+  }
+
+  input:focus::-webkit-input-placeholder {
+    color: transparent;
+  }
+
+  input:focus:-moz-placeholder {
+    color: transparent;
+  }
+
+  .avatar-sign-up {
+    width: 50vw;
+    margin: 10px auto;
+    display: flex;
+    align-items: center;
+    border: 0.5px solid $light-gray;
+    padding: 5px 25px;
+    border-radius: 10px;
+    text-align: center;
+
+    label {
+      font-size: 12px;
+      font-style: italic;
+      margin-right: 20px;
+      margin-top: 10px;
+    }
+  }
+
+  .avatar-sign-up-picture {
+    display: flex;
+    width: 6vh;
+    height: 6vh;
+    border-radius: 50%;
+    background-image: image-url('icons/profile_sign_up.png');
+    background-size: cover;
+    background-position: center;
+  }
+
+  a {
+    color: gray;
+    font-size: 15px;
+    margin-bottom: 0;
+    margin-left: 9px;
+    line-height: 15px;
+    text-decoration: underline;
+  }
+
+  a:visited, a:active {
+    color: gray;
+    cursor: pointer;
+  }
+
+  .form-actions {
+    text-align: center;
+  }
+}
