@@ -93,11 +93,12 @@
       <p>You don't have a mission history yet.</p>
       <p>Go on a mission or locate a point to see something here </p>
     <% else %>
+
       <div class="mission-completed-cards">
         <h3>Your past missions</h3>
-        <% @user.missions do |mission| %>
+        <% @user.missions.each do |mission| %>
           <div class="one-place-profile-card">
-            <% if @user.mission.status == "completed" %>
+            <% if mission.status == "completed" %>
               <div class="mission_done">
                 <h3><i class="far fa-calendar-alt"></i> <%= mission.date.strftime("%d %m %Y") %>
                 <%= mission.time_slot %></h3>
@@ -105,7 +106,7 @@
                   <%= cl_image_tag mission.mapmaster_photo, class: 'memorypic'%>
                 </div>
                  <%#= mission.place.volume %>
-                <p><i class="fas fa-map-marker-alt"></i> <%= mission.place.adress %></p>
+                <p><i class="fas fa-map-marker-alt"></i> <%= mission.place.address %></p>
               </div>
             <% end %>
           </div>

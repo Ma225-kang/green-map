@@ -3,7 +3,6 @@ class PlacesController < ApplicationController
 
   def index
 
-
     if params[:search].present?
       @places = Place.near(params[:search]).geocoded.not_clean_yet.order("created_at DESC")
     else

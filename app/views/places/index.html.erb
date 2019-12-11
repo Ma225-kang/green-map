@@ -1,3 +1,4 @@
+<!-- put the search bar here after ! -->
 <div class="header index-places">
   <!-- <h1 class="find-places">FIND PLACES</h1> -->
   <%= form_tag places_path, method: :get do %>
@@ -16,49 +17,53 @@
     </div>
   <% end %>
 </div>
+<!-- if search results are empty  -->
+<% if @places.empty? %>
+  <div class="sorry-box">
+    <span class="sorry-message"><%= "Sorry, place not found!" %> <i class="far fa-sad-tear"></i></span>
+  </div>
+<% else %>
+  <!-- cards -->
+  <div class="global-places-cards">
 
-<!-- put the search bar here after ! -->
+    <!-- <div class="card-index-place-infos"> -->
+      <% @places.each do |place| %>
 
-<!-- cards -->
-<div class="global-places-cards">
-
-  <!-- <div class="card-index-place-infos"> -->
-    <% @places.each do |place| %>
-
-        <%= link_to place_path(place[:id]), class: "link-to-place" do %>
-          <div class="card-place-infos">
-            <div>
-              <%= cl_image_tag place.mapmaster_photo, alt: "Photo of the site", class: "image-index" %>
-            </div>
-
-            <div class="card-place-details">
-              <p class="address-place"><i class="fas fa-map-marker-alt"></i> <%= place.address %></p>
-
-              <div class="participants">
-                <%= image_tag "icons/team_icon.svg", class: "group" %>
-                <p class="number-of-participants"><strong><%= place.missions.count %></strong> Captain Green</p>
+          <%= link_to place_path(place[:id]), class: "link-to-place" do %>
+            <div class="card-place-infos">
+              <div>
+                <%= cl_image_tag place.mapmaster_photo, alt: "Photo of the site", class: "image-index" %>
               </div>
 
-              <div class="icons-volume-place">
-                <!-- condition : the volume emoticon in green -->
-                <% if place.volume == 1  %>
-                  <%= image_tag "icons/level/level_one_trash.png", class: "icon-level-of-trash" %>
+              <div class="card-place-details">
+                <p class="address-place"><i class="fas fa-map-marker-alt"></i> <%= place.address %></p>
 
-                <% elsif place.volume == 2  %>
-                  <%= image_tag "icons/level/level_two_trash.png", class: "icon-level-of-trash" %>
+                <div class="participants">
+                  <%= image_tag "icons/team_icon.svg", class: "group" %>
+                  <p class="number-of-participants"><strong><%= place.missions.count %></strong> Captain Green</p>
+                </div>
 
-                <% elsif place.volume == 3  %>
-                  <%= image_tag "icons/level/level_three_trash.png", class: "icon-level-of-trash" %>
+                <div class="icons-volume-place">
+                  <!-- condition : the volume emoticon in green -->
+                  <% if place.volume == 1  %>
+                    <%= image_tag "icons/level/level_one_trash.png", class: "icon-level-of-trash" %>
 
-                <% elsif place.volume == 4  %>
-                  <%= image_tag "icons/level/level_four_trash.png", class: "icon-level-of-trash" %>
+                  <% elsif place.volume == 2  %>
+                    <%= image_tag "icons/level/level_two_trash.png", class: "icon-level-of-trash" %>
 
-                <% elsif place.volume == 5  %>
-                  <%= image_tag "icons/level/level_five_trash.png", class: "icon-level-of-trash" %>
-                <% end %>
+                  <% elsif place.volume == 3  %>
+                    <%= image_tag "icons/level/level_three_trash.png", class: "icon-level-of-trash" %>
+
+                  <% elsif place.volume == 4  %>
+                    <%= image_tag "icons/level/level_four_trash.png", class: "icon-level-of-trash" %>
+
+                  <% elsif place.volume == 5  %>
+                    <%= image_tag "icons/level/level_five_trash.png", class: "icon-level-of-trash" %>
+                  <% end %>
+                </div>
               </div>
             </div>
-          </div>
-        <% end %>
-    <% end %>
-</div>
+          <% end %>
+      <% end %>
+  </div>
+<% end %>
