@@ -7,6 +7,8 @@
 
     <div class="banner-home-page-title">
       <h1>Green Map</h1>
+    </div>
+    <div class="profile-icon-home-container">
       <%= link_to new_user_session_path, class: "profile_icon_home" do %>
         <%= image_tag "icons/profile_icon.png" %>
       <% end %>
@@ -32,7 +34,7 @@
       <h3>Want to alert ?</h3>
         <%= image_tag "icons/alert_page_icon.png", class: 'background-icon' %>
         <h4>Be a MapMaster !</h4>
-          <p>See something wrong ? warn the  CaptainsGreen to fly to the rescue !</p>
+          <p class="description-app">See something wrong ? warn the  CaptainsGreen to fly to the rescue !</p>
           <%#= link_to "ALERT", geolocate_user_places_path, class: "nav-btn orange-btn" %>
           <%= link_to "ALERT", geolocate_user_places_path, class: "nav-btn orange-btn buttons-home" %>
     </div>

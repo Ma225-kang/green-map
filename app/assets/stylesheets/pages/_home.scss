@@ -18,7 +18,7 @@
 
 .banner-home-page {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 3fr 1fr;
   height: 80px;
   padding: 10px 20px;
 
@@ -27,10 +27,18 @@
   }
 
   .banner-home-page-title {
-    padding-top: 30px;
+    padding: 30px 0 0 10px;
     text-align: center;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+
+  }
+
+  .profile-icon-home-container {
+    height: 70px;
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 0;
   }
 
   .logo-home {
@@ -124,8 +132,13 @@
   grid-gap: 3px;
   grid-template-columns: 1fr;
   // box-shadow: 0px 4px 6px rgba(0, 0, 0, .10);
+
   width: 95%;
 
+  img {
+    margin: 0 auto;
+
+  }
 
   h3 {
     color: #808080;
@@ -145,6 +158,7 @@
   .description-app {
     font-weight: light;
     font-size: 13px;
+    min-height: 100px;
   }
 
   .background-icon {
@@ -152,9 +166,6 @@
     height: 60px;
     margin-bottom: 20px;
 
-    img {
-      margin: 0 auto;
-    }
   }
 
   h4 {
