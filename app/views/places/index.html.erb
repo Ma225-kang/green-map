@@ -20,7 +20,15 @@
 <!-- if search results are empty  -->
 <% if @places.empty? %>
   <div class="sorry-box">
-    <span class="sorry-message"><%= "Sorry, place not found!" %> <i class="far fa-sad-tear"></i></span>
+    <div class="sorry-message-box">
+      <span class="sorry-message"><%= "Sorry, we don't know where this is!" %></span>
+    </div>
+    <div>
+      <%= image_tag "icons/place_not_found_icon.png", class: "where"%>
+    </div>
+    <div class="sorry-message-box">
+      <span class="sorry-message"><%= "Please, check your address again." %></span>
+    </div>
   </div>
 <% else %>
   <!-- cards -->
