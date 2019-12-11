@@ -4,7 +4,9 @@
     padding: 20px;
     display: flex;
     justify-content: space-between;
-    background-image: asset-url("images/headers/profile.png");
+    background-image: image-url('headers/profile.png');
+    background-size: cover;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, .10);
 
     .logo {
       height: 80px;
@@ -23,7 +25,7 @@
     .avatar {
       height: 60px;
       width: 60px;
-      right: 0px;
+      right: 20px;
     }
 
     .profile-medal {
@@ -34,26 +36,65 @@
       height: 30px;
       width: 30px;
       position: relative;
-      top: 15px;
-      right: 15px;
+      top: 0px;
+      right: 25px;
 
     }
   }
 
-  .global-next-mission-card {
-
-  }
 
   .profile-icons-info {
-    padding: 20px 20px 5px 20px;
+    padding: 10px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, .10);
     margin: 10px;
     background-color: white;
     font-size: 35px;
     font-weight: 600;
 
+  }
+  .profile-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+
+    img {
+      margin: 10px;
+    }
+  }
+
+  .right-part-next-mission {
+
+  }
+
+  .global-next-mission-card {
+    text-align: center;
+    background-color: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, .10);
+    padding: 10px;
+    margin: 10px;
+
+    h3 {
+      font-size: 20px;
+      letter-spacing: 2px;
+      font-weight: bold;
+      margin-bottom: 5px;
+
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .day-time-slot {
+    margin-top: 10px;
+    text-align: justify;
+    p {
+      margin: 0;
+    }
   }
 
   .next-mission-card-first {
@@ -67,11 +108,17 @@
     background-color: white;
   }
 
-  .image-address-time {
-    padding: 15px 0px 0px 10px;
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    height: 190px;
+  .next-mission-photo-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+
+  }
+
+  .next-mission-image {
+    // padding: 15px 0px 0px 10px;
+    // display: grid;
+    // grid-template-rows: 1fr 1fr;
     width: 150px;
 
     .address-time {
@@ -109,7 +156,7 @@
   .next-mission-buttons {
     display: flex;
     flex-direction: column;
-    padding: 25px 3px;
+    // padding: 25px 3px;
     text-align: center;
     align-items: center;
 
@@ -129,6 +176,11 @@
 
   }
 
+  .next-mission-options {
+     padding: 0;
+     margin: 0 10px 15px 10px;
+     text-decoration: none;
+  }
 
   .next-mission-card-second {
     padding: 10px 0px 10px 10px;
@@ -138,11 +190,18 @@
     margin: 10px;
     background-color: white;
     width: 150px;
-    border-top: 1px solid #C4C4C4;
+    border-top: 1.5px solid #C4C4C4;
   }
 
   .next-mission-place-address {
     width: 100%;
+    border-bottom: 1px solid #C4C4C4;
+    border-top: 1.5px solid #C4C4C4;
+    padding: 10px 5px;
+
+    p {
+      margin-bottom: 0;
+    }
   }
 
   .past_mission_card {
@@ -163,6 +222,13 @@
     .mission-completed-cards {
       width: 315px;
 
+      h3 {
+        text-align: center;
+        font-size: 20px;
+        letter-spacing: 2px;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
 
       .memorypic-container {
         display: flex;
@@ -172,19 +238,24 @@
       }
     }
 
-    .place-profile-cards {
+
+    .one-place-profile-card {
       h1 {
-        em {
-          font-weight: 100;
+        border-bottom: 1px solid #C4C4C4;
+        border-top: 1.5px solid #C4C4C4;
+        padding: 10px;
+        font-weight: 100;
+        letter-spacing: 1px;
+        font-size: 16px;
+
+
+        strong {
+          color: $green;
+          letter-spacing: 1px;
         }
+
       }
 
-      .one-place-profile-card {
-        h1 {
-          border-bottom: 1px solid #C4C4C4;
-          padding-bottom: 5px;
-        }
-      }
     }
   }
 
@@ -193,7 +264,17 @@
     margin: 0 auto;
     padding: 10px;
   }
+
+  .volume-address {
+    p {
+      text-align: center;
+      letter-spacing: 2px;
+
+    }
+  }
+
 }
+
 
 
 

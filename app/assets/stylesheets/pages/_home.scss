@@ -8,11 +8,17 @@
 // }
 
 .global-home-page {
+  background-color: white;
+}
+
+.profile_icon_home img {
+  height: 30px;
+  width: 30px;
 }
 
 .banner-home-page {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 3fr 1fr;
   height: 80px;
   padding: 10px 20px;
 
@@ -21,13 +27,23 @@
   }
 
   .banner-home-page-title {
-    padding-top: 30px;
+    padding: 30px 0 0 10px;
     text-align: center;
+    display: flex;
+    justify-content: center;
+
+  }
+
+  .profile-icon-home-container {
+    height: 70px;
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 0;
   }
 
   .logo-home {
     height: 80px;
-    width: 100px;
+    width: 65px;
   }
 
   h1 {
@@ -42,10 +58,10 @@
 .welcome-message {
   text-align: center;
   height: 130px;
-  width: 95%;
-  padding: 10px 15px 5px 15px;
-  margin-top: 5px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, .10);
+  width: 80%;
+  // padding: 10px 15px 5px 15px;
+  // margin-top: 5px;
+  // box-shadow: 0px 4px 6px rgba(0, 0, 0, .10);
   background-color: white;
   margin: 0 auto;
   margin-top: 30px;
@@ -69,25 +85,28 @@
 
 
   p {
+    border-top: 1px solid #C4C4C4;
     color: #808080;
     font-size: 15px;
     letter-spacing: 3px;
     font-weight: semi-bold;
+    padding-top: 20px;
+
 
 
   }
 }
 
-.map-home {
-  display: grid;
-  grid-template-columns: 1fr;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, .10);
-  justify-content: center;
-  width: 95%;
-  height: 210px;
-  background-color: white;
-  margin: 10px auto;
-}
+// .map-home {
+//   display: grid;
+//   grid-template-columns: 1fr;
+//   // box-shadow: 0px 4px 6px rgba(0, 0, 0, .10);
+//   justify-content: center;
+//   // width: 95%;
+//   height: 210px;
+//   background-color: white;
+//   margin: 10px auto;
+// }
 
 
 #map {
@@ -112,8 +131,14 @@
   display: grid;
   grid-gap: 3px;
   grid-template-columns: 1fr;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, .10);
+  // box-shadow: 0px 4px 6px rgba(0, 0, 0, .10);
+
   width: 95%;
+
+  img {
+    margin: 0 auto;
+
+  }
 
   h3 {
     color: #808080;
@@ -133,16 +158,13 @@
   .description-app {
     font-weight: light;
     font-size: 13px;
+    min-height: 100px;
   }
 
   .background-icon {
     width: 60px;
     height: 60px;
     margin-bottom: 20px;
-  }
-
-  p {
-    text-align: center;
 
   }
 
@@ -156,10 +178,20 @@
   }
 
   p {
+    text-align: center;
     color: #808080;
     font-size: 13px;
     letter-spacing: 2px;
     font-weight:regular;
   }
+
+  .buttons-home {
+  height: 45px;
+  width: 145px;
+  text-decoration: none;
+  }
 }
 
+#second-card-manual {
+  border-left: 1px solid #C4C4C4;
+}
