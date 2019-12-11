@@ -3,6 +3,8 @@ class Place < ApplicationRecord
   has_many :missions
   has_many :congratulations
 
+  scope :not_clean_yet, -> { where.not(volume: 0) }
+
   reverse_geocoded_by :latitude, :longitude do |place, results|
     geo = results.first
     place.address = "#{geo.city}, #{geo.postal_code}" if geo
