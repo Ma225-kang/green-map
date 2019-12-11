@@ -38,6 +38,8 @@ import '../components/preview_picture_participation';
 
 import { listenForVolumeLeftSelection } from '../components/form_place_after';
 
+listenForVolumeLeftSelection();
+
 import { initAutocomplete } from '../plugins/init_autocomplete';
 
 initAutocomplete();
