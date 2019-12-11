@@ -1,46 +1,78 @@
-
-<!-- banner  -->
 <div class="header sign-up">
-  <h1>WELCOME TO GREEN MAP</h1>
+  <h1>WELCOME</h1>
 </div>
-<h2>Sign up</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+<div class="form-sign-up">
 
-  <div class="form-inputs">
-    <%= f.input :first_name,
-                required: true,
-                input_html: { autocomplete: "Leo" } %>
-    <%= f.input :last_name,
-                required: true,
-                input_html: { autocomplete: "Dupont" } %>
-    <%= f.input :city,
-                required: true,
-                input_html: { autocomplete: "Nantes" } %>
-    <%= f.input :zip_code,
-                required: true,
-                input_html: { autocomplete: "44000" } %>
-    <%= f.input :country,
-                required: true,
-                input_html: { autocomplete: "France" } %>
-    <%= f.input :avatar %>
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
+  <div class="sign-up-user">
+
+    <h2>Sign up</h2>
+
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= f.error_notification %>
+
+      <div class="form-inputs">
+        <div class="details-user">
+          <%= f.input :first_name,
+                      label: false,
+                      required: true,
+                      placeholder: "Fist name",
+                      input_html: { autocomplete: "Leo" } %>
+          <%= f.input :last_name,
+                      label: false,
+                      required: true,
+                      placeholder: "Last name",
+                      input_html: { autocomplete: "Dupont" } %>
+        </div>
+
+        <div class="details-user">
+          <%= f.input :city,
+                      label: false,
+                      required: true,
+                      placeholder: "City",
+                      input_html: { autocomplete: "Nantes" } %>
+          <%= f.input :zip_code,
+                      label: false,
+                      required: true,
+                      placeholder: "Zip code",
+                      input_html: { autocomplete: "44000" } %>
+        </div>
+        <%#= f.input :country,
+                    required: true,
+                    input_html: { autocomplete: "France" } %>
+        <div class="avatar-sign-up">
+          <%= f.label :avatar, label: "Select picture" %>
+          <div class="avatar-sign-up-picture">
+            <%= f.input :avatar, label: false, input_html: { class: 'hidden' } %>
+            <%= f.input :avatar_cache, as: :hidden %>
+          </div>
+        </div>
+
+        <%= f.input :email,
+                    label: false,
+                    required: true,
+                    autofocus: true,
+                    placeholder: "Email",
+                    input_html: { autocomplete: "email" }%>
+        <%= f.input :password,
+                    label: false,
+                    placeholder: "Password",
+                    required: true,
+                    hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                    input_html: { autocomplete: "new-password" } %>
+        <%= f.input :password_confirmation,
+                    label: false,
+                    required: true,
+                    placeholder: "Password confirmation",
+                    input_html: { autocomplete: "new-password" } %>
+      </div>
+
+      <div class="form-actions">
+        <%= f.button :submit, "Sign up", class: "big-button complete-button sign-up" %>
+      </div>
+    <% end %>
+    <%= render "devise/shared/links" %>
+
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>

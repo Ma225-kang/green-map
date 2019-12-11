@@ -130,7 +130,7 @@ second_place = Place.create!(
 third_place = Place.create!(
   mapmaster: ophelie,
   trashes_on_site: Place::TRASHES.sample(2),
-  volume: 2,
+  volume: 5,
   status: Place::STATUS.sample,
   latitude: 45.6870047,
   longitude: 6.1354066,
@@ -182,7 +182,7 @@ sixth_place = Place.create!(
 seventh_place = Place.create!(
   mapmaster: marie_noelle,
   trashes_on_site: Place::TRASHES.sample(2),
-  volume: 0,
+  volume: 2,
   status: Place::STATUS.sample,
   latitude: 44.2457,
   longitude: 3.65317,
@@ -262,7 +262,7 @@ twelveth_place = Place.create!(
 thirteenth_place = Place.create!(
   mapmaster: ophelie,
   trashes_on_site: Place::TRASHES.sample(2),
-  volume: 0,
+  volume: 1,
   status: Place::STATUS.sample,
   latitude: 45.3422689,
   longitude: 5.8146864,
