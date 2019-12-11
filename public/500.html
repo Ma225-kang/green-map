@@ -65,6 +65,29 @@
   }
 
 
+  .buttons-home {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-family: Montserrat, 'Open Sans', Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  height: 50px;
+  line-height: 20px;
+  margin: 2px 10px;
+  padding: 6px 24px;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  width: 150px;
+  background-color: #4DD59A;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, .10)
+
+  }
+
   </style>
 </head>
 
@@ -72,12 +95,10 @@
   <!-- This file lives in public/500.html -->
   <div class="dialog">
     <div>
+      <p>500 ERROR</p>
+      <img src="dead.png" alt="Dead face" class="dead" style="height: 40px; letter-spacing: 4px;">
       <h1>Oops !<br>Sorry, something went wrong ...</h1>
-
-        <div class="page-error">
-          <img src="dead.png" alt="Dead face" class="dead" style="height: 40px; letter-spacing: 4px;">
-          <p>500 ERROR</p>
-        </div>
+      <p><a href="/" class="buttons-home">Back on site</a></p>
     </div>
 
 
