@@ -190,14 +190,14 @@
     margin: 10px;
     background-color: white;
     width: 150px;
-    border-top: 1px solid #C4C4C4;
+    border-top: 1.5px solid #C4C4C4;
   }
 
   .next-mission-place-address {
     width: 100%;
     border-bottom: 1px solid #C4C4C4;
-    border-top: 1px solid #C4C4C4;
-    padding: 5px;
+    border-top: 1.5px solid #C4C4C4;
+    padding: 10px 5px;
 
     p {
       margin-bottom: 0;
@@ -242,13 +242,20 @@
     .one-place-profile-card {
       h1 {
         border-bottom: 1px solid #C4C4C4;
-        border-top: 1px solid #C4C4C4;
-        padding: 5px;
+        border-top: 1.5px solid #C4C4C4;
+        padding: 10px;
         font-weight: 100;
-        letter-spacing: 2px;
+        letter-spacing: 1px;
         font-size: 16px;
 
+
+        strong {
+          color: $green;
+          letter-spacing: 1px;
+        }
+
       }
+
     }
   }
 
