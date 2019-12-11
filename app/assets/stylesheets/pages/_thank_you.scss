@@ -1,4 +1,4 @@
-.thank-you-box {
+.thank-you-box, .thank-you-box-mission {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -60,6 +60,11 @@
   margin-bottom: 40px;
   text-align: center;
 
+  .mission {
+    display: flex;
+    align-items: center;
+  }
+
   i {
     color: #F2C938;
   }
@@ -67,7 +72,6 @@
   .message-points {
     width: 30vw;
     border: 2px dotted #F2C938;
-    padding: 5px;
     border-radius: 10px;
     font-size: 16px;
     margin: 0 20px;
@@ -81,18 +85,24 @@
 }
 
 .message-points-mission {
-    width: auto;
     border: 2px dotted #F2C938;
-    padding: 5px 10px;
+    padding: 10px 10px;
     border-radius: 10px;
     font-size: 16px;
-    margin: 0 20px;
     color: #F2C938;
+    margin-bottom: 30px;
+}
 
-.trophy-mission {
-    height: 70px;
-    width: auto;
+
+img.trophy-mission {
+    height: 60px;
+    width: 60px;
+    margin-top: 15px;
+    margin-bottom: 10px;
     opacity: 0.6;
-  }
+}
+
+img.bin-mission-congratulations {
+  margin-top: 0;
 }
 
