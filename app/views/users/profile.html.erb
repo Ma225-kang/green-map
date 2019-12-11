@@ -95,16 +95,16 @@
 
     <div class="mission-completed-cards">
 
-      <% @user.missions do |mission| %>
+      <% @user.missions.each do |mission| %>
       <div class="one-place-profile-card">
-        <% if @user.mission.status == "completed" %>
+        <% if mission.status == "completed" %>
         <div class="mission_done">
           <h3>Mission <%= mission.date %>
           <%= mission.time_slot %></h3>
            <div class="memorypic-container">
            <%= cl_image_tag mission.mapmaster_photo, class: 'memorypic'%>
            <%= mission.place.volume %>
-          <%= mission.place.adress %>
+          <%= mission.place.address %>
         </div>
         <% end %>
       </div>
