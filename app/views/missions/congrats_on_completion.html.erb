@@ -4,11 +4,7 @@
   <h2>Your contribution means the world to us. As a <strong>thank you</strong> gift, we're delighted to award you</h2>
 
   <div class="thank-you-message">
-    <p class="message-points"><span class="win-points"><%= @mission.mission_points %> </span>points </p>
-  </div>
-  <div class="points-collection">
-      <%= image_tag "icons/yellow_trophy_icon.png", class: "trophy" %>
-      <p class="message-points">Wow! You've earned <span class="win-points"></span> points!</p>
+    <p class="message-points-mission"><span class="win-points"> <%= image_tag "icons/yellow_trophy_icon.png", class: "trophy-mission" %><%= @mission.mission_points %> </span>points </p>
   </div>
   <h2 class="congratulations-message">Congratulations dear Mapmaster!</h2>
   <%= image_tag'icons/bin_profile_icon.svg' %>
