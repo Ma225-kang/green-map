@@ -1,35 +1,37 @@
 <!-- BANNER -->
-<div class="header locate-place">
-  <h1>POINT LOCATION</h1>
-</div>
+<div class="geolocate-global">
+  <div class="header locate-place">
+    <h1>POINT LOCATION</h1>
+  </div>
 
-<div class="geolocation-box">
+  <div class="geolocation-box">
 
-<h2>Where's that nasty garbage?</h2>
+  <h2>Where's that nasty garbage?</h2>
 
-<!--   <div class="new-form"> -->
-    <!-- CONSIGNES -->
-<!--     <div class = "position-geoloc"> -->
-      <div class="instructions-steps">
+  <!--   <div class="new-form"> -->
+      <!-- CONSIGNES -->
+  <!--     <div class = "position-geoloc"> -->
+        <div class="instructions-steps">
 
-        <div class="step">
-          <%= image_tag "icons/step1gps_icon.svg", class: "icon-geolocalisation" %><p>We need to know where you are to <strong>track garbage location</strong></p>
+          <div class="step">
+            <%= image_tag "icons/step1gps_icon.svg", class: "icon-geolocalisation" %><p>We need to know where you are to <strong>track garbage location</strong></p>
+          </div>
+
+          <div class="step">
+            <%= image_tag "icons/step2gps_icon.svg", class: "icon-geolocalisation" %><p><strong>Allow geolocalisation</strong> to advance to the next step</p>
+          </div>
+
+          <div class="step">
+           <%= image_tag "icons/step3gps_icon.svg", class: "icon-geolocalisation" %><p class="tap-button-geolocalisation">Tap <span class="button-geolocalise-me tap-geolocate">Geolocate me</span> on the <strong>map</strong> below to geolocate the spot</p>
+          </div>
+
         </div>
+  <!--     </div> -->
 
-        <div class="step">
-          <%= image_tag "icons/step2gps_icon.svg", class: "icon-geolocalisation" %><p><strong>Allow geolocalisation</strong> to advance to the next step</p>
-        </div>
-
-        <div class="step">
-         <%= image_tag "icons/step3gps_icon.svg", class: "icon-geolocalisation" %><p class="tap-button-geolocalisation">Tap <span class="button-geolocalise-me tap-geolocate">Geolocate me</span> on the <strong>map</strong> below to geolocate the spot</p>
-        </div>
-
+      <!-- MAP <-->
+      <div class="map-geoloc">
+         <button  id="geolocate_me" class="geolocate-button nav-btn orange-btn go-on-mission-button go-on-mission-button-show geolocating-btn" data-next-page-url="<%= new_place_path %>" >Geolocate me</button>
       </div>
-<!--     </div> -->
-
-    <!-- MAP <-->
-    <div class="map-geoloc">
-       <button  id="geolocate_me" class="geolocate-button nav-btn orange-btn go-on-mission-button go-on-mission-button-show geolocating-btn" data-next-page-url="<%= new_place_path %>" >Geolocate me</button>
     </div>
   </div>
 </div>
