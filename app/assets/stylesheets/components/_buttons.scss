@@ -121,6 +121,10 @@
   &.complete-button {
     background-color: $green;
     text-decoration: none;
+
+    &.place {
+      padding-top: 6px;
+    }
   }
 
   &.mission {
@@ -204,6 +208,11 @@
 
 .back-to-profile-button {
   width: 267.5px !important;
+
+  &.congrats-mission {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
 
 }
 
