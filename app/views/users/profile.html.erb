@@ -23,6 +23,23 @@
           <%= image_tag "icons/rookie_icon.png"%>
         <% end %>
       </div>
+      <div class="profile-status-info">
+        <% if @user.level == "legend" %>
+          <p>Legend</p>
+
+        <% elsif @user.level == "hero" %>
+          <p>Hero</p>
+        <% elsif @user.level == "champion" %>
+          <p>Champion</p>
+
+        <% elsif @user.level == "apprentice" %>
+          <p>Apprentice</p>
+
+        <% else @user.level == "rookie"%>
+          <p>Rookie</p>
+
+        <% end %>
+      </div>
     </div>
   </div>
 
@@ -32,16 +49,16 @@
     <!-- count where user = captaingreen -->
     <div class="profile-icon">
       <%= @user.missions.count %>
-      <%= image_tag "icons/bin_profile_icon.svg"%>
+      <%= image_tag "icons/bin_profile_icon.svg", class: "profile-icon-medals-info"%>
     </div>
     <!-- count where user = mapmaster -->
     <div class="profile-icon">
       <%= @user.places.count %>
-      <%= image_tag "icons/marker_profile_icon.svg"%>
+      <%= image_tag "icons/marker_profile_icon.svg", class: "profile-icon-medals-info"%>
     </div>
     <div class="profile-icon">
       <%= @user.points %>
-      <%= image_tag "icons/points_profile_icon.svg"%>
+      <%= image_tag "icons/points_profile_icon.svg", class: "profile-icon-medals-info"%>
     </div>
     <!-- count points  -->
   </div>
