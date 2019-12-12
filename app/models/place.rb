@@ -1,7 +1,6 @@
 class Place < ApplicationRecord
   belongs_to :mapmaster, class_name: "User"
   has_many :missions
-  has_many :congratulations
 
   scope :not_clean_yet, -> { where.not(volume: 0) }
 
