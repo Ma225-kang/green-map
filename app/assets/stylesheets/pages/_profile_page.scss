@@ -80,7 +80,7 @@
       font-size: 20px;
       letter-spacing: 2px;
       font-weight: bold;
-      margin-bottom: 5px;
+      margin-bottom: 15px;
 
     }
 
@@ -178,7 +178,7 @@
 
   .next-mission-options {
      padding: 0;
-     margin: 0 10px 15px 10px;
+     margin: 0 10px 17px 10px;
      text-decoration: none;
   }
 
@@ -227,7 +227,7 @@
         font-size: 20px;
         letter-spacing: 2px;
         font-weight: bold;
-        margin-bottom: 5px;
+        margin-bottom: 15px;
       }
 
       .memorypic-container {
@@ -267,8 +267,9 @@
 
   .volume-address {
     p {
-      text-align: center;
+      text-align: left;
       letter-spacing: 2px;
+      padding-left: 10px;
 
     }
   }
