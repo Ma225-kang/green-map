@@ -43,30 +43,6 @@
   padding-top: 2px;
 }
 
-.points-collection {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  width: 75vw;
-  margin: 0 auto;
-  margin-top: 10px;
-  border: 2px dotted #F2C938;
-  padding: 5px;
-  border-radius: 10px;
-
-  .message-points {
-    font-size: 14px;
-    margin-bottom: 0;
-    padding: 5px;
-    color: #F2C938;
-  }
-
-  .win-points {
-    font-weight: bold;
-    font-size: 16px;
-  }
-}
-
 .error-no-picture {
   opacity: 0.7;
   width: 45px;
