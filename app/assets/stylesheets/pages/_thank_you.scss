@@ -1,4 +1,4 @@
-.thank-you-box, .thank-you-box-mission {
+.thank-you-box {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,9 +19,13 @@
 
   h2 {
     font-size: 16px;
-    margin-bottom: 15px;
     text-align: center;
     line-height: 25px;
+  }
+
+  .thank-you-message {
+    text-align: center;
+    margin: 30px auto;
   }
 
   .congratulations-message {
@@ -35,6 +39,29 @@
     height: 70px;
     margin-top: 30px;
     margin-bottom: 50px;
+  }
+
+  img.trophy-mission {
+    height: 60px;
+    width: 60px;
+    opacity: 0.6;
+    margin-bottom: 20px;
+    margin-top: 0;
+  }
+
+  .message-points {
+    width: 30vw;
+    padding: 7px;
+    border: 2px dotted #F2C938;
+    border-radius: 10px;
+    font-size: 16px;
+    margin: 0 20px;
+    color: #F2C938;
+  }
+
+  .win-points {
+    font-weight: bold;
+    font-size: 20px;
   }
 
   a.big-button {
@@ -51,58 +78,74 @@
   }
 }
 
-.thank-you-message {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  margin: 0 auto;
-  margin-top: 20px;
-  margin-bottom: 40px;
-  text-align: center;
+// .thank-you-message {
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-around;
+//   margin: 0 auto;
+//   margin-top: 20px;
+//   margin-bottom: 40px;
+//   text-align: center;
 
-  .mission {
-    display: flex;
-    align-items: center;
-  }
+//   img.trophy-mission {
+//     height: 60px;
+//     width: 60px;
+//     margin-top: 15px;
+//     margin-bottom: 10px;
+//     opacity: 0.6;
+//   }
 
-  i {
-    color: #F2C938;
-  }
+//   .message-points {
+//     width: 30vw;
+//     border: 2px dotted #F2C938;
+//     border-radius: 10px;
+//     font-size: 16px;
+//     margin: 0 20px;
+//     color: #F2C938;
+//   }
 
-  .message-points {
-    width: 30vw;
-    border: 2px dotted #F2C938;
-    border-radius: 10px;
-    font-size: 16px;
-    margin: 0 20px;
-    color: #F2C938;
-  }
+//   .win-points {
+//     font-weight: bold;
+//     font-size: 20px;
+//   }
+// }
 
-  .win-points {
-    font-weight: bold;
-    font-size: 20px;
-  }
-}
-
-.message-points-mission {
-    border: 2px dotted #F2C938;
-    padding: 10px 10px;
-    border-radius: 10px;
-    font-size: 16px;
-    color: #F2C938;
-    margin-bottom: 30px;
-}
+// .message-points-mission {
+//     border: 2px dotted #F2C938;
+//     padding: 10px 10px;
+//     border-radius: 10px;
+//     font-size: 16px;
+//     color: #F2C938;
+//     margin-bottom: 30px;
+// }
 
 
-img.trophy-mission {
-    height: 60px;
-    width: 60px;
-    margin-top: 15px;
-    margin-bottom: 10px;
-    opacity: 0.6;
-}
 
-img.bin-mission-congratulations {
-  margin-top: 0;
-}
 
+// img.bin-mission-congratulations {
+//   margin-top: 0;
+// }
+
+// .points-collection {
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-around;
+//   width: 75vw;
+//   margin: 0 auto;
+//   margin-top: 10px;
+//   border: 2px dotted #F2C938;
+//   padding: 5px;
+//   border-radius: 10px;
+
+//   .message-points {
+//     font-size: 14px;
+//     margin-bottom: 0;
+//     padding: 5px;
+//     color: #F2C938;
+//   }
+
+//   .win-points {
+//     font-weight: bold;
+//     font-size: 16px;
+//   }
+// }
