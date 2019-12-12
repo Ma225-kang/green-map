@@ -76,11 +76,11 @@
       <% end %>
     </div>
 
-    <div class="go-on-mission-button">
-      <button type="button" class="big-button complete-button" data-toggle="modal" data-target="#goOnMissionModal" id="button-go-on-mission">
+      <button type="button" class="nav-btn green-btn go-on-mission-button go-on-mission-button-show" data-toggle="modal" data-target="#goOnMissionModal">
+
         GO ON MISSION
       </button>
-    </div>
+
 
     <!-- pop up de demande sur la date -->
     <% mission_has_errors = !@mission.errors.empty? %>
@@ -116,7 +116,7 @@
 
               <div class="modal-footer">
                 <!-- <button type="button" class="nav-btn green-btn" data-dismiss="modal">Close</button> -->
-                <%= f.submit value: "Submit", class: 'big-button complete-button', data: { disable_with: 'Submit' } %>
+                <%= f.submit value: "Submit", class: 'nav-btn green-btn', data: { disable_with: 'Submit' } %>
               </div>
 
             <% end %>
