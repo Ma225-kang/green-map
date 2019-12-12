@@ -1,11 +1,14 @@
-<div class="thank-you-box-mission">
+<div class="thank-you-box">
 
   <h1>Thank you</h1>
 
   <h2>Your contribution means the world to us. As a <strong>thank you</strong> gift, we're delighted to award you</h2>
 
-  <%= image_tag "icons/yellow_trophy_icon.png", class: "trophy-mission" %>
-  <p class="message-points-mission"><span class="win-points"><%= @mission.mission_points %></span> points</p>
+
+  <div class="thank-you-message">
+    <%= image_tag "icons/yellow_trophy_icon.png", class: "trophy-mission" %>
+    <p class="message-points"><span class="win-points"><%= @mission.mission_points %></span> points</p>
+  </div>
 
   <h2 class="congratulations-message">Congratulations dear Captain Geen!</h2>
   <%= image_tag'icons/bin_profile_icon.svg', class: "bin-mission-congratulations" %>
