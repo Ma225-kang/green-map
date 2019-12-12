@@ -211,14 +211,15 @@ label.time-slot-active {
 .days-to-mission-count {
   text-align: center;
   font-weight: bold;
-  margin-top: 5px;
+  margin-top: 25px;
+  margin-bottom: 25px;
 
   .days-to-mission {
     font-size: 16px;
     font-weight: normal;
     color: white;
     background-color: $green;
-    padding: 10px;
+    padding: 10px 15px;
     width: 15px;
     height: 15px;
     border-radius: 50%;
