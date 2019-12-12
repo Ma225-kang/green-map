@@ -323,10 +323,7 @@ first_mission = Mission.create!(
   time_slot: "morning",
   mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place33.jpeg")),
   perceived_effort: 0,
-  status: "planned",
-
-
-
+  status: "planned"
 )
 
 second_mission = Mission.create!(
@@ -336,9 +333,7 @@ second_mission = Mission.create!(
   time_slot: "afternoon",
   mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place34.jpeg")),
   perceived_effort: 1,
-  status: "on-going",
-
-
+  status: "planned"
 )
 
 third_mission = Mission.create!(
@@ -348,9 +343,7 @@ third_mission = Mission.create!(
   time_slot: "all-day",
   mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place35.jpeg")),
   perceived_effort: 2,
-  status: "cancelled",
-
-
+  status: "cancelled"
 )
 
 fourth_mission = Mission.create!(
@@ -360,9 +353,7 @@ fourth_mission = Mission.create!(
   time_slot: "morning",
   mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place36.jpeg")),
   perceived_effort: 3,
-  status: "completed",
-
-
+  status: "completed"
 )
 
 fifth_mission = Mission.create!(
@@ -372,21 +363,17 @@ fifth_mission = Mission.create!(
   time_slot: "afternoon",
   mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place37.jpeg")),
   perceived_effort: 4,
-  status: "planned",
-
-
+  status: "planned"
 )
 
 sixth_mission = Mission.create!(
   place: sixth_place,
-  date: '2020-02-11',
+  date: '2020-01-11',
   captaingreen: marie_noelle,
   time_slot: "all-day",
   mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place38.jpeg")),
   perceived_effort: 5,
-  status: "on-going",
-
-
+  status: "planned"
 )
 
 seventh_mission = Mission.create!(
@@ -396,34 +383,28 @@ seventh_mission = Mission.create!(
   time_slot: "morning",
   mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place39.jpeg")),
   perceived_effort: 0,
-  status: "cancelled",
-
-
+  status: "cancelled"
 )
 
 
 eighth_mission = Mission.create!(
   place: eighth_place,
-  date: '2020-03-18',
+  date: '2019-12-30',
   captaingreen: cecile,
   time_slot: "afternoon",
   mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place40.jpeg")),
   perceived_effort: 1,
-  status: "completed",
-
-
+  status: "completed"
 )
 
 nineth_mission = Mission.create!(
   place: nineth_place,
-  date: '2019-12-13',
+  date: '2019-12-15',
   captaingreen: nicolas,
   time_slot: "all-day",
   mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place41.jpeg")),
   perceived_effort: 2,
-  status: "planned",
-
-
+  status: "planned"
 )
 
 tenth_mission = Mission.create!(
@@ -433,9 +414,7 @@ tenth_mission = Mission.create!(
   time_slot: "morning",
   mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place42.jpeg")),
   perceived_effort: 3,
-  status: "on-going",
-
-
+  status: "planned"
 )
 
 
@@ -446,9 +425,7 @@ eleventh_mission = Mission.create!(
   time_slot: "afternoon",
   mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place43.jpeg")),
   perceived_effort: 4,
-  status: "on-going",
-
-
+  status: "planned"
 )
 
 twelveth_mission = Mission.create!(
@@ -458,9 +435,7 @@ twelveth_mission = Mission.create!(
   time_slot: "all-day",
   mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place44.jpeg")),
   perceived_effort: 5,
-  status: "completed",
-
-
+  status: "completed"
 )
 
 
@@ -471,7 +446,7 @@ eleventh_mission = Mission.create!(
   time_slot: "afternoon",
   mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place43.jpeg")),
   perceived_effort: 2,
-  status: "completed",
+  status: "completed"
 )
 
 puts "Done with missions seeds !"

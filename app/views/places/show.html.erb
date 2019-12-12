@@ -76,11 +76,15 @@
       <% end %>
     </div>
 
-    <div class="go-on-mission-button">
-      <button type="button" class="big-button complete-button" data-toggle="modal" data-target="#goOnMissionModal" id="button-go-on-mission">
-        GO ON MISSION
-      </button>
-    </div>
+    <% if @mission_user %>
+     <p class="days-to-mission-count">Your mission is in <span class="days-to-mission"><%= (@mission_user.date - Date.today).to_i %></span> days</p>
+    <% else %>
+      <div class="go-on-mission-button">
+        <button type="button" class="big-button complete-button" data-toggle="modal" data-target="#goOnMissionModal" id="button-go-on-mission">
+          GO ON MISSION
+        </button>
+      </div>
+    <% end %>
 
     <!-- pop up de demande sur la date -->
     <% mission_has_errors = !@mission.errors.empty? %>
