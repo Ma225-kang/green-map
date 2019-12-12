@@ -246,18 +246,18 @@ eleventh_place = Place.create!(
   mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place61.jpeg"))
 )
 
-twelveth_place = Place.create!(
-  mapmaster: marie_noelle,
-  trashes_on_site: Place::TRASHES.sample(3),
-  volume: 5,
-  status: Place::STATUS.sample,
-  latitude: 44.7141165,
-  longitude: 6.2637767,
-  # equipment: "rake",
-  # address: "05260 Champoléon",
-  # display_photo: File.open(Rails.root.join("db/fixtures/places/place23.jpeg")),
-  mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place62.jpeg"))
-)
+# twelveth_place = Place.create!(
+#   mapmaster: marie_noelle,
+#   trashes_on_site: Place::TRASHES.sample(3),
+#   volume: 5,
+#   status: Place::STATUS.sample,
+#   latitude: 44.7141165,
+#   longitude: 6.2637767,
+#   # equipment: "rake",
+#   # address: "05260 Champoléon",
+#   # display_photo: File.open(Rails.root.join("db/fixtures/places/place23.jpeg")),
+#   mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place62.jpeg"))
+# )
 
 thirteenth_place = Place.create!(
   mapmaster: ophelie,
@@ -353,7 +353,7 @@ fourth_mission = Mission.create!(
   time_slot: "morning",
   mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place36.jpeg")),
   perceived_effort: 3,
-  status: "completed"
+  status: "planned"
 )
 
 fifth_mission = Mission.create!(
@@ -389,10 +389,10 @@ seventh_mission = Mission.create!(
 
 eighth_mission = Mission.create!(
   place: eighth_place,
-  date: '2019-12-30',
-  captaingreen: cecile,
+  date: '2019-11-10',
+  captaingreen: maylis,
   time_slot: "afternoon",
-  mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place40.jpeg")),
+  mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place58.jpeg")),
   perceived_effort: 1,
   status: "completed"
 )
@@ -428,15 +428,15 @@ eleventh_mission = Mission.create!(
   status: "planned"
 )
 
-twelveth_mission = Mission.create!(
-  place: twelveth_place,
-  date: '2020-04-12',
-  captaingreen: ophelie,
-  time_slot: "all-day",
-  mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place44.jpeg")),
-  perceived_effort: 5,
-  status: "completed"
-)
+# twelveth_mission = Mission.create!(
+#   place: twelveth_place,
+#   date: '2020-04-12',
+#   captaingreen: ophelie,
+#   time_slot: "all-day",
+#   mapmaster_photo: File.open(Rails.root.join("db/fixtures/places/place44.jpeg")),
+#   perceived_effort: 5,
+#   status: "completed"
+# )
 
 
 eleventh_mission = Mission.create!(

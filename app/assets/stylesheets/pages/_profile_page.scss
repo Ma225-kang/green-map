@@ -89,7 +89,7 @@
   }
 
   .right-part-next-mission {
-
+    margin-left: 5px;
   }
 
   .global-next-mission-card {
@@ -104,6 +104,7 @@
       letter-spacing: 2px;
       font-weight: bold;
       margin-bottom: 15px;
+      padding-top: 7px;
 
     }
 
@@ -170,6 +171,7 @@
     width: 167px;
     height: 100px;
     object-fit: cover;
+    text-align: center;
     border-radius: 5px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, .10);
 
@@ -201,7 +203,7 @@
 
   .next-mission-options {
      padding: 0;
-     margin: 0 10px 17px 10px;
+     margin: 0 5px 17px 10px;
      text-decoration: none;
   }
 
@@ -291,8 +293,6 @@
     p {
       text-align: left;
       letter-spacing: 2px;
-      padding-left: 10px;
-
     }
   }
 
