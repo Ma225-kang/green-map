@@ -20,13 +20,15 @@
   </div>
 
   <%= simple_form_for @mission, url: complete_mission_path(@mission) do |f| %>
-    <h2 class="text-title-form">Show us your loot!</h2>
+    <h2 class="text-title-form show-us-your-loot">Show us your loot!</h2>
 
     <label for="mission_mapmaster_photo" class="picture-mapmaster">
-        <%= image_tag'icons/alert_page_icon.png', class: "camera" %>
-        <%= image_tag'icons/green_success_icon.png', class: "green-success hidden" %>
-        <p class="take-picture-message">Take a picture of trashpoint and upload it right here.</p>
+        <%= image_tag'icons/alert_page_icon.png', class: "camera mapmaster" %>
+        <%= image_tag'icons/green_success_icon.png', class: "green-success mapmaster-photo hidden" %>
+        <%= image_tag'icons/red_cross_error.png', class: "error-no-picture mapmaster hidden" %>
+        <p class="take-picture-message mapmaster">Take a picture of trashpoint and upload it right here.</p>
         <p class="well-done hidden">Great! You're now two steps away from completing your mission!</p>
+        <p class="error-picture-message mapmaster hidden">Dear Captain Green, we need your picture! </p>
     </label>
 
       <%= f.input :mapmaster_photo, label: false, input_html: { class: 'hidden' } %>
@@ -53,7 +55,7 @@
       <p>I gave it my all!</p>
     </div>
 
-    <h2 class="text-title-form quantity">HOW DOES THE PLACE LOOK LIKE NOW?</h2>
+    <h2 class="text-title-form volume-left">HOW DOES THE PLACE LOOK LIKE NOW?</h2>
 
     <div class="place_after-level-selection-wrapper">
       <label for="volume_left-level-1">1</label>
@@ -74,13 +76,15 @@
       <p>Is is a real mess!</p>
     </div>
 
-    <h2 class="text-title-form text-second-title-form">Show us the result!</h2>
+    <h2 class="text-title-form show-us-the-result">Show us the result!</h2>
 
       <label for="mission_participation_proof" class="picture-participation-proof">
         <%= image_tag'icons/alert_page_icon.png', class: "camera participation" %>
-        <%= image_tag'icons/green_success_icon.png', class: "green-success participation hidden" %>
+        <%= image_tag'icons/green_success_icon.png', class: "green-success proof hidden" %>
+        <%= image_tag'icons/red_cross_error.png', class: "error-no-picture proof hidden" %>
         <p class="take-picture-message-participation">Take a picture of how clean it is now and upload it right here.</p>
         <p class="well-done-participation hidden">Dear Captain Green, your mission is set to be a great success! <i class="fas fa-thumbs-up"></i> </p>
+        <p class="error-picture-message proof hidden">Dear Captain Green, we need your picture! </p>
       </label>
 
     <%= f.input :participation_proof, label: false, input_html: { class: 'hidden' } %>

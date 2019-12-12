@@ -27,8 +27,20 @@
   50% { border-color: orange }
 }
 
+.text-title-form.show-us-your-loot {
+  padding-top: 7px;
+}
+
 .text-title-form.quantity {
-  padding-top: 5px;
+  padding-top: 7px;
+}
+
+.text-title-form.volume-left {
+  padding-top: 10px;
+}
+
+.text-title-form.show-us-the-result {
+  padding-top: 2px;
 }
 
 .points-collection {
@@ -53,4 +65,11 @@
     font-weight: bold;
     font-size: 16px;
   }
+}
+
+.error-no-picture {
+  opacity: 0.7;
+  width: 45px;
+  height: 45px;
+  margin-left: 15px;
 }
