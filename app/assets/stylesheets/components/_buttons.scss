@@ -43,17 +43,24 @@
   font-weight: bold;
   cursor: pointer;
 
+  a:active {
+  text-decoration: none;
+  color: white;
+  }
+
 }
 
 .orange-btn {
   background-color: #fdd200;
   letter-spacing: 3px;
+
 }
 
 
 .green-btn {
   background-color: #4DD59A;
   letter-spacing: 3px;
+
 }
 
 
@@ -154,6 +161,8 @@
     width: 135px;
     border: 0px !important;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, .10)
+
+
   }
 
   .orange-btn {
@@ -169,17 +178,21 @@
   text-align: center;
   margin: 15px auto;
 
+
 }
 
 .go-on-mission-button-show {
   text-decoration: none;
   width: 80vw;
   margin-bottom: 20px;
+
 }
 
 .back-to-profile-button {
   width: 267.5px !important;
+
 }
+
 
 .geolocating-btn {
   width: 220px !important;
