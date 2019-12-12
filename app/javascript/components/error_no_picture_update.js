@@ -27,7 +27,6 @@ const validationFormPictures = (event) => {
 
 
   if (mapMasterPhotoIsInvalid()) {
-    console.log('map master invalid')
     logoCameraMapMaster.style.display = 'none';
     textPictureMessageMapMaster.style.display = 'none';
     errorSignMapMaster.style.display = 'block';
@@ -42,6 +41,11 @@ const validationFormPictures = (event) => {
     errorMessageProof.style.display = 'block';
     event.preventDefault();
   }
+
+  const missionSubmit   = document.getElementById('submit-mission-review');
+  setTimeout(() => {
+    missionSubmit.disabled = false
+  }, 1000);
 
   if (!mapMasterPhotoIsInvalid() && !missionProofValueIsInvalid()) {
     logoCamera.style.display = 'none';
