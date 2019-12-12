@@ -4,15 +4,21 @@ class PlacesController < ApplicationController
   def index
 
     if params[:search].present?
-      @places = Place.near(params[:search]).geocoded.not_clean_yet.order("created_at DESC")
+      coordinates = Geocoder.coordinates(params[:search], lookup: :nominatim)
+      @places = Place.near(coordinates).geocoded.not_clean_yet.order("created_at DESC")
+
+      # @places = Place.near(params[:search], lookup: :nominatim).geocoded.not_clean_yet.order("created_at DESC")
     else
       @places = Place.geocoded.not_clean_yet.order("created_at DESC")
     end
   end
 
   def show
+    console
     @place = Place.find(params[:id])
     @mission = Mission.new
+
+    @mission_user = @place.missions.find_by(status: 'planned', captaingreen: current_user)
 
     @markers = [
       {

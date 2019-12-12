@@ -116,7 +116,7 @@
           <div class="one-place-profile-card">
             <% if mission.status == "completed" %>
 
-                <h1><i class="far fa-calendar-alt"></i> <%= mission.date.strftime("%d %m %Y") %> <strong>as CaptainGreen</strong></h1>
+                <h4><i class="far fa-calendar-alt"></i> <%= mission.date.strftime("%d %m %Y") %> <strong>as CaptainGreen</strong></h4>
                 <div class="memorypic-container">
                   <%= cl_image_tag mission.mapmaster_photo, class: 'memorypic'%>
                 </div>
@@ -134,7 +134,7 @@
       <div class="place-profile-cards">
         <% @user.places.each do |place| %>
           <div class="one-place-profile-card">
-            <h1><i class="far fa-calendar-alt"></i> <%= place.created_at.strftime("%d %m %Y") %> <strong>as MapMaster</strong></h1>
+            <h4><i class="far fa-calendar-alt"></i> <%= place.created_at.strftime("%d %m %Y") %> <strong>as MapMaster</strong></h4>
             <div class="memorypic-container">
               <%= cl_image_tag place.mapmaster_photo, class: 'memorypic' %>
             </div>
