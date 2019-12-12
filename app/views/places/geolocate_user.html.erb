@@ -21,7 +21,7 @@
         </div>
 
         <div class="step">
-         <%= image_tag "icons/step3gps_icon.svg", class: "icon-geolocalisation" %><p class="tap-button-geolocalisation">Tap <span class="button-geolocalise-me">Geolocate me</span> on the <strong>map</strong> below to geolocate the spot</p>
+         <%= image_tag "icons/step3gps_icon.svg", class: "icon-geolocalisation" %><p class="tap-button-geolocalisation">Tap <span class="button-geolocalise-me tap-geolocate">Geolocate me</span> on the <strong>map</strong> below to geolocate the spot</p>
         </div>
 
       </div>
@@ -29,7 +29,7 @@
 
     <!-- MAP <-->
     <div class="map-geoloc">
-       <button  id="geolocate_me" class="geolocate-button nav-btn orange-btn go-on-mission-button go-on-mission-button-show" data-next-page-url="<%= new_place_path %>" >Geolocate me</button>
+       <button  id="geolocate_me" class="geolocate-button nav-btn orange-btn go-on-mission-button go-on-mission-button-show geolocating-btn" data-next-page-url="<%= new_place_path %>" >Geolocate me</button>
     </div>
   </div>
 </div>
