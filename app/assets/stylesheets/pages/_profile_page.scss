@@ -12,7 +12,7 @@
       height: 80px;
       width: 100px;
       position: relative;
-      top: 5px;
+      top: 0px;
       right: 5px;
     }
 
@@ -22,10 +22,25 @@
 
     }
 
+    .profile-status-info {
+
+      font-size: 12px;
+      color: $green;
+
+      p {
+        position: relative;
+        top: 70px;
+        right: 15px;
+        font-weight: bold;
+        background-color: rgba (255, 255, 255, 0.8 );
+      }
+    }
+
     .avatar {
       height: 60px;
       width: 60px;
-      right: 20px;
+      top: -5px;
+      right: -50px;
     }
 
     .profile-medal {
@@ -36,8 +51,8 @@
       height: 30px;
       width: 30px;
       position: relative;
-      top: 0px;
-      right: 25px;
+      top: 40px;
+      right: -35px;
 
     }
   }
@@ -54,11 +69,19 @@
     font-weight: 600;
 
   }
+
+  .profile-icon-medals-info {
+    position: relative;
+    top: -5px;
+
+  }
+
   .profile-icon {
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 10px;
+
 
     img {
       margin: 10px;
