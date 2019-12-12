@@ -11,8 +11,11 @@ class PlacesController < ApplicationController
   end
 
   def show
+    console
     @place = Place.find(params[:id])
     @mission = Mission.new
+
+    @mission_user = @place.missions.find_by(status: 'planned', captaingreen: current_user)
 
     @markers = [
       {
