@@ -105,8 +105,9 @@
                   <%= cl_image_tag mission.mapmaster_photo, class: 'memorypic'%>
                 </div>
                  <%#= mission.place.volume %>
-                <p><i class="fas fa-map-marker-alt"></i> <%= mission.place.address %></p>
-
+                <div class="volume-address">
+                  <p><i class="fas fa-map-marker-alt"></i> <%= mission.place.address %></p>
+                </div>
             <% end %>
           </div>
         <% end %>
