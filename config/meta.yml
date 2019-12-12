@@ -3,5 +3,5 @@
 meta_product_name: "Green Map"
 meta_title: "Green Map - Preserve Nature"
 meta_description: "Green Map is a fun application to participate in the cleaning and protection of Nature."
-meta_image: "cover.png" # should exist in `app/assets/images/`
+meta_image: "banners/banner.jpg" # should exist in `app/assets/images/`
 twitter_account: "@CastellMaylis"   # required for Twitter Cards
