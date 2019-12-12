@@ -43,7 +43,7 @@ class PlacesController < ApplicationController
     puts "#{@place.longitude} #{@place.latitude}"
 
     if @place.save
-      redirect_to place_congratulations_path(@place)
+      redirect_to congrats_on_alerting_place_path(@place)
     else
       render :new
     end
@@ -53,6 +53,10 @@ class PlacesController < ApplicationController
     p cookies[:latitude]
     p cookies[:longitude]
     @markers = [{lat: cookies[:latitude], lng: cookies[:longitude]}]
+  end
+
+  def congrats_on_alerting
+    @place = Place.find(params[:id])
   end
 
   private

@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   get "/profile", to: "users#profile", as: :profile
 
   resources :places, only: [:index, :show, :new, :create] do
-    resource :congratulations, only: [:show]
+    member do
+      get 'congrats_on_alerting'
+    end
 
     collection do
       get "geolocate_user"
