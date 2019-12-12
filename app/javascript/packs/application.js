@@ -43,3 +43,7 @@ listenForVolumeLeftSelection();
 import { initAutocomplete } from '../plugins/init_autocomplete';
 
 initAutocomplete();
+
+import { listenForFormSubmit } from '../components/error_no_picture_update';
+
+listenForFormSubmit();

@@ -33,7 +33,7 @@
   border: 2px solid $green;
 }
 
-.camera, {
+.camera {
   width: 55px;
   height: 53px;
   margin-left: 20px;
@@ -44,6 +44,18 @@
   width: 45px;
   height: 45px;
   margin-left: 15px;
+}
+
+.error-no-picture {
+  opacity: 0.7;
+  width: 45px;
+  height: 45px;
+  margin-left: 15px;
+}
+
+.error-picture-message {
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 i {
