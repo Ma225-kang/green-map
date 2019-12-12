@@ -24,8 +24,10 @@ class MissionsController < ApplicationController
   end
 
   def cancel
+    @mission = Mission.find(params[:id])
     @mission.status = "cancelled"
     @mission.save
+    redirect_to profile_path
   end
 
   def review

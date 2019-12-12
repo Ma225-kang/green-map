@@ -70,11 +70,10 @@
           </div>
 
           <div class="next-mission-buttons">
-            <!-- button more info redirecting towards show of place -->
-
-            <%= link_to "more info", mission_path(next_mission), class:'nav-btn green-btn next-mission-options' %>
-            <!--link_to @next_mission.place_path -->
             <!-- section action -->
+            <!-- button more info redirecting towards show of place -->
+            <!--link_to @next_mission.place_path -->
+            <%= link_to "more info", place_path(next_mission), class:'nav-btn green-btn next-mission-options' %>
             <!-- button completed redirecting towards the end of mission -->
             <%= link_to "complete", review_mission_path(next_mission), class:'nav-btn green-btn next-mission-options'%>
             <!-- button cancel delete mission and delete user_id from the place db -->

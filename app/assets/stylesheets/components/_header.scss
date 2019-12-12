@@ -4,6 +4,7 @@
   background-size: cover;
   background-position: center;
 
+
   &.update-mission {
     background-image: image-url('headers/update-mission.jpg');
   }
@@ -22,6 +23,8 @@
 
   &.index-places {
     background-image: image-url('headers/index-places.jpg');
+    // position: -webkit-sticky;
+    // top: 20px;
 
    h1 {
       padding-top: 12px;
@@ -50,3 +53,9 @@
   }
 
 }
+
+#just-sticky{
+
+position: sticky;
+    top: 0px;
+    }
